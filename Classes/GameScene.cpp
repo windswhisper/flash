@@ -5,14 +5,6 @@
 
 bool GameScene::init()
 {
-    this->bg = Sprite::create("img/welcome/bg_welcome.png");
-    
-    this->bg->setPosition(960, 540);
-    
-    this->bg->setGlobalZOrder(-1);
-    
-    this->addChild(this->bg);
-    
     this->addChild(WelcomeLayer::create());
     
     return true;

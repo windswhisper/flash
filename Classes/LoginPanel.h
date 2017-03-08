@@ -17,6 +17,8 @@ public:
 
 	void close();
 
+	void reg();
+
 	Sprite* bg;
 
 	Node* root;

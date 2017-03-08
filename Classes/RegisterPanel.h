@@ -1,5 +1,5 @@
-#ifndef __LOGIN_PANEL_H__
-#define __LOGIN_PANEL_H__
+#ifndef __REGISTER_PANEL_H__
+#define __REGISTER_PANEL_H__
 
 #include "cocos2d.h"
 
@@ -17,11 +17,13 @@ public:
 
 	void close();
 
-	Sprite* bg;
+	void log();
+
+	Sprite* bg_reg;
 
 	Node* root;
 
-	MenuItemImage* btn_login;
+	MenuItemImage* btn_back;
 
 	MenuItemImage* btn_reg;
     

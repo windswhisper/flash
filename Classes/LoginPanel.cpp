@@ -1,5 +1,5 @@
 #include "LoginPanel.h"
-#include "MainMenuLayer.h"
+#include "RegisterPanel.h"
 
 bool LoginPanel::init()
 {
@@ -37,11 +37,11 @@ bool LoginPanel::init()
 
 	this->btn_login = MenuItemImage::create("img/welcome/btn_login.png", "img/welcome/btn_login_p.png", CC_CALLBACK_0(LoginPanel::login, this));
 
-	this->btn_login->setPosition(1260, 219);
+	this->btn_login->setPosition(1280, 196);
 
-	this->btn_reg = MenuItemImage::create("img/welcome/btn_reg.png", "img/welcome/btn_reg_p.png", CC_CALLBACK_0(LoginPanel::close, this));
+	this->btn_reg = MenuItemImage::create("img/welcome/btn_reg.png", "img/welcome/btn_reg_p.png", CC_CALLBACK_0(LoginPanel::reg, this));
 
-	this->btn_reg->setPosition(1920-1260, 219);
+	this->btn_reg->setPosition(1920-1280, 196);
 
 
 	Menu* menu = Menu::create(btn_login, btn_reg, NULL);      
@@ -55,9 +55,6 @@ bool LoginPanel::init()
 
 void LoginPanel::login()
 {
-    this->close();
-    
-    this->getParent()->addChild(MainMenuLayer::create());
 }
 
 void LoginPanel::close()
@@ -66,4 +63,11 @@ void LoginPanel::close()
 
     this->bg->runAction(Sequence::create(DelayTime::create(0.2f), EaseSineIn::create(ScaleTo::create(0.3f, 0)), CallFunc::create(CC_CALLBACK_0(LoginPanel::removeFromParent,this)),NULL));
 
+}
+ 
+void LoginPanel::reg()
+{
+	this->close();
+
+	this->getParent()->addChild(RegisterPanel::create());
 }
