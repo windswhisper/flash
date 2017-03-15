@@ -1,0 +1,76 @@
+#include "MainMenuLayer.h"
+
+bool MainMenuLayer::init()
+{
+    
+    this->sp = Sprite::create("img/mainmenu/sp.png");
+    this->sp->setPosition(500, 500);
+    this->sp->runAction(RepeatForever::create(Sequence::create(ScaleTo::create(0.1,1.1), ScaleTo::create(0.4, 1),NULL)));
+    this->sp->runAction(RepeatForever::create(Sequence::create(RotateBy::create(2, Vec3(0, 40, 0)), RotateBy::create(4, Vec3(0, -80, 0))	, RotateBy::create(2, Vec3(0, 40, 0)), NULL)));
+    this->addChild(this->sp);
+    
+    this->btnClassic = MenuItemImage::create("img/mainmenu/btn.png", "img/mainmenu/btn_p.png", CC_CALLBACK_0(MainMenuLayer::classic, this));
+    
+    auto textClassic = Sprite::create("img/mainmenu/classic.png");
+    
+    textClassic->setPosition(400,110);
+    
+    this->btnClassic->addChild(textClassic);
+    
+    this->btnClassic->setPosition(1530+800, 780);
+    
+    this->btnClassic->runAction(Sequence::create(DelayTime::create(0.1f),(EaseSineOut::create(MoveBy::create(1,Vec2(-800,0)))),NULL));
+    
+    
+    this->btnDuel = MenuItemImage::create("img/mainmenu/btn.png", "img/mainmenu/btn_p.png", CC_CALLBACK_0(MainMenuLayer::classic, this));
+    
+    auto textDuel= Sprite::create("img/mainmenu/duel.png");
+    
+    textDuel->setPosition(380,110);
+    
+    this->btnDuel->addChild(textDuel);
+    
+    this->btnDuel->setPosition(1630+800,602);
+    
+    this->btnDuel->runAction(Sequence::create(DelayTime::create(0.2f),(EaseSineOut::create(MoveBy::create(1,Vec2(-800,0)))),NULL));
+    
+    
+    this->btnShop = MenuItemImage::create("img/mainmenu/btn.png", "img/mainmenu/btn_p.png", CC_CALLBACK_0(MainMenuLayer::classic, this));
+    
+    auto textShop= Sprite::create("img/mainmenu/shop.png");
+    
+    textShop->setPosition(330,110);
+    
+    this->btnShop->addChild(textShop);
+    
+    this->btnShop->setPosition(1730+800, 424);
+    
+    this->btnShop->runAction(Sequence::create(DelayTime::create(0.3f),(EaseSineOut::create(MoveBy::create(1,Vec2(-800,0)))),NULL));
+    
+    
+    this->btnSetting = MenuItemImage::create("img/mainmenu/btn.png", "img/mainmenu/btn_p.png", CC_CALLBACK_0(MainMenuLayer::classic, this));
+    
+    auto textSetting= Sprite::create("img/mainmenu/setting.png");
+    
+    textSetting->setPosition(300,110);
+    
+    this->btnSetting->addChild(textSetting);
+    
+    this->btnSetting->setPosition(1830+800, 246);
+    
+    this->btnSetting->runAction(Sequence::create(DelayTime::create(0.4f),(EaseSineOut::create(MoveBy::create(1,Vec2(-800,0)))),NULL));
+    
+    
+    Menu* menu = Menu::create(btnClassic, btnDuel, btnShop, btnSetting, NULL);
+    
+    menu->setPosition(Point::ZERO);
+    
+    this->addChild(menu);
+    
+    return true;
+}
+
+void MainMenuLayer::classic()
+{
+    
+}
