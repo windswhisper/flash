@@ -1,5 +1,6 @@
 #include "LoginPanel.h"
 #include "RegisterPanel.h"
+#include "MainMenuLayer.h"
 
 bool LoginPanel::init()
 {
@@ -55,6 +56,9 @@ bool LoginPanel::init()
 
 void LoginPanel::login()
 {
+    this->close();
+    
+    this->getParent()->addChild(MainMenuLayer::create());
 }
 
 void LoginPanel::close()

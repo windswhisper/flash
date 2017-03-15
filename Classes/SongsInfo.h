@@ -1,29 +1,34 @@
-#ifndef __SONGS_LAYER_H__
-#define __SONGS_LAYER_H__
+#ifndef __SONGS_INFO_H__
+#define __SONGS_INFO_H__
 
 #include "cocos2d.h"
 
+#include <vector>
+
+using namespace std ;
 USING_NS_CC;
 
-class SongsLayer : public Node
+struct Song
+{
+    int id;
+    char name[64];
+    char length[32];
+    char artist[64];
+};
+
+class SongsInfo
 {
 public:
-    virtual bool init();
+    static SongsInfo* getInstance();
     
-    CREATE_FUNC(SongsLayer);
+    void load();
     
-    void backToMenu();
+    void addSong(int id,const char* name,const char* length,const char* artist);
     
-    void setting();
-    
-    void close();
-    
-    MenuItemImage* btn_mainmenu;
-    
-    MenuItemImage* btn_setting;
-    
+    vector<Song*> songs;
     
     
 };
+static SongsInfo* _songsInfo;
 
 #endif

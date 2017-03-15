@@ -28,6 +28,8 @@ bool GameLayer::init()
     this->board = Node::create();
     this->addChild(board);
     
+    this->setScale(2);
+    
 	this->speed = 1;
 	this->offset = 3 / speed;
 	this->musicFileName = "2.mp3";

@@ -11,6 +11,8 @@ public:
     virtual bool init();
     
     CREATE_FUNC(GameScene);
+    
+    Sprite* bg;
 };
 
 #endif

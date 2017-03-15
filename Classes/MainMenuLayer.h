@@ -11,10 +11,18 @@ public:
     virtual bool init();
     
     CREATE_FUNC(MainMenuLayer);
-
+    
     void classic();
     
-	Sprite* sp;
+    void duel();
+    
+    void shop();
+    
+    void setting();
+    
+    void close();
+    
+    Sprite* sp;
     
     MenuItemImage* btnClassic;
     
@@ -23,7 +31,7 @@ public:
     MenuItemImage* btnShop;
     
     MenuItemImage* btnSetting;
-
+    
 };
 
 #endif

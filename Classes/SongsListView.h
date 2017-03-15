@@ -1,31 +1,19 @@
-#ifndef __LOGIN_PANEL_H__
-#define __LOGIN_PANEL_H__
+#ifndef __SONGS_LIST_VIEW_H__
+#define __SONGS_LIST_VIEW_H__
 
 #include "cocos2d.h"
 
 USING_NS_CC;
 
 
-class LoginPanel : public Node
+class SongsListView : public Node
 {
 public:
     virtual bool init();
     
-    CREATE_FUNC(LoginPanel);
+    CREATE_FUNC(SongsListView);
 
-	void login();
-
-	void close();
-
-	void reg();
-
-	Sprite* bg;
-
-	Node* root;
-
-	MenuItemImage* btn_login;
-
-	MenuItemImage* btn_reg;
+    Vector<Sprite*> itemSong;
     
 };
 

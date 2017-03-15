@@ -1,76 +1,82 @@
-#include "MainMenuLayer.h"
+#include "SongsLayer.h"
 
-bool MainMenuLayer::init()
+#include "MainMenuLayer.h"
+#include "SongsListView.h"
+
+
+bool SongsLayer::init()
 {
     
-    this->sp = Sprite::create("img/mainmenu/sp.png");
-    this->sp->setPosition(500, 500);
-    this->sp->runAction(RepeatForever::create(Sequence::create(ScaleTo::create(0.1,1.1), ScaleTo::create(0.4, 1),NULL)));
-    this->sp->runAction(RepeatForever::create(Sequence::create(RotateBy::create(2, Vec3(0, 40, 0)), RotateBy::create(4, Vec3(0, -80, 0))	, RotateBy::create(2, Vec3(0, 40, 0)), NULL)));
-    this->addChild(this->sp);
+    this->btn_mainmenu = MenuItemImage::create("img/selectsongs/btn_mainmenu.png", "img/selectsongs/btn_mainmenu_p.png", CC_CALLBACK_0(SongsLayer::backToMenu, this));
     
-    this->btnClassic = MenuItemImage::create("img/mainmenu/btn.png", "img/mainmenu/btn_p.png", CC_CALLBACK_0(MainMenuLayer::classic, this));
+    this->btn_mainmenu->setPosition(250,973+300);
     
-    auto textClassic = Sprite::create("img/mainmenu/classic.png");
+    this->btn_mainmenu->runAction(Sequence::create(DelayTime::create(0.3f),(EaseSineOut::create(MoveBy::create(1,Vec2(0,-300)))),NULL));
     
-    textClassic->setPosition(400,110);
+    auto ringL = Sprite::create("img/selectsongs/ring.png");
     
-    this->btnClassic->addChild(textClassic);
+    ringL->setPosition(130,98);
     
-    this->btnClassic->setPosition(1530+800, 780);
+    ringL->runAction(RepeatForever::create(RotateBy::create(4, 360)));
     
-    this->btnClassic->runAction(Sequence::create(DelayTime::create(0.1f),(EaseSineOut::create(MoveBy::create(1,Vec2(-800,0)))),NULL));
+    this->btn_mainmenu->addChild(ringL);
     
     
-    this->btnDuel = MenuItemImage::create("img/mainmenu/btn.png", "img/mainmenu/btn_p.png", CC_CALLBACK_0(MainMenuLayer::classic, this));
     
-    auto textDuel= Sprite::create("img/mainmenu/duel.png");
+    this->btn_setting = MenuItemImage::create("img/selectsongs/btn_setting.png", "img/selectsongs/btn_setting_p.png", CC_CALLBACK_0(SongsLayer::setting, this));
     
-    textDuel->setPosition(380,110);
+    this->btn_setting->setPosition(1670,973+300);
     
-    this->btnDuel->addChild(textDuel);
+    this->btn_setting->runAction(Sequence::create(DelayTime::create(0.3f),(EaseSineOut::create(MoveBy::create(1,Vec2(0,-300)))),NULL));
     
-    this->btnDuel->setPosition(1630+800,602);
+    auto ringR = Sprite::create("img/selectsongs/ring.png");
     
-    this->btnDuel->runAction(Sequence::create(DelayTime::create(0.2f),(EaseSineOut::create(MoveBy::create(1,Vec2(-800,0)))),NULL));
+    ringR->setPosition(357,96);
     
+    ringR->runAction(RepeatForever::create(RotateBy::create(4, 360)));
     
-    this->btnShop = MenuItemImage::create("img/mainmenu/btn.png", "img/mainmenu/btn_p.png", CC_CALLBACK_0(MainMenuLayer::classic, this));
-    
-    auto textShop= Sprite::create("img/mainmenu/shop.png");
-    
-    textShop->setPosition(330,110);
-    
-    this->btnShop->addChild(textShop);
-    
-    this->btnShop->setPosition(1730+800, 424);
-    
-    this->btnShop->runAction(Sequence::create(DelayTime::create(0.3f),(EaseSineOut::create(MoveBy::create(1,Vec2(-800,0)))),NULL));
+    this->btn_setting->addChild(ringR);
     
     
-    this->btnSetting = MenuItemImage::create("img/mainmenu/btn.png", "img/mainmenu/btn_p.png", CC_CALLBACK_0(MainMenuLayer::classic, this));
-    
-    auto textSetting= Sprite::create("img/mainmenu/setting.png");
-    
-    textSetting->setPosition(300,110);
-    
-    this->btnSetting->addChild(textSetting);
-    
-    this->btnSetting->setPosition(1830+800, 246);
-    
-    this->btnSetting->runAction(Sequence::create(DelayTime::create(0.4f),(EaseSineOut::create(MoveBy::create(1,Vec2(-800,0)))),NULL));
-    
-    
-    Menu* menu = Menu::create(btnClassic, btnDuel, btnShop, btnSetting, NULL);
+    Menu* menu = Menu::create(btn_mainmenu, btn_setting, NULL);
     
     menu->setPosition(Point::ZERO);
     
     this->addChild(menu);
     
+    auto playButton = Sprite::create("img/selectsongs/btn_play.png");
+    
+    playButton->setPosition(1800,120);
+    
+    playButton->runAction(RepeatForever::create(Sequence::create(ScaleTo::create(0.1,1.1), ScaleTo::create(0.4, 1),NULL)));
+    
+    this->addChild(playButton);
+    
+    
+    this->songsList = SongsListView::create();
+    
+    this->songsList->setPosition(500,800);
+    
+    this->addChild(this->songsList);
+    
     return true;
 }
 
-void MainMenuLayer::classic()
+void SongsLayer::backToMenu()
+{
+    this->getParent()->addChild(MainMenuLayer::create());
+    
+    this->close();
+
+}
+
+void SongsLayer::setting()
 {
     
+}
+
+void SongsLayer::close()
+{
+    this->btn_mainmenu->runAction(Sequence::create(DelayTime::create(0.3f),(EaseSineOut::create(MoveBy::create(1,Vec2(0,300)))),NULL));
+    this->btn_setting->runAction(Sequence::create(DelayTime::create(0.3f),(EaseSineOut::create(MoveBy::create(1,Vec2(0,300)))),CallFunc::create(CC_CALLBACK_0(SongsLayer::removeFromParent, this)),NULL));
 }
