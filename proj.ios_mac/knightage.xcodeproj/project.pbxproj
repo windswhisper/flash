@@ -20,7 +20,6 @@
 		47A6E1EE1E6A652F0089E3A9 /* GameLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47A6E1E51E6A652F0089E3A9 /* GameLayer.cpp */; };
 		47A6E1EF1E6A652F0089E3A9 /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47A6E1E71E6A652F0089E3A9 /* GameScene.cpp */; };
 		47A6E1F01E6A652F0089E3A9 /* LoginPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47A6E1E91E6A652F0089E3A9 /* LoginPanel.cpp */; };
-		47A6E1F11E6A652F0089E3A9 /* WelcomeLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47A6E1EB1E6A652F0089E3A9 /* WelcomeLayer.cpp */; };
 		47A6E2001E6A65800089E3A9 /* 1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 47A6E1F21E6A65800089E3A9 /* 1.mp3 */; };
 		47A6E2011E6A65800089E3A9 /* 1.osu in Resources */ = {isa = PBXBuildFile; fileRef = 47A6E1F31E6A65800089E3A9 /* 1.osu */; };
 		47A6E2031E6A65800089E3A9 /* 2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 47A6E1F51E6A65800089E3A9 /* 2.mp3 */; };
@@ -135,8 +134,6 @@
 		47A6E1E81E6A652F0089E3A9 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
 		47A6E1E91E6A652F0089E3A9 /* LoginPanel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LoginPanel.cpp; sourceTree = "<group>"; };
 		47A6E1EA1E6A652F0089E3A9 /* LoginPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginPanel.h; sourceTree = "<group>"; };
-		47A6E1EB1E6A652F0089E3A9 /* WelcomeLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WelcomeLayer.cpp; sourceTree = "<group>"; };
-		47A6E1EC1E6A652F0089E3A9 /* WelcomeLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeLayer.h; sourceTree = "<group>"; };
 		47A6E1F21E6A65800089E3A9 /* 1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1.mp3; sourceTree = "<group>"; };
 		47A6E1F31E6A65800089E3A9 /* 1.osu */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 1.osu; sourceTree = "<group>"; };
 		47A6E1F51E6A65800089E3A9 /* 2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 2.mp3; sourceTree = "<group>"; };
@@ -346,8 +343,6 @@
 				472DA5C01E77809A006D4DB7 /* SongsLayer.h */,
 				47773AF71E78E7040053AC10 /* SongsListView.cpp */,
 				47773AF81E78E7040053AC10 /* SongsListView.h */,
-				47A6E1EB1E6A652F0089E3A9 /* WelcomeLayer.cpp */,
-				47A6E1EC1E6A652F0089E3A9 /* WelcomeLayer.h */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -556,7 +551,6 @@
 				47773AF91E78E7040053AC10 /* SongsListView.cpp in Sources */,
 				47A6E1EE1E6A652F0089E3A9 /* GameLayer.cpp in Sources */,
 				472DA5C51E77E44A006D4DB7 /* SongsInfo.cpp in Sources */,
-				47A6E1F11E6A652F0089E3A9 /* WelcomeLayer.cpp in Sources */,
 				47A6E1ED1E6A652F0089E3A9 /* AppDelegate.cpp in Sources */,
 				47B9AC951E6E984800953ACA /* MainMenuLayer.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,

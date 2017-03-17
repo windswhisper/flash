@@ -48,7 +48,7 @@ bool RegisterPanel::init()
 
 	Menu* menu = Menu::create(btn_back, btn_reg, NULL);
 
-	menu->setPosition(Point::ZERO);     
+	menu->setPosition(Point::ZERO);
 
 	root->addChild(menu);
 
@@ -59,17 +59,19 @@ void RegisterPanel::reg()
 {
 }
 
-void RegisterPanel::close()
+void RegisterPanel::close(CallFunc* callfunc)
 {
+    this->getEventDispatcher()->removeEventListenersForTarget(this,true);
 	this->root->runAction(FadeTo::create(0.2f, 0));
 
-	this->bg_reg->runAction(Sequence::create(DelayTime::create(0.2f), EaseSineIn::create(ScaleTo::create(0.3f, 0)), CallFunc::create(CC_CALLBACK_0(RegisterPanel::removeFromParent, this)), NULL));
+	this->bg_reg->runAction(Sequence::create(DelayTime::create(0.2f), EaseSineIn::create(ScaleTo::create(0.3f, 0)),callfunc, CallFunc::create(CC_CALLBACK_0(RegisterPanel::removeFromParent, this)), NULL));
 
 }
 
 void RegisterPanel::log()
 {
-	this->close();
+    this->close(CallFunc::create([=](){
+        this->getParent()->addChild(LoginPanel::create());
+    }));
 
-	this->getParent()->addChild(LoginPanel::create());
 }

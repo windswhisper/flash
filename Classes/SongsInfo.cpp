@@ -12,7 +12,7 @@ SongsInfo* SongsInfo::getInstance()
 
 void SongsInfo::load()
 {
-    for(int i=0;i<5;i++)
+    for(int i=0;i<4;i++)
     {
         this->addSong(i, "1", "1", "1");
     }

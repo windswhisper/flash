@@ -12,9 +12,36 @@ public:
     virtual bool init();
     
     CREATE_FUNC(SongsListView);
-
+    
+    bool onTouchBegan(Touch *touch,Event *pEvent);
+    
+    void onTouchMoved(Touch *touch,Event *pEvent);
+    
+    void onTouchEnded(Touch *touch,Event *pEvent);
+    
+    void update(float dt);
+    
+    void addOption(const char* name);
+    
     Vector<Sprite*> itemSong;
     
+    Node* root;
+    
+    float height;
+    
+    float option_height;
+    
+    float visible_height;
+    
+    float scoll_speed;
+    
+    float max_speed;
+    
+    float last_y;
+    
+    float now_y;
+    
+    bool isMoving;
 };
 
 #endif

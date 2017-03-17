@@ -20,7 +20,7 @@ public:
     
     void setting();
     
-    void close();
+    void close(CallFunc* callfunc);
     
     Sprite* sp;
     

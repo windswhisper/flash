@@ -56,22 +56,25 @@ bool LoginPanel::init()
 
 void LoginPanel::login()
 {
-    this->close();
+    this->close(CallFunc::create([=](){
+        this->getParent()->addChild(MainMenuLayer::create());
+    }));
     
-    this->getParent()->addChild(MainMenuLayer::create());
 }
 
-void LoginPanel::close()
+void LoginPanel::close(CallFunc* callfunc)
 {
+    this->getEventDispatcher()->removeEventListenersForTarget(this,true);
 	this->root->runAction(FadeTo::create(0.2f, 0));
 
-    this->bg->runAction(Sequence::create(DelayTime::create(0.2f), EaseSineIn::create(ScaleTo::create(0.3f, 0)), CallFunc::create(CC_CALLBACK_0(LoginPanel::removeFromParent,this)),NULL));
+    this->bg->runAction(Sequence::create(DelayTime::create(0.2f), EaseSineIn::create(ScaleTo::create(0.3f, 0)),callfunc, CallFunc::create(CC_CALLBACK_0(LoginPanel::removeFromParent,this)),NULL));
 
 }
  
 void LoginPanel::reg()
 {
-	this->close();
-
-	this->getParent()->addChild(RegisterPanel::create());
+    this->close(CallFunc::create([=](){
+        this->getParent()->addChild(RegisterPanel::create());
+    }));
+	
 }

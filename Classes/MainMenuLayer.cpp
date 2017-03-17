@@ -4,10 +4,10 @@
 
 bool MainMenuLayer::init()
 {
-    
+
     this->sp = Sprite::create("img/mainmenu/sp.png");
     this->sp->setPosition(500, 500);
-    this->sp->runAction(RepeatForever::create(Sequence::create(ScaleTo::create(105.3/60*0.05,1.1), ScaleTo::create(105.3/60*0.2, 1),NULL)));
+    this->sp->runAction(RepeatForever::create(Sequence::create(ScaleTo::create(60/105.3*0.2,1.1), ScaleTo::create(60/105.3*0.8, 1),NULL)));//《Unity》bpm为105.3
     this->sp->runAction(RepeatForever::create(Sequence::create(RotateBy::create(2, Vec3(0, 40, 0)), RotateBy::create(4, Vec3(0, -80, 0))	, RotateBy::create(2, Vec3(0, 40, 0)), NULL)));
     this->sp->setOpacity(0);
     this->sp->runAction(FadeTo::create(1, 255));
@@ -76,9 +76,10 @@ bool MainMenuLayer::init()
 
 void MainMenuLayer::classic()
 {
-    this->getParent()->addChild(SongsLayer::create());
     
-    this->close();
+    this->close(CallFunc::create([=](){
+        this->getParent()->addChild(SongsLayer::create());
+    }));
     
 }
 
@@ -92,12 +93,14 @@ void MainMenuLayer::setting()
 {
 }
 
-void MainMenuLayer::close()
+void MainMenuLayer::close(CallFunc* callfunc)
 {
-    this->btnClassic->runAction(Sequence::create(DelayTime::create(0.1f),(EaseSineOut::create(MoveBy::create(1,Vec2(1000,0)))),NULL));
-    this->btnDuel->runAction(Sequence::create(DelayTime::create(0.2f),(EaseSineOut::create(MoveBy::create(1,Vec2(1000,0)))),NULL));
-    this->btnShop->runAction(Sequence::create(DelayTime::create(0.3f),(EaseSineOut::create(MoveBy::create(1,Vec2(1000,0)))),NULL));
-    this->btnSetting->runAction(Sequence::create(DelayTime::create(0.4f),(EaseSineOut::create(MoveBy::create(1,Vec2(1000,0)))),CallFunc::create(CC_CALLBACK_0(MainMenuLayer::removeFromParent, this)),NULL));
+    this->getEventDispatcher()->removeEventListenersForTarget(this,true);
+    
+    this->btnClassic->runAction(Sequence::create(DelayTime::create(0.1f),(EaseSineOut::create(MoveBy::create(0.6f,Vec2(1000,0)))),NULL));
+    this->btnDuel->runAction(Sequence::create(DelayTime::create(0.2f),(EaseSineOut::create(MoveBy::create(0.6f,Vec2(1000,0)))),NULL));
+    this->btnShop->runAction(Sequence::create(DelayTime::create(0.3f),(EaseSineOut::create(MoveBy::create(0.6f,Vec2(1000,0)))),NULL));
+    this->btnSetting->runAction(Sequence::create(DelayTime::create(0.4f),(EaseSineOut::create(MoveBy::create(0.6f,Vec2(1000,0)))),callfunc,CallFunc::create(CC_CALLBACK_0(MainMenuLayer::removeFromParent, this)),NULL));
     
     this->sp->runAction(FadeTo::create(0.5f, 0));
     

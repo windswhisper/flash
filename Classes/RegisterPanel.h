@@ -15,7 +15,7 @@ public:
 
 	void reg();
 
-	void close();
+	void close(CallFunc* callfunc);
 
 	void log();
 

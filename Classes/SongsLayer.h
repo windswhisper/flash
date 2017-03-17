@@ -5,7 +5,7 @@
 
 USING_NS_CC;
 
-class SongsLayer : public Node
+class SongsLayer : public Layer
 {
 public:
     virtual bool init();
@@ -16,7 +16,9 @@ public:
     
     void setting();
     
-    void close();
+    void close(CallFunc* callfunc);
+    
+    void changerCover(const char* fileName);
     
     MenuItemImage* btn_mainmenu;
     
@@ -24,6 +26,9 @@ public:
     
     Node* songsList;
     
+    Node* coverScreen;
+    
+    Sprite* songCover;
 };
 
 #endif

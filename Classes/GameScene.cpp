@@ -1,7 +1,7 @@
 #include "GameScene.h"
 
 #include "GameLayer.h"
-#include "WelcomeLayer.h"
+#include "LoginPanel.h"
 
 bool GameScene::init()
 {
@@ -13,7 +13,7 @@ bool GameScene::init()
     
     this->addChild(this->bg);
     
-    this->addChild(WelcomeLayer::create());
+    this->addChild(LoginPanel::create());
     
     return true;
 }
