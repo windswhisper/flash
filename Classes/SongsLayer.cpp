@@ -2,7 +2,7 @@
 
 #include "MainMenuLayer.h"
 #include "SongsListView.h"
-
+#include "GameLayer.h"
 
 bool SongsLayer::init()
 {
@@ -38,19 +38,27 @@ bool SongsLayer::init()
     this->btn_setting->addChild(ringR);
     
     
-    Menu* menu = Menu::create(btn_mainmenu, btn_setting, NULL);
+    playButton = MenuItemImage::create("img/selectsongs/btn_play.png","img/selectsongs/btn_play.png",CC_CALLBACK_0(SongsLayer::play, this));
+    
+    playButton->setPosition(1800+800,120);
+    
+    playButton->runAction(RepeatForever::create(Sequence::create(ScaleTo::create(0.1f,1.1f), ScaleTo::create(0.4f, 1),NULL)));
+    
+    
+    btn_back = MenuItemImage::create("img/selectsongs/back.png","back.png",CC_CALLBACK_0(SongsLayer::backToList, this));
+    
+    btn_back->setPosition(100,450);
+    
+    btn_back->runAction(RepeatForever::create(Sequence::create(FadeTo::create(1.0f,72), FadeTo::create(1.0f, 255),NULL)));
+    
+    btn_back->setVisible(false);
+    
+    Menu* menu = Menu::create(btn_mainmenu, btn_setting,playButton,btn_back, NULL);
     
     menu->setPosition(Point::ZERO);
     
     this->addChild(menu);
-    
-    auto playButton = Sprite::create("img/selectsongs/btn_play.png");
-    
-    playButton->setPosition(1800,120);
-    
-    playButton->runAction(RepeatForever::create(Sequence::create(ScaleTo::create(0.1f,1.1f), ScaleTo::create(0.4f, 1),NULL)));
-    
-    //this->addChild(playButton);
+
     
     
     this->songsList = SongsListView::create();
@@ -85,6 +93,7 @@ bool SongsLayer::init()
     this->songCover->setScale(600.0f/this->songCover->getContentSize().height);
     
     this->coverScreen->addChild(this->songCover);
+
     
     return true;
 }
@@ -101,13 +110,13 @@ void SongsLayer::backToMenu()
 
 void SongsLayer::setting()
 {
-    this->changerCover("img/2.jpg");
 }
 
 void SongsLayer::close(CallFunc* callfunc)
 {
     this->getEventDispatcher()->removeEventListenersForTarget(this,true);
     
+    this->playButton->runAction(FadeTo::create(0.5f,0));
     this->songCover->runAction(FadeTo::create(0.5f,0));
     this->coverScreen->runAction(Sequence::create(DelayTime::create(0.5f),EaseSineIn::create(ScaleTo::create(0.5f, 1,0)),NULL));
     this->songsList->runAction(Sequence::create(DelayTime::create(0.1f),(EaseSineOut::create(MoveBy::create(1,Vec2(-800,0)))),NULL));
@@ -115,7 +124,40 @@ void SongsLayer::close(CallFunc* callfunc)
     this->btn_setting->runAction(Sequence::create(DelayTime::create(0.3f),(EaseSineOut::create(MoveBy::create(1,Vec2(0,300)))),callfunc,CallFunc::create(CC_CALLBACK_0(SongsLayer::removeFromParent, this)),NULL));
 }
 
-void SongsLayer::changerCover(const char* fileName)
+void SongsLayer::changeCover(int id)
 {
+    const char* fileName = "img/2.jpg";
+    
     this->songCover->runAction(Sequence::create(FadeTo::create(0.3f,0),CallFunc::create([=](){this->songCover->setTexture(fileName);}),FadeTo::create(0.3f,255), NULL));
+}
+
+void SongsLayer::selectSong(int id, int diff)
+{
+    auto action = EaseSineOut::create(MoveBy::create(1.0f, Vec2(-800,0)));
+    
+    this->songsList->runAction(Sequence::create(action,CallFunc::create([=](){this->btn_back->setVisible(true);}),NULL));
+    
+    this->coverScreen->runAction(action->clone());
+    
+    this->playButton->runAction(action->clone());
+}
+
+void SongsLayer::backToList()
+{
+    auto action = EaseSineOut::create(MoveBy::create(1.0f, Vec2(800,0)));
+    
+    this->songsList->runAction(action);
+    
+    this->coverScreen->runAction(action->clone());
+    
+    this->playButton->runAction(action->clone());
+    
+    this->btn_back->setVisible(false);
+}
+
+void SongsLayer::play()
+{
+    this->close(CallFunc::create([=]{
+        this->getParent()->addChild(GameLayer::create());
+    }));
 }

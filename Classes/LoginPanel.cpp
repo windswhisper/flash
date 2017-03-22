@@ -45,9 +45,9 @@ bool LoginPanel::init()
 	this->btn_reg->setPosition(1920-1280, 196);
 
 
-	Menu* menu = Menu::create(btn_login, btn_reg, NULL);      
+	Menu* menu = Menu::create(btn_login, btn_reg, NULL);
 
-	menu->setPosition(Point::ZERO);     
+	menu->setPosition(Point::ZERO);
 
 	root->addChild(menu);
 

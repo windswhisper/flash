@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/LoginPanel.cpp"
-            timestampString = "511410322.988813"
+            timestampString = "511755468.204225"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "73"
@@ -56,11 +56,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/SongsListView.cpp"
-            timestampString = "511328420.291408"
+            timestampString = "511690545.505365"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "SongsListView::addOption(const char* name)"
             landmarkType = "7">
          </BreakpointContent>
@@ -78,6 +78,22 @@
             startingLineNumber = "73"
             endingLineNumber = "73"
             landmarkName = "RegisterPanel::log()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/SongsLayer.cpp"
+            timestampString = "511776180.988069"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "SongsLayer::init()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

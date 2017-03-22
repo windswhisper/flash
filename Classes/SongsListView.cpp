@@ -1,6 +1,7 @@
 #include "SongsListView.h"
 
 #include "SongsInfo.h"
+#include "SongsLayer.h"
 
 bool SongsListView::init()
 {
@@ -10,9 +11,12 @@ bool SongsListView::init()
     this->option_height = 160;
     this->visible_height = 800;
     
+    this->isMoving = false;
+    this->isPause = false;
+    
     this->root = Node::create();
     this->addChild(root);
-    
+        
     this->scheduleUpdate();
     
     auto dispatcher = Director::getInstance()->getEventDispatcher();
@@ -64,7 +68,8 @@ void SongsListView::addOption(const char* name)
 }
 void SongsListView::update(float dt)
 {
-
+    if(this->isPause)return;
+    
     if(scoll_speed>max_speed)scoll_speed = max_speed;
     if(scoll_speed<-max_speed)scoll_speed = -max_speed;
     
@@ -116,9 +121,22 @@ void SongsListView::update(float dt)
 }
 bool SongsListView::onTouchBegan(Touch *touch,Event *pEvent)
 {
+    if(this->isPause)return false;
+    
+    Point p = this->root->convertTouchToNodeSpace(touch);
+    
     this->scoll_speed = 0;
     
     this->isMoving = false;
+    
+    for(auto v : this->itemSong)
+    {
+        if(v->getBoundingBox().containsPoint(p)&&v->getOpacity()!=0)
+        {
+            this->touchItem(v);
+            break;
+        }
+    }
     
     return true;
 }
@@ -126,11 +144,13 @@ void SongsListView::onTouchMoved(Touch *touch,Event *pEvent)
 {
     this->isMoving = true;
     
+    this->canelTouch();
+    
     this->root->setPositionY(this->root->getPositionY()+ touch->getLocation().y-touch->getPreviousLocation().y);
 }
 void SongsListView::onTouchEnded(Touch *touch,Event *pEvent)
 {
-    Point p = this->convertTouchToNodeSpace(touch);
+    Point p = this->root->convertTouchToNodeSpace(touch);
     
     if(!this->isMoving)
     {
@@ -138,9 +158,9 @@ void SongsListView::onTouchEnded(Touch *touch,Event *pEvent)
         {
             if(v->getBoundingBox().containsPoint(p)&&v->getOpacity()!=0)
             {
-                //auto scene = StageMapScene::create_map(this->itemSong.getIndex(v));
-                
-               // Director::getInstance()->pushScene(TransitionSlideInR::create(0.2f, scene));
+                this->selectItem(this->itemSong.getIndex(v));
+ 
+                break;
             }
         }
     }
@@ -148,4 +168,67 @@ void SongsListView::onTouchEnded(Touch *touch,Event *pEvent)
     {
         this->scoll_speed = (now_y - last_y)*3;
     }
+    
+    this->canelTouch();
+
+}
+void SongsListView::touchItem(Sprite* item)
+{
+    this->canelTouch();
+    
+    this->itemOnPress = item;
+    item->setTexture("img/selectsongs/btn_song_p.png");
+}
+void SongsListView::canelTouch()
+{
+    if(this->itemOnPress!=NULL)
+        this->itemOnPress->setTexture("img/selectsongs/btn_song.png");
+}
+void SongsListView::selectItem(int i)
+{
+    this->isPause = true;
+    
+    auto songsLayer = (SongsLayer*)this->getParent();
+    songsLayer->changeCover(i);
+
+    for(int n=0;n<5;n++)
+    {
+        if(i-n-1>=0)
+            this->itemSong.at(i-n-1)->runAction(FadeTo::create(0.2f,0));
+    }
+    for(int n=0;n<5;n++)
+    {
+        if(this->itemSong.size()>=i+n+2)
+            this->itemSong.at(i+n+1)->runAction(FadeTo::create(0.2f,0));
+    }
+    
+    this->root->runAction(Sequence::create(DelayTime::create(0.2f),EaseSineOut::create( MoveTo::create((-this->root->getPositionY()-this->itemSong.at(i)->getPositionY())/1200,Vec2(0,-this->itemSong.at(i)->getPositionY()))),CallFunc::create([=]()
+    {
+        this->showDiffList(i);
+    }),NULL));
+    
+}
+void SongsListView::showDiffList(int i)
+{    Menu* menu = Menu::create();
+    for(int n=0;n<3;n++)
+    {
+        MenuItemImage* btn = MenuItemImage::create("img/selectsongs/btn_song.png","img/selectsongs/btn_song_p.png",[=](Ref* pSender){
+            auto songsLayer = (SongsLayer*)this->getParent();
+            songsLayer->selectSong(0, 0);
+        });
+        
+        auto title = Label::createWithSystemFont("Easy","",72);
+        
+        title->setAnchorPoint(Vec2(0,0.5));
+        
+        title->setPosition(80,100);
+        
+        btn->addChild(title);
+        
+        btn->setPosition(0,-n*160);
+        
+        menu->addChild(btn);
+    }
+    menu->setPosition(0,this->itemSong.at(i)->getPositionY()-option_height);
+    this->root->addChild(menu);
 }

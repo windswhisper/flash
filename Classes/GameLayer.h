@@ -14,6 +14,8 @@ public:
     
     static Note* createNote(int x,int t,int type,int endt);
     
+    virtual void display();
+    
     int x;
     
     int t;
@@ -23,6 +25,24 @@ public:
     int endt;
 
 	Sprite* p;
+};
+
+class LongNote : public Note
+{
+public:
+    virtual bool init();
+    
+    CREATE_FUNC(LongNote);
+    
+    static LongNote* createLongNote(int x,int t,int type,int endt);
+    
+    virtual void display();
+    
+    Sprite* lb;
+    
+    Sprite* lm;
+    
+    Sprite* le;
 };
 
 class GameLayer : public Node
@@ -48,19 +68,35 @@ public:
     
     void click(int col);
     
+    void release(int col);
+    
     void loadFile();
+    
+    void miss(int col);
+    
+    void getRate(int rate);
     
     float t;
     
 	float speed;
 
 	float offset;
-
+    
+    Vec2 key1Pos;
+    
+    float keyDis;
+    
 	char* musicFileName;
 
-    Node* board;
+    Node* root;
+    
+    Sprite* board;
     
 	Sprite* key[4];
+    
+    Sprite* pressLight[4];
+    
+    Sprite* hitEffect[4];
     
     Vector<Note*> notes;
     

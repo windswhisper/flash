@@ -18,17 +18,31 @@ public:
     
     void close(CallFunc* callfunc);
     
-    void changerCover(const char* fileName);
+    void changeCover(int id);
+    
+    void selectSong(int id,int diff);
+    
+    void backToList();
+    
+    void play();
     
     MenuItemImage* btn_mainmenu;
     
     MenuItemImage* btn_setting;
-    
+
     Node* songsList;
     
     Node* coverScreen;
     
     Sprite* songCover;
+    
+    MenuItemImage* playButton;
+    
+    MenuItemImage* btn_back;
+    
+    Node* rankList;
+    
+    Node* itemList;
 };
 
 #endif

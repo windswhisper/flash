@@ -23,6 +23,14 @@ public:
     
     void addOption(const char* name);
     
+    void touchItem(Sprite* item);
+    
+    void canelTouch();
+    
+    void selectItem(int i);
+    
+    void showDiffList(int i);
+    
     Vector<Sprite*> itemSong;
     
     Node* root;
@@ -42,6 +50,11 @@ public:
     float now_y;
     
     bool isMoving;
+    
+    Sprite* itemOnPress;
+    
+    bool isPause;
+    
 };
 
 #endif
