@@ -8,13 +8,15 @@ USING_NS_CC;
 class Note : public Node
 {
 public:
-    virtual bool init();
+    virtual void display()=0;
     
-    CREATE_FUNC(Note);
+    virtual void miss()=0;
     
-    static Note* createNote(int x,int t,int type,int endt);
+    virtual void click()=0;
     
-    virtual void display();
+    virtual void release()=0;
+    
+    void remove();
     
     int x;
     
@@ -24,9 +26,28 @@ public:
     
     int endt;
 
-	Sprite* p;
 };
 
+class SimpleNote : public Note
+{
+public:
+    virtual bool init();
+    
+    CREATE_FUNC(SimpleNote);
+    
+    static SimpleNote* createSimpleNote(int x,int t,int type,int endt);
+    
+    virtual void display();
+    
+    virtual void miss();
+    
+    virtual void click();
+    
+    virtual void release();
+    
+    Sprite* p;
+    
+};
 class LongNote : public Note
 {
 public:
@@ -38,11 +59,21 @@ public:
     
     virtual void display();
     
-    Sprite* lb;
+    virtual void miss();
     
-    Sprite* lm;
+    virtual void click();
     
-    Sprite* le;
+    virtual void release();
+    
+    void update(float dt);
+    
+    void finish();
+    
+    int status;//0=初始，1=按下，2=错过，3=完成
+    
+    float tSum;
+    
+    Vector<Sprite*> pics;
 };
 
 class GameLayer : public Node
@@ -76,6 +107,8 @@ public:
     
     void getRate(int rate);
     
+    void playAnimate(int col,int type);
+    
     float t;
     
 	float speed;
@@ -107,4 +140,5 @@ public:
 	Label* socre;
 };
 
+static GameLayer* _gamelayer;
 #endif

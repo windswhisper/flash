@@ -6,13 +6,22 @@
 using namespace std;
 using namespace CocosDenshion;
 
-bool Note::init()
+
+void Note::remove()
+{
+    this->removeFromParent();
+    _gamelayer->tags[this->x].eraseObject(this);
+}
+
+
+
+bool SimpleNote::init()
 {
     return true;
 }
-Note* Note::createNote(int x, int t, int type, int endt)
+SimpleNote* SimpleNote::createSimpleNote(int x, int t, int type, int endt)
 {
-    Note* note = Note::create();
+    SimpleNote* note = SimpleNote::create();
     
     note->x = x;
     note->t = t;
@@ -21,12 +30,31 @@ Note* Note::createNote(int x, int t, int type, int endt)
     
     return note;
 }
-void Note::display()
+void SimpleNote::display()
 {
     this->p = Sprite::create("img/game/note.png");
-
+    
+    this->runAction(Sequence::create(MoveBy::create(_gamelayer->offset+0.2f, Vec2(0,-3000*(_gamelayer->offset+0.2f)/_gamelayer->offset)),CallFunc::create([=]{this->miss();}),NULL));
+    
     this->addChild(this->p);
 }
+void SimpleNote::miss()
+{
+    _gamelayer->miss(this->x);
+    this->remove();
+}
+void SimpleNote::click()
+{
+    _gamelayer->playAnimate(this->x, 0);
+    this->stopAllActions();
+    this->removeFromParent();
+    _gamelayer->tags[this->x].eraseObject(this);
+}
+void SimpleNote::release()
+{
+}
+
+
 
 bool LongNote::init()
 {
@@ -41,33 +69,106 @@ LongNote* LongNote::createLongNote(int x, int t, int type, int endt)
     note->type = type;
     note->endt = endt;
     
+    note->tSum = 0;
+    note->status = 0;
+    
     return note;
 }
 void LongNote::display()
 {
-    this->lb = Sprite::create("img/game/longnoteB.png");
+    auto p = Sprite::create("img/game/longnoteB.png");
     
-    this->addChild(this->lb);
+    this->addChild(p);
     
-    this->le = Sprite::create("img/game/longnoteE.png");
+    this->pics.pushBack(p);
     
-    this->le->setPosition(0,3000*(this->endt-this->t)/1000);
+    int n=1;
     
-    this->addChild(this->le);
+    while(78*n<2*(this->endt-this->t))
+    {
+        p = Sprite::create("img/game/longnoteM.png");
+        
+        p->setPosition(0,78*n);
+        
+        this->addChild(p);
+        
+        this->pics.pushBack(p);
+        
+        n++;
+    }
     
-    this->lm = Sprite::create("img/game/longnoteM.png");
+    p = Sprite::create("img/game/longnoteE.png");
     
-    this->setScale(1,3000*(this->endt-this->t)/1000/this->getBoundingBox().size.height);
+    p->setPosition(0,2*(this->endt-this->t));
     
-    this->addChild(this->lm);
+    this->addChild(p);
     
+    this->pics.pushBack(p);
+    
+    this->pics.reverse();
+
+    this->runAction(Sequence::create(MoveBy::create(_gamelayer->offset+0.2f, Vec2(0,-3000*(_gamelayer->offset+0.2f)/_gamelayer->offset)),CallFunc::create([=]{this->miss();}),MoveBy::create((this->endt-this->t)/1000.0f, Vec2(0,-2*(this->endt-this->t))),CallFunc::create([=]{this->remove();}),NULL));
 }
+void LongNote::miss()
+{
+    if(this->status == 0)
+    {
+        _gamelayer->miss(this->x);
+        this->status = 2;
+    }
+}
+void LongNote::click()
+{    if(this->status == 0)
+    {
+        this->status = 1;
+        _gamelayer->playAnimate(this->x, 1);
+        this->scheduleUpdate();
+    }
+}
+void LongNote::release()
+{
+    if(this->status == 1)
+    {
+        _gamelayer->hitEffect[this->x]->stopAllActions();
+        _gamelayer->hitEffect[this->x]->setSpriteFrame("space.png");
+        _gamelayer->miss(this->x);
+        this->status = 2;
+    }
+}
+void LongNote::update(float dt)
+{
+    
+    if(this->status!=1)return;
+    
+    if(pics.size()>0&&pics.at(pics.size()-1)->getPositionY()+this->getPositionY()<_gamelayer->key1Pos.y)
+    {
+        pics.at(pics.size()-1)->removeFromParent();
+        pics.popBack();
+    }
+    
+    if((_gamelayer->t-_gamelayer->offset)*1000>this->endt)this->finish();
+    
+    this->tSum+=dt;
+    if(tSum<0.25f)return;
+    tSum-=0.25f;
+    
+    _gamelayer->getRate(1);
+}
+void LongNote::finish()
+{
+    this->status=3;
+    _gamelayer->hitEffect[this->x]->stopAllActions();
+    _gamelayer->hitEffect[this->x]->setSpriteFrame("space.png");
+}
+
 
 bool GameLayer::init()
 {
+    _gamelayer = this;
+    
 	this->speed = 1.5;
 	this->offset = 2 / speed;
-	this->musicFileName = "2.mp3";
+	this->musicFileName = "1.mp3";
 
     this->key1Pos = Vec2(229,350);
     this->keyDis = 318;
@@ -76,6 +177,7 @@ bool GameLayer::init()
     
     SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/game/hit.plist");
     AnimationCache::getInstance()->addAnimationsWithFile("img/game/hit_ani.plist");
+    AnimationCache::getInstance()->addAnimationsWithFile("img/game/lhit_ani.plist");
     
     root = Node::create();
     
@@ -151,7 +253,6 @@ bool GameLayer::init()
 	this->addChild(this->rate);
 
     
-    
     return true;
 }
 
@@ -167,12 +268,13 @@ void GameLayer::update(float dt)
     while(!this->notes.empty()&&this->notes.at(0)->t < this->t*1000)
     {
         this->dropTag(this->notes.at(0)->x);
+        
     }
 }
 
 void GameLayer::loadFile()
 {
-    std::string str = FileUtils::getInstance()->getStringFromFile("2.osu");
+    std::string str = FileUtils::getInstance()->getStringFromFile("1.osu");
     
     std::string line;
     
@@ -223,8 +325,10 @@ void GameLayer::loadFile()
             if(data1==320)data1 = 2;
             if(data1==448)data1 = 3;
             
-            this->notes.pushBack(Note::createNote(data1, data3, data4, data6));
-            
+            if(data4==1)
+                this->notes.pushBack(SimpleNote::createSimpleNote(data1, data3, data4, data3));
+            if(data4==128)
+                this->notes.pushBack(LongNote::createLongNote(data1, data3, data4, data6));
         }
         if(line=="[HitObjects]")
         {
@@ -296,12 +400,10 @@ void GameLayer::onKeyReleased(EventKeyboard::KeyCode keyCode, cocos2d::Event *ev
 void GameLayer::dropTag(int col)
 {
 	Note* tag = this->notes.at(0);
-	
+
     tag->display();
 
     tag->setPosition(key1Pos+Vec2(keyDis*col,3000));
-    
-    tag->runAction(Sequence::create(MoveBy::create(this->offset+0.2f, Vec2(0,-3000*(this->offset+0.2f)/offset)),CallFunc::create([=]{this->miss(col);}),NULL));
     
     this->board->addChild(tag);
     
@@ -317,27 +419,14 @@ void GameLayer::click(int col)
 
     if(this->tags[col].size()==0)return;
 
-    auto tag = this->tags[col].at(0);
+    Note* tag = this->tags[col].at(0);
     
     if (abs((this->t - this->offset) * 1000 - tag->t) > 200) return;
 	else if (abs((this->t - this->offset) * 1000 - tag->t) > 150) this->getRate(3);
 	else if (abs((this->t - this->offset) * 1000 - tag->t) > 60) this->getRate(2);
 	else if (abs((this->t - this->offset) * 1000 - tag->t) > 0) this->getRate(1);
-
-
-    auto ani = AnimationCache::getInstance()->getAnimation("hit");
     
-    auto act = Animate::create(ani);
-    
-    hitEffect[col]->stopAllActions();
-    
-    hitEffect[col]->runAction(act);
-    
-	tag->stopAllActions();
-    
-    tag->removeFromParent();
-    
-	this->tags[col].eraseObject(tag);
+    tag->click();
     
 }
 
@@ -345,14 +434,13 @@ void GameLayer::release(int col)
 {
     this->pressLight[col]->stopAllActions();
     this->pressLight[col]->runAction(FadeTo::create(0.3f, 0));
+    
+    if(this->tags[col].size()==0)return;
+    this->tags[col].at(0)->release();
 }
 
 void GameLayer::miss(int col)
 {
-    auto tag = this->tags[col].at(0);
-    tag->removeFromParent();
-    this->tags[col].eraseObject(tag);
-    
     this->getRate(0);
 }
 
@@ -372,3 +460,23 @@ void GameLayer::getRate(int rate)
     this->rate->runAction(ScaleTo::create(0.1, 1));
     
 }
+void GameLayer::playAnimate(int col, int type)
+{
+    Animation* ani;
+    Animate* act;
+    if(type==0)
+    {
+        ani = AnimationCache::getInstance()->getAnimation("hit");
+        act = Animate::create(ani);
+    }
+    else if(type==1)
+    {
+        ani = AnimationCache::getInstance()->getAnimation("lhit");
+        ani->setLoops(999);
+        act = Animate::create(ani);
+    }
+    hitEffect[col]->stopAllActions();
+    
+    hitEffect[col]->runAction(act);
+}
+
