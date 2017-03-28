@@ -141,7 +141,6 @@ void SongsLayer::selectSong(int id, int diff)
     
     this->playButton->runAction(action->clone());
 }
-
 void SongsLayer::backToList()
 {
     auto action = EaseSineOut::create(MoveBy::create(1.0f, Vec2(800,0)));

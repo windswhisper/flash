@@ -1,6 +1,9 @@
 #include "RegisterPanel.h"
 #include "LoginPanel.h"
 
+#include "SocketIOClient.h"
+
+
 bool RegisterPanel::init()
 {
 	Size visiblesize = Director::getInstance()->getVisibleSize();
@@ -57,6 +60,7 @@ bool RegisterPanel::init()
 
 void RegisterPanel::reg()
 {
+    SocketIOClient::getInstance()->send("1111111");
 }
 
 void RegisterPanel::close(CallFunc* callfunc)

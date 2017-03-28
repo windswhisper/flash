@@ -3,6 +3,8 @@
 #include "GameLayer.h"
 #include "LoginPanel.h"
 
+#include "SocketIOClient.h"
+
 bool GameScene::init()
 {
     this->bg = Sprite::create("img/bg.png");
@@ -14,6 +16,8 @@ bool GameScene::init()
     this->addChild(this->bg);
     
     this->addChild(LoginPanel::create());
+    
+    SocketIOClient::getInstance()->connect();
     
     return true;
 }

@@ -109,6 +109,10 @@ public:
     
     void playAnimate(int col,int type);
     
+    void comboIncrese();
+    
+    void comboClear();
+    
     float t;
     
 	float speed;
@@ -135,9 +139,17 @@ public:
     
     Vector<Note*> tags[4];
 
-	Label* rate;
+	Sprite* rate;
 
-	Label* socre;
+    int score;
+    
+	Label* socreLabel;
+    
+    LabelAtlas* comboLabel;
+    
+    int combo;
+    
+    int rateCount[3];
 };
 
 static GameLayer* _gamelayer;

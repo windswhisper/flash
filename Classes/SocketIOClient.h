@@ -1,34 +1,37 @@
-#ifndef __SONGS_INFO_H__
-#define __SONGS_INFO_H__
+#ifndef __SOCKET_IO_CLIENT_H__
+#define __SOCKET_IO_CLIENT_H__
 
 #include "cocos2d.h"
 
-#include <vector>
+#include "extensions/cocos-ext.h"
+#include "network/SocketIO.h"
 
-using namespace std ;
 USING_NS_CC;
+using namespace cocos2d::network;
 
-struct Song
+class SocketIOClient : public SocketIO::SIODelegate
 {
-    int id;
-    char name[64];
-    char length[32];
-    char artist[64];
-};
-
-class SongsInfo
-{
+    SocketIOClient();
+    ~SocketIOClient();
 public:
-    static SongsInfo* getInstance();
+    static SocketIOClient* getInstance();
     
-    void load();
+    void connect();
     
-    void addSong(int id,const char* name,const char* length,const char* artist);
+    void send(char* msg);
     
-    vector<Song*> songs;
+    void onConnect(SIOClient* client);
     
+    void onMessage(SIOClient* client, const std::string& data);
+    
+    void onError(SIOClient* client, const std::string& data);
+    
+    void onClose(SIOClient* client);
+    
+    SIOClient* client;
     
 };
-static SongsInfo* _songsInfo;
+
+static SocketIOClient* _socketIOClient=NULL;
 
 #endif
