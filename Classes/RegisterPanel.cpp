@@ -57,6 +57,7 @@ bool RegisterPanel::init()
 
 void RegisterPanel::reg()
 {
+	
 }
 
 void RegisterPanel::close(CallFunc* callfunc)

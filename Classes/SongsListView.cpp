@@ -13,7 +13,8 @@ bool SongsListView::init()
     
     this->isMoving = false;
     this->isPause = false;
-    
+	this->itemOnPress = NULL;
+
     this->root = Node::create();
     this->addChild(root);
         
