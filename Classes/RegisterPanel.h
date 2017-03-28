@@ -2,6 +2,7 @@
 #define __REGISTER_PANEL_H__
 
 #include "cocos2d.h"
+#include "SocketClient.h"
 
 USING_NS_CC;
 

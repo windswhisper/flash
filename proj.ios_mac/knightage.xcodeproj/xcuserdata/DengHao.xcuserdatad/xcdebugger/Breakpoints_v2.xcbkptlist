@@ -77,7 +77,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "77"
             endingLineNumber = "77"
-            landmarkName = "RegisterPanel::log()"
+            landmarkName = "RegisterPanel::close(CallFunc* callfunc)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

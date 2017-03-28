@@ -1,5 +1,5 @@
 #include "GameScene.h"
-
+#include "SocketClient.h"
 #include "GameLayer.h"
 #include "LoginPanel.h"
 
@@ -16,6 +16,8 @@ bool GameScene::init()
     this->addChild(this->bg);
     
     this->addChild(LoginPanel::create());
+
+	this->addChild(SocketClient::create());
     
     SocketIOClient::getInstance()->connect();
     
