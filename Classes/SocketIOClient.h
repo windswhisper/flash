@@ -18,7 +18,9 @@ public:
     
     void connect();
     
-    void send(char* msg);
+    void listen(char* event,std::function<void(SIOClient*,std::string msg)> callback);
+    
+    void send(char* event,char* msg);
     
     void onConnect(SIOClient* client);
     

@@ -1,5 +1,8 @@
 #include "SocketIOClient.h"
 
+static const char* SOCKETIO_IP = "ws://111.206.45.12:30219";
+//static const char* SOCKETIO_IP = "ws://127.0.0.1:8808";
+
 SocketIOClient::SocketIOClient()
 {
 }
@@ -18,17 +21,18 @@ SocketIOClient* SocketIOClient::getInstance()
 
 void SocketIOClient::connect()
 {
-    client = SocketIO::connect("ws://111.206.45.12:30219", *this);
-    client->setTag("init socket");
-    //4.初始化的时候设置一个监听器：使用on监听事件和获取接收到的数据
-    client->on("loginresult",[=](SIOClient *client,const std::string &data){//使用C++匿名函数实现
-        log("login result is :%s",data.c_str());
-    });
+    client = SocketIO::connect(SOCKETIO_IP, *this);
+    client->setTag("n1");
 }
 
-void SocketIOClient::send(char *msg)
+void SocketIOClient::listen(char* event,std::function<void(SIOClient*,std::string msg)> callback)
 {
-    client->send(msg);
+    client->on(event,callback);
+}
+
+void SocketIOClient::send(char *event,char* msg)
+{
+    client->emit(event,msg);
 }
 
 void SocketIOClient::onConnect(SIOClient* client){

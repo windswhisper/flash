@@ -3,9 +3,10 @@
 
 #include "cocos2d.h"
 #include "SocketClient.h"
+#include "ui/CocosGUI.h"
 
 USING_NS_CC;
-
+using namespace cocos2d::ui;
 
 class RegisterPanel : public Node
 {
@@ -28,6 +29,9 @@ public:
 
 	MenuItemImage* btn_reg;
     
+    TextField* usernameText;
+    
+    TextField* passwordText;
 };
 
 #endif
