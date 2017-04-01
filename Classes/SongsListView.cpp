@@ -188,7 +188,7 @@ void SongsListView::canelTouch()
 void SongsListView::selectItem(int i)
 {
     this->isPause = true;
-    
+    this->selectId = i;
     auto songsLayer = (SongsLayer*)this->getParent();
     songsLayer->changeCover(i);
 
@@ -210,7 +210,8 @@ void SongsListView::selectItem(int i)
     
 }
 void SongsListView::showDiffList(int i)
-{    Menu* menu = Menu::create();
+{
+    diffList = Menu::create();
     for(int n=0;n<3;n++)
     {
         MenuItemImage* btn = MenuItemImage::create("img/selectsongs/btn_song.png","img/selectsongs/btn_song_p.png",[=](Ref* pSender){
@@ -228,8 +229,25 @@ void SongsListView::showDiffList(int i)
         
         btn->setPosition(0,-n*160);
         
-        menu->addChild(btn);
+        diffList->addChild(btn);
     }
-    menu->setPosition(0,this->itemSong.at(i)->getPositionY()-option_height);
-    this->root->addChild(menu);
+
+    diffList->setPosition(0,this->itemSong.at(i)->getPositionY()-option_height);
+    this->root->addChild(diffList);
 }
+void SongsListView::cancelSelect()
+{
+    for(int n=0;n<5;n++)
+    {
+        if(this->itemSong.size()>=selectId+n+2)
+            this->itemSong.at(selectId+n+1)->runAction(Sequence::create(DelayTime::create(0.5f),FadeTo::create(0.2f,255),NULL));
+    }
+    
+    this->diffList->runAction(FadeTo::create(0.2f,0));
+
+    this->root->runAction(Sequence::create(DelayTime::create(0.5f),CallFunc::create([=](){
+        this->isPause = false;
+    }), NULL));
+}
+
+

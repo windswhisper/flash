@@ -1,5 +1,9 @@
 #include "RegisterPanel.h"
 #include "LoginPanel.h"
+#include "MainMenuLayer.h"
+
+#include "SocketIOClient.h"
+
 
 USING_NS_CC;
 
@@ -48,7 +52,47 @@ bool RegisterPanel::init()
 
 	this->btn_reg->setPosition(Vec2(visiblesize.width / 2 + bg_reg->getContentSize().width / 2 - btn_back->getContentSize().width / 2, visiblesize.height / 2 - bg_reg->getContentSize().height / 2 + btn_back->getContentSize().height / 2));
 
-
+    
+    this->usernameText = TextField::create();
+    
+    this->usernameText->setFontSize(64);
+    
+    this->usernameText->setTextAreaSize(Size(500,100));
+    
+    this->usernameText->setPosition(Vec2(880,690));
+    
+    this->usernameText->setMaxLengthEnabled(true);
+    
+    this->usernameText->setMaxLength(10);
+    
+    this->usernameText->setPlaceHolder("请输入用户名");
+    
+    this->usernameText->setAnchorPoint(Vec2(0,0.5));
+        
+    root->addChild(this->usernameText);
+    
+    this->passwordText = TextField::create();
+    
+    this->passwordText->setFontSize(64);
+    
+    this->passwordText->setPosition(Vec2(880,580));
+    
+    this->passwordText->setTextAreaSize(Size(500,100));
+    
+    this->passwordText->setMaxLengthEnabled(true);
+    
+    this->passwordText->setMaxLength(12);
+    
+    this->passwordText->setPlaceHolder("请输入密码");
+    
+    this->passwordText->setAnchorPoint(Vec2(0,0.5));
+    
+    this->passwordText->setPasswordEnabled(true);
+    
+    root->addChild(this->passwordText);
+    
+    
+    
 	Menu* menu = Menu::create(btn_back, btn_reg, NULL);
 
 	menu->setPosition(Point::ZERO);
@@ -60,7 +104,20 @@ bool RegisterPanel::init()
 
 void RegisterPanel::reg()
 {
-	
+    char msg[128];
+    sprintf(msg, "{\"username\":\"%s\",\"password\":\"%s\"}",this->usernameText->getString().c_str(),this->passwordText->getString().c_str());
+    SocketIOClient::getInstance()->send("register",msg);
+    SocketIOClient::getInstance()->listen("registerRes", [=](SIOClient* client, std::string msg){
+        if(msg.compare("\"succeed\"")==0)
+        {
+            this->close(CallFunc::create([=](){
+                this->getParent()->addChild(MainMenuLayer::create());
+            }));
+        }
+        if(msg.compare("\"fail\"")==0)
+        {
+            //TODO
+        }    });
 }
 
 void RegisterPanel::close(CallFunc* callfunc)

@@ -1,7 +1,7 @@
 #ifndef __SOCKETIO_H__
 #define __SOCKETIO_H__
 #include "cocos2d.h"
-#include "network\SocketIO.h"
+#include "network/SocketIO.h"
 USING_NS_CC;
 using namespace cocos2d::network;
 

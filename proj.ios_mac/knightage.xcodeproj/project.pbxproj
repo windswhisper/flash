@@ -14,8 +14,10 @@
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		472DA5C11E77809A006D4DB7 /* SongsLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 472DA5BF1E77809A006D4DB7 /* SongsLayer.cpp */; };
 		472DA5C51E77E44A006D4DB7 /* SongsInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 472DA5C31E77E44A006D4DB7 /* SongsInfo.cpp */; };
+		4755807C1E8A3283002A302F /* RankingList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4755807A1E8A3283002A302F /* RankingList.cpp */; };
 		47773AF91E78E7040053AC10 /* SongsListView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47773AF71E78E7040053AC10 /* SongsListView.cpp */; };
 		47925D7E1E6E4A58008AE59C /* RegisterPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47925D7C1E6E4A58008AE59C /* RegisterPanel.cpp */; };
+		47A159E21E88EA7B004EAFE9 /* SocketIOClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47A159E01E88EA7B004EAFE9 /* SocketIOClient.cpp */; };
 		47A6E1ED1E6A652F0089E3A9 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47A6E1E31E6A652F0089E3A9 /* AppDelegate.cpp */; };
 		47A6E1EE1E6A652F0089E3A9 /* GameLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47A6E1E51E6A652F0089E3A9 /* GameLayer.cpp */; };
 		47A6E1EF1E6A652F0089E3A9 /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47A6E1E71E6A652F0089E3A9 /* GameScene.cpp */; };
@@ -122,10 +124,14 @@
 		472DA5C01E77809A006D4DB7 /* SongsLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongsLayer.h; sourceTree = "<group>"; };
 		472DA5C31E77E44A006D4DB7 /* SongsInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SongsInfo.cpp; sourceTree = "<group>"; };
 		472DA5C41E77E44A006D4DB7 /* SongsInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongsInfo.h; sourceTree = "<group>"; };
+		4755807A1E8A3283002A302F /* RankingList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RankingList.cpp; sourceTree = "<group>"; };
+		4755807B1E8A3283002A302F /* RankingList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RankingList.h; sourceTree = "<group>"; };
 		47773AF71E78E7040053AC10 /* SongsListView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SongsListView.cpp; sourceTree = "<group>"; };
 		47773AF81E78E7040053AC10 /* SongsListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongsListView.h; sourceTree = "<group>"; };
 		47925D7C1E6E4A58008AE59C /* RegisterPanel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RegisterPanel.cpp; sourceTree = "<group>"; };
 		47925D7D1E6E4A58008AE59C /* RegisterPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterPanel.h; sourceTree = "<group>"; };
+		47A159E01E88EA7B004EAFE9 /* SocketIOClient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SocketIOClient.cpp; sourceTree = "<group>"; };
+		47A159E11E88EA7B004EAFE9 /* SocketIOClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOClient.h; sourceTree = "<group>"; };
 		47A6E1E31E6A652F0089E3A9 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppDelegate.cpp; sourceTree = "<group>"; };
 		47A6E1E41E6A652F0089E3A9 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		47A6E1E51E6A652F0089E3A9 /* GameLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameLayer.cpp; sourceTree = "<group>"; };
@@ -335,8 +341,12 @@
 				47A6E1EA1E6A652F0089E3A9 /* LoginPanel.h */,
 				47B9AC931E6E984800953ACA /* MainMenuLayer.cpp */,
 				47B9AC941E6E984800953ACA /* MainMenuLayer.h */,
+				4755807A1E8A3283002A302F /* RankingList.cpp */,
+				4755807B1E8A3283002A302F /* RankingList.h */,
 				47925D7C1E6E4A58008AE59C /* RegisterPanel.cpp */,
 				47925D7D1E6E4A58008AE59C /* RegisterPanel.h */,
+				47A159E01E88EA7B004EAFE9 /* SocketIOClient.cpp */,
+				47A159E11E88EA7B004EAFE9 /* SocketIOClient.h */,
 				472DA5C31E77E44A006D4DB7 /* SongsInfo.cpp */,
 				472DA5C41E77E44A006D4DB7 /* SongsInfo.h */,
 				472DA5BF1E77809A006D4DB7 /* SongsLayer.cpp */,
@@ -545,6 +555,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4755807C1E8A3283002A302F /* RankingList.cpp in Sources */,
 				47A6E1F01E6A652F0089E3A9 /* LoginPanel.cpp in Sources */,
 				47925D7E1E6E4A58008AE59C /* RegisterPanel.cpp in Sources */,
 				472DA5C11E77809A006D4DB7 /* SongsLayer.cpp in Sources */,
@@ -555,6 +566,7 @@
 				47B9AC951E6E984800953ACA /* MainMenuLayer.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
+				47A159E21E88EA7B004EAFE9 /* SocketIOClient.cpp in Sources */,
 				47A6E1EF1E6A652F0089E3A9 /* GameScene.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 			);

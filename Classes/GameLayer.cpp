@@ -6,6 +6,7 @@
 using namespace std;
 using namespace CocosDenshion;
 
+int RATE_SCORE[4] = {0,100,60,20};
 
 void Note::remove()
 {
@@ -157,6 +158,7 @@ void LongNote::update(float dt)
 void LongNote::finish()
 {
     this->status=3;
+    this->removeAllChildren();
     _gamelayer->hitEffect[this->x]->stopAllActions();
     _gamelayer->hitEffect[this->x]->setSpriteFrame("space.png");
 }
@@ -169,9 +171,15 @@ bool GameLayer::init()
 	this->speed = 1.5;
 	this->offset = 2 / speed;
 	this->musicFileName = "1.mp3";
-
+    
     this->key1Pos = Vec2(229,350);
     this->keyDis = 318;
+    
+    this->rateCount[0] = 0;
+    this->rateCount[1] = 0;
+    this->rateCount[2] = 0;
+    this->rateCount[3] = 0;
+    this->score = 0;
     
 	SimpleAudioEngine::getInstance()->preloadBackgroundMusic(this->musicFileName);
     
@@ -196,6 +204,12 @@ bool GameLayer::init()
     root->setPosition(960,540);
     
     root->setScale(2);
+    
+    this->comboLabel = LabelAtlas::create("","img/game/combo.png",184,206,'0');
+    
+    this->comboLabel->setPosition(960,700);
+    
+    this->addChild(this->comboLabel);
     
    
     for(int i=0;i<4;i++)
@@ -248,8 +262,8 @@ bool GameLayer::init()
     
     this->loadFile();
     
-	this->rate = Label::create("","",128);
-	this->rate->setPosition(960, 540);
+	this->rate = Sprite::create();
+	this->rate->setPosition(960, 450);
 	this->addChild(this->rate);
 
     
@@ -373,7 +387,7 @@ void GameLayer::onTouchEnded(Touch *touch, Event *pEvent)
     
     for(int i=0;i<4;i++)
     {
-        if(p.x>i*1920/4&&p.x<(i+1)*1920/4&&p.y<300)
+        if(p.x>i*1920/4&&p.x<(i+1)*1920/4&&p.y<500)
         {
             this->release(i);
             break;
@@ -446,19 +460,24 @@ void GameLayer::miss(int col)
 
 void GameLayer::getRate(int rate)
 {
-    if(rate==0)
-        this->rate->setString("Miss");
-    if(rate==1)
-        this->rate->setString("Perfect");
-    if(rate==2)
-        this->rate->setString("Great");
-    if(rate==3)
-        this->rate->setString("Good");
     
-    this->rate->setScale(1.2);
+    char str[20];
+    
+    sprintf(str, "img/game/rate%d.png",rate);
+    
+    this->rate->setTexture(str);
+    
+    this->rate->setOpacity(255);
+    this->rate->setScale(2);
     this->rate->stopAllActions();
-    this->rate->runAction(ScaleTo::create(0.1, 1));
+    this->rate->runAction(Sequence::create(ScaleTo::create(0.1, 1.8),DelayTime::create(0.5f),FadeTo::create(0.3f,0 ),NULL));
     
+    this->rateCount[rate]++;
+    
+    this->score+=RATE_SCORE[rate];
+    
+    if(rate!=0)this->comboIncrese();
+    else this->comboClear();
 }
 void GameLayer::playAnimate(int col, int type)
 {
@@ -479,4 +498,20 @@ void GameLayer::playAnimate(int col, int type)
     
     hitEffect[col]->runAction(act);
 }
-
+void GameLayer::comboIncrese()
+{
+    this->combo++;
+    
+    char str[20];
+    sprintf(str, "%d",this->combo);
+    this->comboLabel->setPositionX(960-strlen(str)*184/2);
+    this->comboLabel->setString(str);
+    this->comboLabel->setPositionY(680);
+    this->comboLabel->stopAllActions();
+    this->comboLabel->runAction(MoveBy::create(0.2f, Vec2(0,20)));
+}
+void GameLayer::comboClear()
+{
+    this->comboLabel->setString("");
+    this->combo=0;
+}

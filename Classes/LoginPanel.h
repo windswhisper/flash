@@ -2,11 +2,11 @@
 #define __LOGIN_PANEL_H__
 
 #include "cocos2d.h"
-//#include "cocos-ext.h"
 
+#include "ui/CocosGUI.h"
 
 USING_NS_CC;
-//USING_NS_CC_EXT;
+using namespace cocos2d::ui;
 
 class LoginPanel : public Node
 {
@@ -29,6 +29,9 @@ public:
 
 	MenuItemImage* btn_reg;
     
+    TextField* usernameText;
+    
+    TextField* passwordText;
 };
 
 #endif

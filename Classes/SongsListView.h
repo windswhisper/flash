@@ -29,6 +29,8 @@ public:
     
     void selectItem(int i);
     
+    void cancelSelect();
+    
     void showDiffList(int i);
     
     Vector<Sprite*> itemSong;
@@ -54,6 +56,10 @@ public:
     Sprite* itemOnPress;
     
     bool isPause;
+    
+    Menu* diffList;
+    
+    int selectId;
     
 };
 
