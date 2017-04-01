@@ -15,7 +15,7 @@ bool GameScene::init()
     
     this->addChild(LoginPanel::create());
 
-	this->addChild(SocketClient::create());
+//	this->addChild(SocketClient::create());
     
     return true;
 }

@@ -1,6 +1,9 @@
 #include "RegisterPanel.h"
 #include "LoginPanel.h"
 
+USING_NS_CC;
+
+
 bool RegisterPanel::init()
 {
 	Size visiblesize = Director::getInstance()->getVisibleSize();
@@ -35,7 +38,7 @@ bool RegisterPanel::init()
 	content->setPosition(960, 650);
 
 	root->addChild(content);
-	
+
 
 	this->btn_back = MenuItemImage::create("img/welcome/btn_back.png", "img/welcome/btn_back_p.png", CC_CALLBACK_0(RegisterPanel::log, this));
 

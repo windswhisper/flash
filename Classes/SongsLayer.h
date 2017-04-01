@@ -40,9 +40,9 @@ public:
     
     MenuItemImage* btn_back;
     
-    Node* rankList;
+    Node* rankingList;
     
-    Node* itemList;
+    Node* itemSelection;
 
 };
 

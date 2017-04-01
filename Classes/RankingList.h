@@ -3,9 +3,20 @@
 
 #include "cocos2d.h"
 #include "ui/CocosGUI.h"
+#include <vector>
 
 USING_NS_CC;
 using namespace ui;
+using namespace std;
+
+struct RankInfo
+{
+	char name[32];
+
+	char score[16];
+
+	char comble[8];
+};
 
 class RankingList : public Node
 {
@@ -14,7 +25,7 @@ public:
 
 	CREATE_FUNC(RankingList);
 
-	void setData(char* RankInfo[20][3]);
+	void setData(vector<RankInfo*> rankItem);
 
 	void addData(const char* name, const char* score, const char* comble);
 
@@ -23,13 +34,13 @@ public:
 private:
 	Sprite * bg;
 
-	Vector<Sprite*> rankitem;
+//	Vector<Sprite*> rankitem;
 
 	ListView* listview;
 
-	char* RankInfo[20][3];
+//	char RankInfo[20][3][32];
+	vector<RankInfo*> rankItem;
 
-	
 };
 
 #endif

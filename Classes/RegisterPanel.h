@@ -5,6 +5,7 @@
 #include "SocketClient.h"
 
 USING_NS_CC;
+using namespace ui;
 
 
 class RegisterPanel : public Node
