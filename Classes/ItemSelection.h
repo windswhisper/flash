@@ -31,15 +31,15 @@ private:
 
 	int isSelect[20];
 
-//	bool isSelect;
+    Vector<Sprite*> itemButtonSelect;
 
 	Node* node;
 
 	Button* items[20];
 
-	Sprite* btn_sel;
+//	Sprite* btn_sel;
 
-	Sprite* itemSel;
+//	Sprite* itemSel;
 
 };
 #endif

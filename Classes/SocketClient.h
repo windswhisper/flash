@@ -1,11 +1,11 @@
-#ifndef __SOCKETIO_H__
+ï»¿#ifndef __SOCKETIO_H__
 #define __SOCKETIO_H__
 #include "cocos2d.h"
 #include "network/SocketIO.h"
 USING_NS_CC;
 using namespace cocos2d::network;
 
-//¼Ì³ĞSocketIO::SIODelegateºÍÊµÏÖËÄ¸öĞéº¯Êı
+//ç»§æ‰¿SocketIO::SIODelegateå’Œå®ç°å››ä¸ªè™šå‡½æ•°
 class SocketClient : public cocos2d::Layer, SocketIO::SIODelegate
 {
 public:
@@ -14,13 +14,13 @@ public:
 	// Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
 	virtual bool init();
 
-	//socketÁ¬½ÓÊ±µ÷ÓÃ
+	//socketè¿æ¥æ—¶è°ƒç”¨
 	void onConnect(SIOClient* client);
-	//ÊÕµ½Êı¾İÊ±µ÷ÓÃ
+	//æ”¶åˆ°æ•°æ®æ—¶è°ƒç”¨
 	void onMessage(SIOClient* client, const std::string& data);
-	//Á¬½Ó´íÎó»ò½ÓÊÕµ½´íÎóĞÅºÅÊ±µ÷ÓÃ
+	//è¿æ¥é”™è¯¯æˆ–æ¥æ”¶åˆ°é”™è¯¯ä¿¡å·æ—¶è°ƒç”¨
 	void onError(SIOClient* client, const std::string& data);
-	//socket¹Ø±ÕÊ±µ÷ÓÃ
+	//socketå…³é—­æ—¶è°ƒç”¨
 	void onClose(SIOClient* client);
 
 	// implement the "static create()" method manually

@@ -77,6 +77,18 @@ void ItemSelection::setItem()
 		items[i]->addTouchEventListener(CC_CALLBACK_2(ItemSelection::selectItem,this, items[i],i));
 
 		node->addChild(items[i]);
+
+		auto btn_sel = Sprite::create("img/selectsongs/items_p.png");
+
+		auto itemSel = Sprite::create("img/selectsongs/items_s.png");
+
+		btn_sel->setPosition(95, 90);
+
+		itemSel->setPosition(150, 40);
+
+		btn_sel->addChild(itemSel);
+
+		itemButtonSelect.pushBack(btn_sel);
 	}
 /*
 	node->addChild(item1);
@@ -123,24 +135,14 @@ void ItemSelection::selectItem(Ref* pSender, Widget::TouchEventType type,  Butto
 	{
 		if (isSelect[i] == 0)
 		{
-			btn_sel = Sprite::create("img/selectsongs/items_p.png");
-
-			itemSel = Sprite::create("img/selectsongs/items_s.png");
-
-			btn_sel->setPosition(95, 90);
-
-			itemSel->setPosition(150, 40);
-
-			btn_sel->addChild(itemSel);
-
-			items_btn->addChild(btn_sel);
+			items_btn->addChild(itemButtonSelect.at(i));
 
 			isSelect[i] = 1;
 
 		}
 		else
 		{
-			items_btn->removeAllChildren();
+			items_btn->removeChild(itemButtonSelect.at(i),true);
 
 			isSelect[i] = 0;
 		}

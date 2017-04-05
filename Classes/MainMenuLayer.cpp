@@ -71,6 +71,7 @@ bool MainMenuLayer::init()
     
     this->addChild(menu);
     
+	SongsInfo::getInstance();
     
     return true;
 }
@@ -87,7 +88,7 @@ void MainMenuLayer::classic()
 void MainMenuLayer::duel()
 {
     
-    SongsInfo::getInstance();
+    
 }
 void MainMenuLayer::shop()
 {
