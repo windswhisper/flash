@@ -86,6 +86,8 @@ void RankingList::setData(vector<RankInfo*> rankItem)
 
 	sprite_local->setPosition(0, -185);
 
+	sprite_local->setColor(Color3B::GREEN);
+
 	this->addChild(sprite_local);
 }
 

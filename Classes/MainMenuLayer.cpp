@@ -71,6 +71,7 @@ bool MainMenuLayer::init()
     
     this->addChild(menu);
     
+	SongsInfo::getInstance();
     
     SongsInfo::getInstance();
     
@@ -87,6 +88,10 @@ void MainMenuLayer::classic()
 void MainMenuLayer::duel()
 {
     
+<<<<<<< HEAD
+    
+=======
+>>>>>>> origin/master
 }
 void MainMenuLayer::shop()
 {
