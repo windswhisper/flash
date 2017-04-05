@@ -65,7 +65,7 @@ bool LoginPanel::init()
     
     this->usernameText->setMaxLength(10);
     
-    this->usernameText->setPlaceHolder("è¯·è¾“å…¥ç”¨æˆ·å");
+    this->usernameText->setPlaceHolder("ÇëÊäÈëÓÃ»§Ãû");
     
     this->usernameText->setAnchorPoint(Vec2(0,0.5));
     
@@ -83,7 +83,7 @@ bool LoginPanel::init()
     
     this->passwordText->setMaxLength(12);
     
-    this->passwordText->setPlaceHolder("è¯·è¾“å…¥å¯†ç ");
+    this->passwordText->setPlaceHolder("ÇëÊäÈëÃÜÂë");
     
     this->passwordText->setAnchorPoint(Vec2(0,0.5));
     

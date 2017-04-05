@@ -15,8 +15,13 @@ bool GameScene::init()
     this->addChild(this->bg);
     
     this->addChild(LoginPanel::create());
+
+
+//	this->addChild(SocketClient::create());
+
     
     SocketIOClient::getInstance()->connect();
+
     
     return true;
 }

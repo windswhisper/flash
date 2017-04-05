@@ -6,7 +6,8 @@
 #include "ui/CocosGUI.h"
 
 USING_NS_CC;
-using namespace cocos2d::ui;
+
+using namespace ui;
 
 class RegisterPanel : public Node
 {

@@ -5,6 +5,9 @@
 #include "SocketIOClient.h"
 
 
+USING_NS_CC;
+
+
 bool RegisterPanel::init()
 {
 	Size visiblesize = Director::getInstance()->getVisibleSize();
@@ -39,7 +42,7 @@ bool RegisterPanel::init()
 	content->setPosition(960, 650);
 
 	root->addChild(content);
-	
+
 
 	this->btn_back = MenuItemImage::create("img/welcome/btn_back.png", "img/welcome/btn_back_p.png", CC_CALLBACK_0(RegisterPanel::log, this));
 
@@ -62,7 +65,7 @@ bool RegisterPanel::init()
     
     this->usernameText->setMaxLength(10);
     
-    this->usernameText->setPlaceHolder("è¯·è¾“å…¥ç”¨æˆ·å");
+    this->usernameText->setPlaceHolder("ÇëÊäÈëÓÃ»§Ãû");
     
     this->usernameText->setAnchorPoint(Vec2(0,0.5));
         
@@ -80,7 +83,7 @@ bool RegisterPanel::init()
     
     this->passwordText->setMaxLength(12);
     
-    this->passwordText->setPlaceHolder("è¯·è¾“å…¥å¯†ç ");
+    this->passwordText->setPlaceHolder("ÇëÊäÈëÃÜÂë");
     
     this->passwordText->setAnchorPoint(Vec2(0,0.5));
     

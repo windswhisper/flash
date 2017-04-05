@@ -4,6 +4,7 @@
 #include "SongsListView.h"
 #include "GameLayer.h"
 #include "RankingList.h"
+#include "ItemSelection.h"
 
 bool SongsLayer::init()
 {
@@ -96,15 +97,29 @@ bool SongsLayer::init()
     this->coverScreen->addChild(this->songCover);
 
 	/**************************************************************************************************/
-	this->rankList = RankingList::create();
+	this->rankingList = RankingList::create();
 
-	this->rankList->setPosition(1220 + 800,280);
+	this->rankingList->setPosition(1220 + 800, 280);
 
 //	this->rankList->runAction(Sequence::create(DelayTime::create(1), FadeTo::create(0.5f, 255), NULL));
     
-	this->addChild(this->rankList);
+	this->addChild(this->rankingList);
 
-	this->rankList->setVisible(false);
+	this->rankingList->setVisible(false);
+
+/***
+	
+*******	µÀ¾ßÑ¡Ôñ************
+
+***/
+
+	this->itemSelection = ItemSelection::create();
+
+	this->itemSelection->setPosition(1408 + 800,680);
+
+	this->itemSelection->setVisible(false);
+
+	this->addChild(this->itemSelection);
 
     return true;
 }
@@ -145,15 +160,17 @@ void SongsLayer::changeCover(int id)
 void SongsLayer::selectSong(int id, int diff)
 {
     auto action = EaseSineOut::create(MoveBy::create(1.0f, Vec2(-800,0)));
-	auto fadein = FadeIn::create(1.0f);
-//    this->songsList->runAction(Sequence::create(action,CallFunc::create([=](){this->btn_back->setVisible(true);}),NULL));
+
 	this->songsList->runAction(action->clone());
 
-	this->rankList->setVisible(true);
+	this->rankingList->setVisible(true);
 
-	this->rankList->runAction(fadein);
-	this->rankList->runAction(Sequence::create(action, CallFunc::create([=](){this->btn_back->setVisible(true); }), NULL)); //*****************************************************88
+	this->rankingList->runAction(Sequence::create(action, CallFunc::create([=](){this->btn_back->setVisible(true); }), NULL)); //*****************************************************88
     
+	this->itemSelection->setVisible(true);
+
+	this->itemSelection->runAction(action->clone());
+
     this->coverScreen->runAction(action->clone());
     
     this->playButton->runAction(action->clone());
@@ -161,18 +178,14 @@ void SongsLayer::selectSong(int id, int diff)
 void SongsLayer::backToList()
 {
     auto action = EaseSineOut::create(MoveBy::create(1.0f, Vec2(800,0)));
-
-//	ActionInterval* fadeout = FadeOut::create(1);
     
     this->songsList->runAction(action->clone());
     
     this->coverScreen->runAction(action->clone());
 
-	this->rankList->runAction(Sequence::create(action, CallFunc::create([=](){this->rankList->setVisible(false); }), NULL));
+	this->rankingList->runAction(Sequence::create(action->clone(), CallFunc::create([=](){this->rankingList->setVisible(false); }), NULL));
 
-//	this->rankList->runAction(fadeout);
-//	this->rankList->runAction(action);
-//	this->rankList->setVisible(false);
+	this->itemSelection->runAction(Sequence::create(action, CallFunc::create([=](){this->itemSelection->setVisible(false); }), NULL));
     
     this->playButton->runAction(action->clone());
     
