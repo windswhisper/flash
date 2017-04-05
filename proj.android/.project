@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>knightage</name>
+	<name>SocketTest</name>
 	<comment></comment>
 	<projects>
 		<project>libcocos2dx</project>

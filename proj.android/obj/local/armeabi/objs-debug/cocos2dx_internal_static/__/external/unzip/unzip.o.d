@@ -1,5 +1,5 @@
 obj/local/armeabi/objs-debug/cocos2dx_internal_static/__/external/unzip/unzip.o: \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/./../external/unzip/unzip.cpp \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/./../external/unzip/unzip.cpp \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/stdio.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/sys/cdefs.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/sys/cdefs_elf.h \
@@ -22,8 +22,8 @@ obj/local/armeabi/objs-debug/cocos2dx_internal_static/__/external/unzip/unzip.o:
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/alloca.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/strings.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/memory.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/zlib/prebuilt/android/../../include/zlib.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/zlib/prebuilt/android/../../include/zconf.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/zlib/prebuilt/android/../../include/zlib.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/zlib/prebuilt/android/../../include/zconf.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/limits.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/sys/limits.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/linux/limits.h \
@@ -44,13 +44,13 @@ obj/local/armeabi/objs-debug/cocos2dx_internal_static/__/external/unzip/unzip.o:
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/sys/sysconf.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/linux/capability.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/pathconf.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/./../external/unzip/unzip.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/./platform/CCPlatformDefine.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/./platform/CCPlatformConfig.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/./platform/android/CCPlatformDefine-android.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/./../external/unzip/unzip.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/./platform/CCPlatformDefine.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/./platform/CCPlatformConfig.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/./platform/android/CCPlatformDefine-android.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/android/log.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/./../external/unzip/ioapi.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/./../external/unzip/ioapi_mem.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/./../external/unzip/ioapi.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/./../external/unzip/ioapi_mem.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/errno.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/linux/errno.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/asm/errno.h \
@@ -101,9 +101,9 @@ obj/local/armeabi/objs-debug/cocos2dx_internal_static/__/external/unzip/unzip.o:
 
 /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/memory.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/zlib/prebuilt/android/../../include/zlib.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/zlib/prebuilt/android/../../include/zlib.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/zlib/prebuilt/android/../../include/zconf.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/zlib/prebuilt/android/../../include/zconf.h:
 
 /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/limits.h:
 
@@ -145,19 +145,19 @@ obj/local/armeabi/objs-debug/cocos2dx_internal_static/__/external/unzip/unzip.o:
 
 /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/pathconf.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/./../external/unzip/unzip.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/./../external/unzip/unzip.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/./platform/CCPlatformDefine.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/./platform/CCPlatformDefine.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/./platform/CCPlatformConfig.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/./platform/CCPlatformConfig.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/./platform/android/CCPlatformDefine-android.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/./platform/android/CCPlatformDefine-android.h:
 
 /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/android/log.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/./../external/unzip/ioapi.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/./../external/unzip/ioapi.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/./../external/unzip/ioapi_mem.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/./../external/unzip/ioapi_mem.h:
 
 /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/errno.h:
 

@@ -1,6 +1,6 @@
 obj/local/armeabi/objs-debug/spine_static/Json.o: \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/editor-support/spine/Json.c \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/./editor-support/spine/Json.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/editor-support/spine/Json.c \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/./editor-support/spine/Json.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/stdio.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/sys/cdefs.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/sys/cdefs_elf.h \
@@ -25,7 +25,7 @@ obj/local/armeabi/objs-debug/spine_static/Json.o: \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/alloca.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/strings.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/memory.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/extension.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/extension.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/math.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/limits.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/sys/limits.h \
@@ -34,29 +34,29 @@ obj/local/armeabi/objs-debug/spine_static/Json.o: \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/machine/limits.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/sys/syslimits.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/asm/page.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/Skeleton.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/SkeletonData.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/BoneData.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/SlotData.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/Skin.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/Attachment.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/EventData.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/Animation.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/Event.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/IkConstraintData.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/Slot.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/Bone.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/IkConstraint.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/Atlas.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/AttachmentLoader.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/RegionAttachment.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/MeshAttachment.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/SkinnedMeshAttachment.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/BoundingBoxAttachment.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/AnimationState.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/AnimationStateData.h
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/Skeleton.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/SkeletonData.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/BoneData.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/SlotData.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/Skin.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/Attachment.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/EventData.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/Animation.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/Event.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/IkConstraintData.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/Slot.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/Bone.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/IkConstraint.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/Atlas.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/AttachmentLoader.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/RegionAttachment.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/MeshAttachment.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/SkinnedMeshAttachment.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/BoundingBoxAttachment.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/AnimationState.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/AnimationStateData.h
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/./editor-support/spine/Json.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/./editor-support/spine/Json.h:
 
 /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/stdio.h:
 
@@ -106,7 +106,7 @@ obj/local/armeabi/objs-debug/spine_static/Json.o: \
 
 /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/memory.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/extension.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/extension.h:
 
 /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/math.h:
 
@@ -124,44 +124,44 @@ obj/local/armeabi/objs-debug/spine_static/Json.o: \
 
 /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/asm/page.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/Skeleton.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/Skeleton.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/SkeletonData.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/SkeletonData.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/BoneData.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/BoneData.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/SlotData.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/SlotData.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/Skin.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/Skin.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/Attachment.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/Attachment.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/EventData.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/EventData.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/Animation.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/Animation.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/Event.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/Event.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/IkConstraintData.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/IkConstraintData.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/Slot.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/Slot.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/Bone.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/Bone.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/IkConstraint.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/IkConstraint.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/Atlas.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/Atlas.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/AttachmentLoader.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/AttachmentLoader.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/RegionAttachment.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/RegionAttachment.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/MeshAttachment.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/MeshAttachment.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/SkinnedMeshAttachment.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/SkinnedMeshAttachment.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/BoundingBoxAttachment.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/BoundingBoxAttachment.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/AnimationState.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/AnimationState.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/AnimationStateData.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/editor-support/spine/../spine/AnimationStateData.h:

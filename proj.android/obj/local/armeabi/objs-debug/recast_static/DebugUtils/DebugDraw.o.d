@@ -1,12 +1,12 @@
 obj/local/armeabi/objs-debug/recast_static/DebugUtils/DebugDraw.o: \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/recast/DebugUtils/DebugDraw.cpp \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/recast/DebugUtils/DebugDraw.cpp \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/string.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/sys/cdefs.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/sys/cdefs_elf.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/android/api-level.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/malloc.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/recast/DebugUtils/DebugDraw.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/recast/../recast/Detour/DetourMath.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/recast/DebugUtils/DebugDraw.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/recast/../recast/Detour/DetourMath.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/math.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/sys/types.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/stdint.h \
@@ -38,9 +38,9 @@ obj/local/armeabi/objs-debug/recast_static/DebugUtils/DebugDraw.o: \
 
 /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/malloc.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/recast/DebugUtils/DebugDraw.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/recast/DebugUtils/DebugDraw.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/recast/../recast/Detour/DetourMath.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/recast/../recast/Detour/DetourMath.h:
 
 /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/math.h:
 

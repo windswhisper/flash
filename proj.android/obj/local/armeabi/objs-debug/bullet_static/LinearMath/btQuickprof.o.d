@@ -1,6 +1,6 @@
 obj/local/armeabi/objs-debug/bullet_static/LinearMath/btQuickprof.o: \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/LinearMath/btQuickprof.cpp \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/LinearMath/btQuickprof.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/LinearMath/btQuickprof.cpp \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/LinearMath/btQuickprof.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/stdio.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/sys/cdefs.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/sys/cdefs_elf.h \
@@ -17,7 +17,7 @@ obj/local/armeabi/objs-debug/bullet_static/LinearMath/btQuickprof.o: \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/linux/types.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/machine/kernel.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/sys/sysmacros.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/LinearMath/btScalar.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/LinearMath/btScalar.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/math.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/limits.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/sys/limits.h \
@@ -33,12 +33,12 @@ obj/local/armeabi/objs-debug/bullet_static/LinearMath/btQuickprof.o: \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/strings.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/memory.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/assert.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/LinearMath/btAlignedAllocator.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/LinearMath/btAlignedAllocator.h \
  /Users/DengHao/Documents/Environment/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/new \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/sys/time.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/linux/time.h
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/LinearMath/btQuickprof.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/LinearMath/btQuickprof.h:
 
 /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/stdio.h:
 
@@ -72,7 +72,7 @@ obj/local/armeabi/objs-debug/bullet_static/LinearMath/btQuickprof.o: \
 
 /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/sys/sysmacros.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/LinearMath/btScalar.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/LinearMath/btScalar.h:
 
 /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/math.h:
 
@@ -104,7 +104,7 @@ obj/local/armeabi/objs-debug/bullet_static/LinearMath/btQuickprof.o: \
 
 /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/assert.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/LinearMath/btAlignedAllocator.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/LinearMath/btAlignedAllocator.h:
 
 /Users/DengHao/Documents/Environment/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/new:
 

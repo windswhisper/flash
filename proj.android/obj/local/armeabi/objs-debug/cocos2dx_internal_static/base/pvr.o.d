@@ -1,5 +1,5 @@
 obj/local/armeabi/objs-debug/cocos2dx_internal_static/base/pvr.o: \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/./base/pvr.cpp \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/./base/pvr.cpp \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/stdlib.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/sys/cdefs.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/sys/cdefs_elf.h \
@@ -32,7 +32,7 @@ obj/local/armeabi/objs-debug/cocos2dx_internal_static/base/pvr.o: \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/math.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/assert.h \
  /Users/DengHao/Documents/Environment/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/cstdint \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/./base/pvr.h
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/./base/pvr.h
 
 /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/stdlib.h:
 
@@ -98,4 +98,4 @@ obj/local/armeabi/objs-debug/cocos2dx_internal_static/base/pvr.o: \
 
 /Users/DengHao/Documents/Environment/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/cstdint:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/./base/pvr.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/cocos/./base/pvr.h:

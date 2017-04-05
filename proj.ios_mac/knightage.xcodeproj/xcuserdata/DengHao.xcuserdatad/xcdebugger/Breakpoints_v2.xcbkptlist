@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/LoginPanel.cpp"
-            timestampString = "512640592.226946"
+            timestampString = "512709389.818271"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "127"
@@ -40,11 +40,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/SongsInfo.cpp"
-            timestampString = "511240796.208033"
+            timestampString = "513048602.49058"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
             landmarkName = "SongsInfo::load()"
             landmarkType = "7">
          </BreakpointContent>
@@ -56,12 +56,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/SongsListView.cpp"
-            timestampString = "511690545.505365"
+            timestampString = "513048866.436873"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "SongsListView::addOption(const char* name)"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "SongsListView::init()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -72,11 +72,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/RegisterPanel.cpp"
-            timestampString = "512640333.740374"
+            timestampString = "512708682.537596"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
             landmarkName = "RegisterPanel::log()"
             landmarkType = "7">
          </BreakpointContent>

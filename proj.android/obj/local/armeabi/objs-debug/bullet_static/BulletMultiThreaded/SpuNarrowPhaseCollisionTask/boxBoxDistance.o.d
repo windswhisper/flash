@@ -1,5 +1,5 @@
 obj/local/armeabi/objs-debug/bullet_static/BulletMultiThreaded/SpuNarrowPhaseCollisionTask/boxBoxDistance.o: \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/BulletMultiThreaded/SpuNarrowPhaseCollisionTask/boxBoxDistance.cpp \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/BulletMultiThreaded/SpuNarrowPhaseCollisionTask/boxBoxDistance.cpp \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/math.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/sys/cdefs.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/sys/cdefs_elf.h \
@@ -23,8 +23,8 @@ obj/local/armeabi/objs-debug/bullet_static/BulletMultiThreaded/SpuNarrowPhaseCol
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/machine/limits.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/sys/syslimits.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/asm/page.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/BulletMultiThreaded/SpuNarrowPhaseCollisionTask/../PlatformDefinitions.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btScalar.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/BulletMultiThreaded/SpuNarrowPhaseCollisionTask/../PlatformDefinitions.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btScalar.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/stdlib.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/string.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/malloc.h \
@@ -32,16 +32,16 @@ obj/local/armeabi/objs-debug/bullet_static/BulletMultiThreaded/SpuNarrowPhaseCol
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/strings.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/memory.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/assert.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btMinMax.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btScalar.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/vectormath/vmInclude.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/vectormath/scalar/vectormath_aos.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/vectormath/scalar/vec_aos.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/vectormath/scalar/quat_aos.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/vectormath/scalar/mat_aos.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/BulletMultiThreaded/SpuNarrowPhaseCollisionTask/../PpuAddressSpace.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/BulletMultiThreaded/SpuNarrowPhaseCollisionTask/boxBoxDistance.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/BulletMultiThreaded/SpuNarrowPhaseCollisionTask/Box.h
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btMinMax.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btScalar.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/vectormath/vmInclude.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/vectormath/scalar/vectormath_aos.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/vectormath/scalar/vec_aos.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/vectormath/scalar/quat_aos.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/vectormath/scalar/mat_aos.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/BulletMultiThreaded/SpuNarrowPhaseCollisionTask/../PpuAddressSpace.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/BulletMultiThreaded/SpuNarrowPhaseCollisionTask/boxBoxDistance.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/BulletMultiThreaded/SpuNarrowPhaseCollisionTask/Box.h
 
 /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/math.h:
 
@@ -89,9 +89,9 @@ obj/local/armeabi/objs-debug/bullet_static/BulletMultiThreaded/SpuNarrowPhaseCol
 
 /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/asm/page.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/BulletMultiThreaded/SpuNarrowPhaseCollisionTask/../PlatformDefinitions.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/BulletMultiThreaded/SpuNarrowPhaseCollisionTask/../PlatformDefinitions.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btScalar.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btScalar.h:
 
 /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/stdlib.h:
 
@@ -107,22 +107,22 @@ obj/local/armeabi/objs-debug/bullet_static/BulletMultiThreaded/SpuNarrowPhaseCol
 
 /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/assert.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btMinMax.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btMinMax.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btScalar.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btScalar.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/vectormath/vmInclude.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/vectormath/vmInclude.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/vectormath/scalar/vectormath_aos.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/vectormath/scalar/vectormath_aos.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/vectormath/scalar/vec_aos.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/vectormath/scalar/vec_aos.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/vectormath/scalar/quat_aos.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/vectormath/scalar/quat_aos.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/vectormath/scalar/mat_aos.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/vectormath/scalar/mat_aos.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/BulletMultiThreaded/SpuNarrowPhaseCollisionTask/../PpuAddressSpace.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/BulletMultiThreaded/SpuNarrowPhaseCollisionTask/../PpuAddressSpace.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/BulletMultiThreaded/SpuNarrowPhaseCollisionTask/boxBoxDistance.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/BulletMultiThreaded/SpuNarrowPhaseCollisionTask/boxBoxDistance.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/BulletMultiThreaded/SpuNarrowPhaseCollisionTask/Box.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/BulletMultiThreaded/SpuNarrowPhaseCollisionTask/Box.h:

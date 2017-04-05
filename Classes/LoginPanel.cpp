@@ -57,7 +57,7 @@ bool LoginPanel::init()
     
     this->usernameText->setFontSize(64);
     
-    this->usernameText->setTextAreaSize(Size(500,100));
+    this->usernameText->setTextAreaSize(Size(600,100));
     
     this->usernameText->setPosition(Vec2(800,633));
     
@@ -77,7 +77,7 @@ bool LoginPanel::init()
     
     this->passwordText->setPosition(Vec2(800,520));
     
-    this->passwordText->setTextAreaSize(Size(500,100));
+    this->passwordText->setTextAreaSize(Size(600,100));
     
     this->passwordText->setMaxLengthEnabled(true);
     
@@ -101,13 +101,13 @@ void LoginPanel::login()
     sprintf(msg, "{\"username\":\"%s\",\"password\":\"%s\"}",this->usernameText->getString().c_str(),this->passwordText->getString().c_str());
     SocketIOClient::getInstance()->send("login",msg);
     SocketIOClient::getInstance()->listen("loginRes", [=](SIOClient* client, std::string msg){
-        if(msg.compare("\"succeed\"")==0)
+        if(msg.compare("succeed")==0)
         {
             this->close(CallFunc::create([=](){
                 this->getParent()->addChild(MainMenuLayer::create());
             }));
         }
-        if(msg.compare("\"fail\"")==0)
+        if(msg.compare("fail")==0)
         {
             //TODO
         }

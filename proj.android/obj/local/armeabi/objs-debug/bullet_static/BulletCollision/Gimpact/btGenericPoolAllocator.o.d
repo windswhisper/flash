@@ -1,6 +1,6 @@
 obj/local/armeabi/objs-debug/bullet_static/BulletCollision/Gimpact/btGenericPoolAllocator.o: \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/btGenericPoolAllocator.cpp \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/btGenericPoolAllocator.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/btGenericPoolAllocator.cpp \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/btGenericPoolAllocator.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/limits.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/sys/cdefs.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/sys/cdefs_elf.h \
@@ -26,8 +26,8 @@ obj/local/armeabi/objs-debug/bullet_static/BulletCollision/Gimpact/btGenericPool
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/sys/sysmacros.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/string.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/malloc.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btAlignedAllocator.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btScalar.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btAlignedAllocator.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btScalar.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/math.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/stdlib.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/alloca.h \
@@ -35,7 +35,7 @@ obj/local/armeabi/objs-debug/bullet_static/BulletCollision/Gimpact/btGenericPool
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/memory.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/assert.h
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/btGenericPoolAllocator.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/btGenericPoolAllocator.h:
 
 /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/limits.h:
 
@@ -87,9 +87,9 @@ obj/local/armeabi/objs-debug/bullet_static/BulletCollision/Gimpact/btGenericPool
 
 /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/malloc.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btAlignedAllocator.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btAlignedAllocator.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btScalar.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btScalar.h:
 
 /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/math.h:
 

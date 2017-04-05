@@ -31,11 +31,9 @@ bool SongsListView::init()
     
     auto songs = SongsInfo::getInstance()->songs;
     
-    for(int i=0;i<songs.size()+10;i++)
+    for(int i=0;i<songs.size();i++)
     {
-        char str[50];
-        sprintf(str, "Flower Dance%d", i);
-        this->addOption(str);
+        this->addOption(songs[i]->name);
     }
     
     return true;

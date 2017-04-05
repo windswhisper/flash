@@ -25,9 +25,17 @@ void SocketIOClient::connect()
     client->setTag("n1");
 }
 
-void SocketIOClient::listen(char* event,std::function<void(SIOClient*,std::string msg)> callback)
+void SocketIOClient::listen(char* event,std::function<void(SIOClient*,std::string)> callback)
 {
-    client->on(event,callback);
+    client->on(event,[=](SIOClient* client,std::string msg){
+        msg.erase(0,1);
+        msg.erase(msg.size()-1,1);
+        while(msg.find("\\")!=std::string::npos)
+        {
+            msg.erase(msg.find("\\"),1);
+        }
+        callback(client,msg);
+    });
 }
 
 void SocketIOClient::send(char *event,char* msg)

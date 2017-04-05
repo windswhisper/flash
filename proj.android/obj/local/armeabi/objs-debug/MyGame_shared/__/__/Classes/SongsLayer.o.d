@@ -1,5 +1,5 @@
-obj/local/armeabi/objs-debug/MyGame_shared/__/__/Classes/SongsLayer.o: \
- jni/../../Classes/SongsLayer.cpp jni/../../Classes/SongsLayer.h \
+obj/local/armeabi/objs-debug/MyGame_shared/__/__/Classes//SongsLayer.o: \
+ jni/../../Classes//SongsLayer.cpp jni/../../Classes//SongsLayer.h \
  /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../cocos2d.h \
  /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../base/ccConfig.h \
  /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../platform/CCPlatformConfig.h \
@@ -337,10 +337,70 @@ obj/local/armeabi/objs-debug/MyGame_shared/__/__/Classes/SongsLayer.o: \
  /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../deprecated/CCSet.h \
  /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../deprecated/CCString.h \
  /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../deprecated/CCDeprecated.h \
- jni/../../Classes/MainMenuLayer.h jni/../../Classes/SongsListView.h \
- jni/../../Classes/GameLayer.h
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/document.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/reader.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/rapidjson.h \
+ /Users/DengHao/Documents/Environment/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/cstring \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/allocators.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/encodings.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/internal/meta.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/internal/../rapidjson.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/internal/stack.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/internal/strtod.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/internal/ieee754.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/internal/biginteger.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/internal/diyfp.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/internal/pow10.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/error/error.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/error/../rapidjson.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/internal/strfunc.h \
+ /Users/DengHao/Documents/Environment/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/iterator \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/writer.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/internal/dtoa.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/internal/itoa.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/internal/itoa.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/stringbuffer.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/stringbuffer.h \
+ jni/../../Classes//MainMenuLayer.h jni/../../Classes//SongsListView.h \
+ jni/../../Classes//GameLayer.h jni/../../Classes//RankingList.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/CocosGUI.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UIWidget.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../2d/CCProtectedNode.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UILayoutParameter.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/GUIExport.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/GUIDefine.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../base/ObjectFactory.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UILayout.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UIButton.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UICheckBox.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UIAbstractCheckButton.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UIRadioButton.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UIImageView.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UIText.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UITextAtlas.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UILoadingBar.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UIScrollView.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UIListView.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UISlider.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UITextField.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../2d/CCTextFieldTTF.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UITextBMFont.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UIPageView.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UIHelper.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UIRichText.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UIHBox.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UIVBox.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UIRelativeBox.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UIVideoPlayer.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UIWebView.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UIDeprecated.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UIScale9Sprite.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UIEditBox/UIEditBox.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UILayoutComponent.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UITabControl.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../editor-support/cocostudio/CocosStudioExtension.h
 
-jni/../../Classes/SongsLayer.h:
+jni/../../Classes//SongsLayer.h:
 
 /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../cocos2d.h:
 
@@ -1016,8 +1076,130 @@ jni/../../Classes/SongsLayer.h:
 
 /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../deprecated/CCDeprecated.h:
 
-jni/../../Classes/MainMenuLayer.h:
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/document.h:
 
-jni/../../Classes/SongsListView.h:
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/reader.h:
 
-jni/../../Classes/GameLayer.h:
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/rapidjson.h:
+
+/Users/DengHao/Documents/Environment/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/cstring:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/allocators.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/encodings.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/internal/meta.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/internal/../rapidjson.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/internal/stack.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/internal/strtod.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/internal/ieee754.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/internal/biginteger.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/internal/diyfp.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/internal/pow10.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/error/error.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/error/../rapidjson.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/internal/strfunc.h:
+
+/Users/DengHao/Documents/Environment/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/iterator:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/writer.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/internal/dtoa.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/internal/itoa.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/internal/itoa.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/stringbuffer.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/stringbuffer.h:
+
+jni/../../Classes//MainMenuLayer.h:
+
+jni/../../Classes//SongsListView.h:
+
+jni/../../Classes//GameLayer.h:
+
+jni/../../Classes//RankingList.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/CocosGUI.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UIWidget.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../2d/CCProtectedNode.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UILayoutParameter.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/GUIExport.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/GUIDefine.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../base/ObjectFactory.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UILayout.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UIButton.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UICheckBox.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UIAbstractCheckButton.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UIRadioButton.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UIImageView.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UIText.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UITextAtlas.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UILoadingBar.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UIScrollView.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UIListView.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UISlider.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UITextField.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../2d/CCTextFieldTTF.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UITextBMFont.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UIPageView.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UIHelper.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UIRichText.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UIHBox.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UIVBox.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UIRelativeBox.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UIVideoPlayer.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UIWebView.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UIDeprecated.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UIScale9Sprite.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UIEditBox/UIEditBox.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UILayoutComponent.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../ui/UITabControl.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../editor-support/cocostudio/CocosStudioExtension.h:

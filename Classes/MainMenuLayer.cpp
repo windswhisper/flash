@@ -1,5 +1,5 @@
 #include "MainMenuLayer.h"
-
+#include "SongsInfo.h"
 #include "SongsLayer.h"
 
 bool MainMenuLayer::init()
@@ -71,6 +71,7 @@ bool MainMenuLayer::init()
     
     this->addChild(menu);
     
+    
     return true;
 }
 
@@ -85,6 +86,8 @@ void MainMenuLayer::classic()
 
 void MainMenuLayer::duel()
 {
+    
+    SongsInfo::getInstance();
 }
 void MainMenuLayer::shop()
 {

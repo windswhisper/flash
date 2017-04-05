@@ -1,5 +1,5 @@
 obj/local/armeabi/objs-debug/recast_static/Detour/DetourAlloc.o: \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/recast/Detour/DetourAlloc.cpp \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/recast/Detour/DetourAlloc.cpp \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/stdlib.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/sys/cdefs.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/sys/cdefs_elf.h \
@@ -21,7 +21,7 @@ obj/local/armeabi/objs-debug/recast_static/Detour/DetourAlloc.o: \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/machine/kernel.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/sys/sysmacros.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/memory.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/recast/Detour/DetourAlloc.h
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/recast/Detour/DetourAlloc.h
 
 /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/stdlib.h:
 
@@ -65,4 +65,4 @@ obj/local/armeabi/objs-debug/recast_static/Detour/DetourAlloc.o: \
 
 /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/memory.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/recast/Detour/DetourAlloc.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/recast/Detour/DetourAlloc.h:

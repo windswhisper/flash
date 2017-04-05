@@ -1,10 +1,10 @@
 obj/local/armeabi/objs-debug/bullet_static/BulletCollision/Gimpact/gim_box_set.o: \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/gim_box_set.cpp \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/gim_box_set.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/gim_array.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/gim_memory.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/gim_math.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btScalar.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/gim_box_set.cpp \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/gim_box_set.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/gim_array.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/gim_memory.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/gim_math.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btScalar.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/math.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/sys/cdefs.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/sys/cdefs_elf.h \
@@ -35,32 +35,32 @@ obj/local/armeabi/objs-debug/bullet_static/BulletCollision/Gimpact/gim_box_set.o
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/strings.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/memory.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/assert.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/gim_radixsort.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/gim_box_collision.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/gim_basic_geometry_operations.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/gim_linear_math.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/gim_geom_types.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btTransform.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btMatrix3x3.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btVector3.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btScalar.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btMinMax.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btAlignedAllocator.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btQuaternion.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btQuadWord.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/gim_radixsort.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/gim_box_collision.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/gim_basic_geometry_operations.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/gim_linear_math.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/gim_geom_types.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btTransform.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btMatrix3x3.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btVector3.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btScalar.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btMinMax.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btAlignedAllocator.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btQuaternion.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btQuadWord.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/stdio.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/gim_tri_collision.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/gim_clip_polygon.h
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/gim_tri_collision.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/gim_clip_polygon.h
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/gim_box_set.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/gim_box_set.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/gim_array.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/gim_array.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/gim_memory.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/gim_memory.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/gim_math.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/gim_math.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btScalar.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btScalar.h:
 
 /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/math.h:
 
@@ -122,34 +122,34 @@ obj/local/armeabi/objs-debug/bullet_static/BulletCollision/Gimpact/gim_box_set.o
 
 /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/assert.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/gim_radixsort.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/gim_radixsort.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/gim_box_collision.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/gim_box_collision.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/gim_basic_geometry_operations.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/gim_basic_geometry_operations.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/gim_linear_math.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/gim_linear_math.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/gim_geom_types.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/gim_geom_types.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btTransform.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btTransform.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btMatrix3x3.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btMatrix3x3.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btVector3.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btVector3.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btScalar.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btScalar.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btMinMax.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btMinMax.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btAlignedAllocator.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btAlignedAllocator.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btQuaternion.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btQuaternion.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btQuadWord.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btQuadWord.h:
 
 /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/stdio.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/gim_tri_collision.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/gim_tri_collision.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/gim_clip_polygon.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/BulletCollision/Gimpact/gim_clip_polygon.h:

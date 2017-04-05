@@ -1,4 +1,5 @@
 #include "SongsInfo.h"
+#include "SocketIOClient.h"
 
 SongsInfo* SongsInfo::getInstance()
 {
@@ -12,10 +13,21 @@ SongsInfo* SongsInfo::getInstance()
 
 void SongsInfo::load()
 {
-    for(int i=0;i<4;i++)
-    {
-        this->addSong(i, "1", "1", "1");
-    }
+    SocketIOClient::getInstance()->send("songsList", "");
+    SocketIOClient::getInstance()->listen("songsListRes", [=](SIOClient* client, std::string msg){
+        
+
+        rapidjson::Document doc;
+        doc.Parse<0>(msg.c_str());
+        
+        for(int i=0;i<doc.Size();i++)
+        {
+            this->addSong(doc[i]["id"].GetInt(), doc[i]["name"].GetString(), "", "");
+        }
+        
+        log("%s",doc[0]["name"].GetString());
+    });
+
 }
 
 void SongsInfo::addSong(int id,const char *name,const char *length,const char *artist)

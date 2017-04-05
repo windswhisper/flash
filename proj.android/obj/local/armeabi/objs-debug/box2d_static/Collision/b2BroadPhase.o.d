@@ -1,13 +1,13 @@
 obj/local/armeabi/objs-debug/box2d_static/Collision/b2BroadPhase.o: \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/Box2D/Collision/b2BroadPhase.cpp \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/Box2D/../Box2D/Collision/b2BroadPhase.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/Box2D/../Box2D/Common/b2Settings.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/Box2D/Collision/b2BroadPhase.cpp \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/Box2D/../Box2D/Collision/b2BroadPhase.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/Box2D/../Box2D/Common/b2Settings.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/assert.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/sys/cdefs.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/sys/cdefs_elf.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/android/api-level.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/Box2D/../Box2D/Collision/b2Collision.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/Box2D/../Box2D/Common/b2Math.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/Box2D/../Box2D/Collision/b2Collision.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/Box2D/../Box2D/Common/b2Math.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/math.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/sys/types.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/stdint.h \
@@ -28,16 +28,16 @@ obj/local/armeabi/objs-debug/box2d_static/Collision/b2BroadPhase.o: \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/machine/limits.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/sys/syslimits.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/asm/page.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/Box2D/../Box2D/Collision/b2DynamicTree.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/Box2D/../Box2D/Common/b2GrowableStack.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/Box2D/../Box2D/Collision/b2DynamicTree.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/Box2D/../Box2D/Common/b2GrowableStack.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/memory.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/string.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/malloc.h \
  /Users/DengHao/Documents/Environment/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/algorithm
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/Box2D/../Box2D/Collision/b2BroadPhase.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/Box2D/../Box2D/Collision/b2BroadPhase.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/Box2D/../Box2D/Common/b2Settings.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/Box2D/../Box2D/Common/b2Settings.h:
 
 /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/assert.h:
 
@@ -47,9 +47,9 @@ obj/local/armeabi/objs-debug/box2d_static/Collision/b2BroadPhase.o: \
 
 /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/android/api-level.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/Box2D/../Box2D/Collision/b2Collision.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/Box2D/../Box2D/Collision/b2Collision.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/Box2D/../Box2D/Common/b2Math.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/Box2D/../Box2D/Common/b2Math.h:
 
 /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/math.h:
 
@@ -91,9 +91,9 @@ obj/local/armeabi/objs-debug/box2d_static/Collision/b2BroadPhase.o: \
 
 /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/asm/page.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/Box2D/../Box2D/Collision/b2DynamicTree.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/Box2D/../Box2D/Collision/b2DynamicTree.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/Box2D/../Box2D/Common/b2GrowableStack.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/Box2D/../Box2D/Common/b2GrowableStack.h:
 
 /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/memory.h:
 

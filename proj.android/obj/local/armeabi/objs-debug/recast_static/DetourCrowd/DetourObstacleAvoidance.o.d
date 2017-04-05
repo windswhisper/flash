@@ -1,8 +1,8 @@
 obj/local/armeabi/objs-debug/recast_static/DetourCrowd/DetourObstacleAvoidance.o: \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/recast/DetourCrowd/DetourObstacleAvoidance.cpp \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/recast/DetourCrowd/DetourObstacleAvoidance.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/recast/../recast/Detour/DetourCommon.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/recast/../recast/Detour/DetourMath.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/recast/DetourCrowd/DetourObstacleAvoidance.cpp \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/recast/DetourCrowd/DetourObstacleAvoidance.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/recast/../recast/Detour/DetourCommon.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/recast/../recast/Detour/DetourMath.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/math.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/sys/cdefs.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/sys/cdefs_elf.h \
@@ -26,19 +26,19 @@ obj/local/armeabi/objs-debug/recast_static/DetourCrowd/DetourObstacleAvoidance.o
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/machine/limits.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/sys/syslimits.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/asm/page.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/recast/../recast/Detour/DetourMath.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/recast/../recast/Detour/DetourAlloc.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/recast/../recast/Detour/DetourAssert.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/recast/../recast/Detour/DetourMath.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/recast/../recast/Detour/DetourAlloc.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/recast/../recast/Detour/DetourAssert.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/assert.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/string.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/malloc.h \
  /Users/DengHao/Documents/Environment/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/new
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/recast/DetourCrowd/DetourObstacleAvoidance.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/recast/DetourCrowd/DetourObstacleAvoidance.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/recast/../recast/Detour/DetourCommon.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/recast/../recast/Detour/DetourCommon.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/recast/../recast/Detour/DetourMath.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/recast/../recast/Detour/DetourMath.h:
 
 /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/math.h:
 
@@ -86,11 +86,11 @@ obj/local/armeabi/objs-debug/recast_static/DetourCrowd/DetourObstacleAvoidance.o
 
 /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/asm/page.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/recast/../recast/Detour/DetourMath.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/recast/../recast/Detour/DetourMath.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/recast/../recast/Detour/DetourAlloc.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/recast/../recast/Detour/DetourAlloc.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/recast/../recast/Detour/DetourAssert.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/recast/../recast/Detour/DetourAssert.h:
 
 /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/assert.h:
 

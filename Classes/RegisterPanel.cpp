@@ -54,9 +54,9 @@ bool RegisterPanel::init()
     
     this->usernameText->setFontSize(64);
     
-    this->usernameText->setTextAreaSize(Size(500,100));
+    this->usernameText->setTextAreaSize(Size(600,100));
     
-    this->usernameText->setPosition(Vec2(880,690));
+    this->usernameText->setPosition(Vec2(873,690));
     
     this->usernameText->setMaxLengthEnabled(true);
     
@@ -72,9 +72,9 @@ bool RegisterPanel::init()
     
     this->passwordText->setFontSize(64);
     
-    this->passwordText->setPosition(Vec2(880,580));
+    this->passwordText->setPosition(Vec2(873,580));
     
-    this->passwordText->setTextAreaSize(Size(500,100));
+    this->passwordText->setTextAreaSize(Size(600,100));
     
     this->passwordText->setMaxLengthEnabled(true);
     
@@ -105,16 +105,17 @@ void RegisterPanel::reg()
     sprintf(msg, "{\"username\":\"%s\",\"password\":\"%s\"}",this->usernameText->getString().c_str(),this->passwordText->getString().c_str());
     SocketIOClient::getInstance()->send("register",msg);
     SocketIOClient::getInstance()->listen("registerRes", [=](SIOClient* client, std::string msg){
-        if(msg.compare("\"succeed\"")==0)
+        if(msg.compare("succeed")==0)
         {
             this->close(CallFunc::create([=](){
                 this->getParent()->addChild(MainMenuLayer::create());
             }));
         }
-        if(msg.compare("\"fail\"")==0)
+        if(msg.compare("fail")==0)
         {
             //TODO
-        }    });
+        }
+    });
 }
 
 void RegisterPanel::close(CallFunc* callfunc)

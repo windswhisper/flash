@@ -1,5 +1,5 @@
-obj/local/armeabi/objs-debug/MyGame_shared/__/__/Classes/SongsInfo.o: \
- jni/../../Classes/SongsInfo.cpp jni/../../Classes/SongsInfo.h \
+obj/local/armeabi/objs-debug/MyGame_shared/__/__/Classes//SongsInfo.o: \
+ jni/../../Classes//SongsInfo.cpp jni/../../Classes//SongsInfo.h \
  /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../cocos2d.h \
  /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../base/ccConfig.h \
  /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../platform/CCPlatformConfig.h \
@@ -336,9 +336,33 @@ obj/local/armeabi/objs-debug/MyGame_shared/__/__/Classes/SongsInfo.o: \
  /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../deprecated/CCNotificationCenter.h \
  /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../deprecated/CCSet.h \
  /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../deprecated/CCString.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../deprecated/CCDeprecated.h
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../deprecated/CCDeprecated.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/document.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/reader.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/rapidjson.h \
+ /Users/DengHao/Documents/Environment/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/cstring \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/allocators.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/encodings.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/internal/meta.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/internal/../rapidjson.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/internal/stack.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/internal/strtod.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/internal/ieee754.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/internal/biginteger.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/internal/diyfp.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/internal/pow10.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/error/error.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/error/../rapidjson.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/internal/strfunc.h \
+ /Users/DengHao/Documents/Environment/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/iterator \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/writer.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/internal/dtoa.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/internal/itoa.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/internal/itoa.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/stringbuffer.h \
+ /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/stringbuffer.h
 
-jni/../../Classes/SongsInfo.h:
+jni/../../Classes//SongsInfo.h:
 
 /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../cocos2d.h:
 
@@ -1013,3 +1037,51 @@ jni/../../Classes/SongsInfo.h:
 /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../deprecated/CCString.h:
 
 /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/cocos/3d/../deprecated/CCDeprecated.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/document.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/reader.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/rapidjson.h:
+
+/Users/DengHao/Documents/Environment/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/cstring:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/allocators.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/encodings.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/internal/meta.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/internal/../rapidjson.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/internal/stack.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/internal/strtod.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/internal/ieee754.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/internal/biginteger.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/internal/diyfp.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/internal/pow10.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/error/error.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/error/../rapidjson.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/internal/strfunc.h:
+
+/Users/DengHao/Documents/Environment/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/iterator:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/writer.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/internal/dtoa.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/internal/itoa.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/internal/itoa.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/stringbuffer.h:
+
+/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/flatbuffers/../json/stringbuffer.h:

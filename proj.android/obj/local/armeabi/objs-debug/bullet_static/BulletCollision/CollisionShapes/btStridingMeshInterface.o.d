@@ -1,8 +1,8 @@
 obj/local/armeabi/objs-debug/bullet_static/BulletCollision/CollisionShapes/btStridingMeshInterface.o: \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/BulletCollision/CollisionShapes/btStridingMeshInterface.cpp \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/BulletCollision/CollisionShapes/btStridingMeshInterface.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btVector3.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btScalar.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/BulletCollision/CollisionShapes/btStridingMeshInterface.cpp \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/BulletCollision/CollisionShapes/btStridingMeshInterface.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btVector3.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btScalar.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/math.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/sys/cdefs.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/sys/cdefs_elf.h \
@@ -33,31 +33,31 @@ obj/local/armeabi/objs-debug/bullet_static/BulletCollision/CollisionShapes/btStr
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/strings.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/memory.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/assert.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btMinMax.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btAlignedAllocator.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/BulletCollision/CollisionShapes/btTriangleCallback.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/BulletCollision/CollisionShapes/btConcaveShape.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/BulletCollision/CollisionShapes/btCollisionShape.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btTransform.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btMatrix3x3.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btVector3.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btQuaternion.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btQuadWord.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btMinMax.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btAlignedAllocator.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/BulletCollision/CollisionShapes/btTriangleCallback.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/BulletCollision/CollisionShapes/btConcaveShape.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/BulletCollision/CollisionShapes/btCollisionShape.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btTransform.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btMatrix3x3.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btVector3.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btQuaternion.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btQuadWord.h \
  /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/stdio.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btMatrix3x3.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/BulletCollision//BroadphaseCollision/btBroadphaseProxy.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btScalar.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btAlignedAllocator.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btSerializer.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btHashMap.h \
- /Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btAlignedObjectArray.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btMatrix3x3.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/BulletCollision//BroadphaseCollision/btBroadphaseProxy.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btScalar.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btAlignedAllocator.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btSerializer.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btHashMap.h \
+ /Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btAlignedObjectArray.h \
  /Users/DengHao/Documents/Environment/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/new
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/BulletCollision/CollisionShapes/btStridingMeshInterface.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/BulletCollision/CollisionShapes/btStridingMeshInterface.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btVector3.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btVector3.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btScalar.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btScalar.h:
 
 /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/math.h:
 
@@ -119,40 +119,40 @@ obj/local/armeabi/objs-debug/bullet_static/BulletCollision/CollisionShapes/btStr
 
 /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/assert.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btMinMax.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btMinMax.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btAlignedAllocator.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btAlignedAllocator.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/BulletCollision/CollisionShapes/btTriangleCallback.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/BulletCollision/CollisionShapes/btTriangleCallback.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/BulletCollision/CollisionShapes/btConcaveShape.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/BulletCollision/CollisionShapes/btConcaveShape.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/BulletCollision/CollisionShapes/btCollisionShape.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/BulletCollision/CollisionShapes/btCollisionShape.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btTransform.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btTransform.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btMatrix3x3.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btMatrix3x3.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btVector3.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btVector3.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btQuaternion.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btQuaternion.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btQuadWord.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btQuadWord.h:
 
 /Users/DengHao/Documents/Environment/ndk/platforms/android-19/arch-arm/usr/include/stdio.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btMatrix3x3.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btMatrix3x3.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/BulletCollision//BroadphaseCollision/btBroadphaseProxy.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/BulletCollision//BroadphaseCollision/btBroadphaseProxy.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btScalar.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btScalar.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btAlignedAllocator.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btAlignedAllocator.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btSerializer.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btSerializer.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btHashMap.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btHashMap.h:
 
-/Users/DengHao/Documents/git/flash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btAlignedObjectArray.h:
+/Users/DengHao/Documents/Coding/cocos2dxproject/blockclash/proj.android/../cocos2d/external/bullet/../bullet/LinearMath/btAlignedObjectArray.h:
 
 /Users/DengHao/Documents/Environment/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/new:
