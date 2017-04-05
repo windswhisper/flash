@@ -72,22 +72,21 @@ bool MainMenuLayer::init()
     this->addChild(menu);
     
     
+    SongsInfo::getInstance();
+    
     return true;
 }
 
 void MainMenuLayer::classic()
 {
-    
     this->close(CallFunc::create([=](){
         this->getParent()->addChild(SongsLayer::create());
     }));
-    
 }
 
 void MainMenuLayer::duel()
 {
     
-    SongsInfo::getInstance();
 }
 void MainMenuLayer::shop()
 {

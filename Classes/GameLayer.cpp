@@ -1,4 +1,6 @@
 #include "GameLayer.h"
+#include "SongsInfo.h"
+
 #include  <iostream>
 #include  <fstream>
 #include "SimpleAudioEngine.h"
@@ -170,7 +172,6 @@ bool GameLayer::init()
     
 	this->speed = 1.5;
 	this->offset = 2 / speed;
-	this->musicFileName = "1.mp3";
     
     this->key1Pos = Vec2(229,350);
     this->keyDis = 318;
@@ -180,8 +181,6 @@ bool GameLayer::init()
     this->rateCount[2] = 0;
     this->rateCount[3] = 0;
     this->score = 0;
-    
-	SimpleAudioEngine::getInstance()->preloadBackgroundMusic(this->musicFileName);
     
     SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/game/hit.plist");
     AnimationCache::getInstance()->addAnimationsWithFile("img/game/hit_ani.plist");
@@ -260,7 +259,6 @@ bool GameLayer::init()
     listenerKeyPad->onKeyReleased = CC_CALLBACK_2(GameLayer::onKeyReleased,this);
     _eventDispatcher->addEventListenerWithSceneGraphPriority(listenerKeyPad, this);
     
-    this->loadFile();
     
 	this->rate = Sprite::create();
 	this->rate->setPosition(960, 450);
@@ -270,13 +268,23 @@ bool GameLayer::init()
     return true;
 }
 
+GameLayer* GameLayer::createWithId(int id,char* name ,char* diff, int mode)
+{
+    auto gamelayer = GameLayer::create();
+    gamelayer->songId = id;
+    strcpy(gamelayer->diff, diff);
+    strcpy(gamelayer->songName, name);
+    gamelayer->loadFile();
+    return gamelayer;
+}
+
 void GameLayer::update(float dt)
 {
     this->t+=dt;
 
 	if (this->t > this->offset&&this->t-dt <= this->offset)
 	{
-		SimpleAudioEngine::getInstance()->playBackgroundMusic(this->musicFileName,false);
+		SimpleAudioEngine::getInstance()->playBackgroundMusic(filename,false);
 	}
     
     while(!this->notes.empty()&&this->notes.at(0)->t < this->t*1000)
@@ -288,7 +296,15 @@ void GameLayer::update(float dt)
 
 void GameLayer::loadFile()
 {
-    std::string str = FileUtils::getInstance()->getStringFromFile("1.osu");
+    sprintf(filename, "songs/%d/%s.mp3",songId,songName);
+    
+    SimpleAudioEngine::getInstance()->preloadBackgroundMusic(filename);
+    
+    char osuFilename[128];
+    
+    sprintf(osuFilename, "songs/%d/%s.osu",songId,diff);
+    
+    std::string str = FileUtils::getInstance()->getStringFromFile(osuFilename);
     
     std::string line;
     

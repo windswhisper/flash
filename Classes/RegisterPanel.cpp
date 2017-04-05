@@ -4,7 +4,6 @@
 
 #include "SocketIOClient.h"
 
-
 USING_NS_CC;
 
 
@@ -65,7 +64,7 @@ bool RegisterPanel::init()
     
     this->usernameText->setMaxLength(10);
     
-    this->usernameText->setPlaceHolder("请输入用户名");
+    this->usernameText->setPlaceHolder("Username");
     
     this->usernameText->setAnchorPoint(Vec2(0,0.5));
         
@@ -83,14 +82,13 @@ bool RegisterPanel::init()
     
     this->passwordText->setMaxLength(12);
     
-    this->passwordText->setPlaceHolder("请输入密码");
+    this->passwordText->setPlaceHolder("Password");
     
     this->passwordText->setAnchorPoint(Vec2(0,0.5));
     
     this->passwordText->setPasswordEnabled(true);
     
     root->addChild(this->passwordText);
-    
     
     
 	Menu* menu = Menu::create(btn_back, btn_reg, NULL);

@@ -186,9 +186,9 @@ void SongsListView::canelTouch()
 void SongsListView::selectItem(int i)
 {
     this->isPause = true;
-    this->selectId = i;
+    this->selectId = SongsInfo::getInstance()->songs[i]->id;
     auto songsLayer = (SongsLayer*)this->getParent();
-    songsLayer->changeCover(i);
+    songsLayer->changeCover(SongsInfo::getInstance()->songs[i]->id);
 
     for(int n=0;n<5;n++)
     {
@@ -214,7 +214,7 @@ void SongsListView::showDiffList(int i)
     {
         MenuItemImage* btn = MenuItemImage::create("img/selectsongs/btn_song.png","img/selectsongs/btn_song_p.png",[=](Ref* pSender){
             auto songsLayer = (SongsLayer*)this->getParent();
-            songsLayer->selectSong(0, 0);
+            songsLayer->selectSong(SongsInfo::getInstance()->songs[i]->id,SongsInfo::getInstance()->songs[i]->name, "1");
         });
         
         auto title = Label::createWithSystemFont("Easy","",72);
