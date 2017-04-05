@@ -107,11 +107,6 @@ bool SongsLayer::init()
 
 	this->rankingList->setVisible(false);
 
-/***
-	
-*******	µÀ¾ßÑ¡Ôñ************
-
-***/
 
 	this->itemSelection = ItemSelection::create();
 
@@ -152,20 +147,29 @@ void SongsLayer::close(CallFunc* callfunc)
 
 void SongsLayer::changeCover(int id)
 {
-    const char* fileName = "img/2.jpg";
+    char fileName[64];
+    
+    sprintf(fileName,"songs/%d/cover.jpg",id);
     
     this->songCover->runAction(Sequence::create(FadeTo::create(0.3f,0),CallFunc::create([=](){this->songCover->setTexture(fileName);}),FadeTo::create(0.3f,255), NULL));
 }
 
-void SongsLayer::selectSong(int id, int diff)
+void SongsLayer::selectSong(int id,char* name, char* diff)
 {
+    this->songId = id;
+    
+    strcpy(songDiff, diff);
+    
+    strcpy(songName, name);
+    
+    
     auto action = EaseSineOut::create(MoveBy::create(1.0f, Vec2(-800,0)));
 
 	this->songsList->runAction(action->clone());
 
 	this->rankingList->setVisible(true);
 
-	this->rankingList->runAction(Sequence::create(action, CallFunc::create([=](){this->btn_back->setVisible(true); }), NULL)); //*****************************************************88
+	this->rankingList->runAction(Sequence::create(action, CallFunc::create([=](){this->btn_back->setVisible(true); }), NULL));
     
 	this->itemSelection->setVisible(true);
 
@@ -195,6 +199,6 @@ void SongsLayer::backToList()
 void SongsLayer::play()
 {
     this->close(CallFunc::create([=]{
-        this->getParent()->addChild(GameLayer::create());
+        this->getParent()->addChild(GameLayer::createWithId(this->songId , this->songName, this->songDiff, 0));
     }));
 }

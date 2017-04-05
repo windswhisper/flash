@@ -22,7 +22,7 @@ void SongsInfo::load()
         
         for(int i=0;i<doc.Size();i++)
         {
-            this->addSong(doc[i]["id"].GetInt(), doc[i]["name"].GetString(), "", "");
+            this->addSong(doc[i]["songId"].GetInt(), doc[i]["name"].GetString(), "", "");
         }
         
         log("%s",doc[0]["name"].GetString());

@@ -83,6 +83,8 @@ public:
     
     CREATE_FUNC(GameLayer);
     
+    static GameLayer* createWithId(int id,char* diff,char* name,int mode);
+    
     void update(float dt);
     
     bool onTouchBegan(Touch *touch, Event *pEvent);
@@ -112,7 +114,7 @@ public:
     void comboIncrese();
     
     void comboClear();
-    
+
     float t;
     
 	float speed;
@@ -123,8 +125,14 @@ public:
     
     float keyDis;
     
-	char* musicFileName;
-
+    int songId;
+    
+    char filename[128];
+    
+    char diff[32];
+    
+    char songName[64];
+    
     Node* root;
     
     Sprite* board;

@@ -65,7 +65,7 @@ bool LoginPanel::init()
     
     this->usernameText->setMaxLength(10);
     
-    this->usernameText->setPlaceHolder("请输入用户名");
+    this->usernameText->setPlaceHolder("Username");
     
     this->usernameText->setAnchorPoint(Vec2(0,0.5));
     
@@ -83,7 +83,7 @@ bool LoginPanel::init()
     
     this->passwordText->setMaxLength(12);
     
-    this->passwordText->setPlaceHolder("请输入密码");
+    this->passwordText->setPlaceHolder("Password");
     
     this->passwordText->setAnchorPoint(Vec2(0,0.5));
     

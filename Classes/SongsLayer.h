@@ -20,7 +20,7 @@ public:
     
     void changeCover(int id);
     
-    void selectSong(int id,int diff);
+    void selectSong(int id,char* name,char* diff);
     
     void backToList();
     
@@ -43,7 +43,12 @@ public:
     Node* rankingList;
     
     Node* itemSelection;
+    
+    int songId;
 
+    char songDiff[32];
+    
+    char songName[64];
 };
 
 #endif
