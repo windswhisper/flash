@@ -147,11 +147,11 @@ void SongsLayer::close(CallFunc* callfunc)
 
 void SongsLayer::changeCover(int id)
 {
-    char fileName[64];
-    
-    sprintf(fileName,"songs/%d/cover.jpg",id);
-    
-    this->songCover->runAction(Sequence::create(FadeTo::create(0.3f,0),CallFunc::create([=](){this->songCover->setTexture(fileName);}),FadeTo::create(0.3f,255), NULL));
+    this->songCover->runAction(Sequence::create(FadeTo::create(0.3f,0),CallFunc::create([=](){
+        char fileName[64];
+        sprintf(fileName,"songs/%d/cover.jpg",id);
+        this->songCover->setTexture(fileName);
+    }),FadeTo::create(0.3f,255), NULL));
 }
 
 void SongsLayer::selectSong(int id,char* name, char* diff)
