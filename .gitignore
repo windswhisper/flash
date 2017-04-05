@@ -1,3 +1,4 @@
 cocos2d/
 proj.win32/
 proj.android/
+.DS_Store
