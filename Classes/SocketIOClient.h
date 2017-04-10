@@ -6,6 +6,7 @@
 #include "extensions/cocos-ext.h"
 #include "network/SocketIO.h"
 
+
 USING_NS_CC;
 using namespace cocos2d::network;
 
@@ -29,6 +30,10 @@ public:
     void onError(SIOClient* client, const std::string& data);
     
     void onClose(SIOClient* client);
+    
+    void lock();
+    
+    void unlock();
     
     SIOClient* client;
     

@@ -1,9 +1,16 @@
 #include "MainMenuLayer.h"
+#include "UserInfo.h"
 #include "SongsInfo.h"
 #include "SongsLayer.h"
 
+#include "SimpleAudioEngine.h"
+
+using namespace CocosDenshion;
+
 bool MainMenuLayer::init()
 {
+    //if(!SimpleAudioEngine::getInstance()->isBackgroundMusicPlaying())
+    //    SimpleAudioEngine::getInstance()->playBackgroundMusic("TheFatRat - Unity.mp3",true);
 
     this->sp = Sprite::create("img/mainmenu/sp.png");
     this->sp->setPosition(500, 500);
@@ -71,9 +78,9 @@ bool MainMenuLayer::init()
     
     this->addChild(menu);
     
-	SongsInfo::getInstance();
-    
     SongsInfo::getInstance();
+    UserInfo::getInstance();
+    
     
     return true;
 }
@@ -88,10 +95,6 @@ void MainMenuLayer::classic()
 void MainMenuLayer::duel()
 {
     
-<<<<<<< HEAD
-    
-=======
->>>>>>> origin/master
 }
 void MainMenuLayer::shop()
 {

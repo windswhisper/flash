@@ -18,7 +18,7 @@ public:
     
     void close(CallFunc* callfunc);
     
-    void changeCover(int id);
+    void changeCover(int id,char* name);
     
     void selectSong(int id,char* name,char* diff);
     
@@ -49,6 +49,8 @@ public:
     char songDiff[32];
     
     char songName[64];
+    
+    bool isSelected;
 };
 
 #endif

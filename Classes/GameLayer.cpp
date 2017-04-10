@@ -8,7 +8,9 @@
 using namespace std;
 using namespace CocosDenshion;
 
-int RATE_SCORE[4] = {0,100,60,20};
+int RATE_SCORE[4] = {0,100,80,40};//{miss,cool,good,poor}
+int RATE_HP[4] = {-10,4,2,-4};
+int MAX_HP = 100;
 
 void Note::remove()
 {
@@ -182,6 +184,8 @@ bool GameLayer::init()
     this->rateCount[3] = 0;
     this->score = 0;
     
+    this->hp = 100;
+    
     SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/game/hit.plist");
     AnimationCache::getInstance()->addAnimationsWithFile("img/game/hit_ani.plist");
     AnimationCache::getInstance()->addAnimationsWithFile("img/game/lhit_ani.plist");
@@ -210,7 +214,14 @@ bool GameLayer::init()
     
     this->addChild(this->comboLabel);
     
+    this->scoreLabel = Label::createWithSystemFont("0000000", "Arial", 80);
    
+    this->scoreLabel->setPosition(1920,1080);
+    
+    this->scoreLabel->setAnchorPoint(Vec2(1,1));
+    
+    this->addChild(this->scoreLabel);
+    
     for(int i=0;i<4;i++)
     {
         this->key[i] = Sprite::create("img/game/stdline.png");
@@ -242,9 +253,32 @@ bool GameLayer::init()
         
     }
     
-    //this->schedule(schedule_selector(GameLayer::droper), 0.5f);
-
+    this->hpFrame = Sprite::create("img/game/hpFrame.png");
+    
+    this->hpFrame->setPosition(1920-100,540);
+    
+    this->addChild(hpFrame);
+    
+    this->hpBar = Sprite::create("img/game/hpBar.png");
+    
+    this->hpBar->setPosition(50,280);
+    
+    this->hpFrame->addChild(hpBar);
+    
+    this->comboFrame = Sprite::create("img/game/comboFrame.png");
+    
+    this->comboFrame->setPosition(100,540);
+    
+    this->addChild(comboFrame);
+    
+    this->comboBar = Sprite::create("img/game/comboBar.png");
+    
+    this->comboBar->setPosition(120,280);
+    
+    this->comboFrame->addChild(comboBar);
+    
     this->t = 0;
+    
     this->scheduleUpdate();
     
     auto dispatcher = Director::getInstance()->getEventDispatcher();
@@ -290,15 +324,17 @@ void GameLayer::update(float dt)
     while(!this->notes.empty()&&this->notes.at(0)->t < this->t*1000)
     {
         this->dropTag(this->notes.at(0)->x);
-        
+    }
+    
+    if(this->notes.empty())
+    {
+        this->complete();
     }
 }
 
 void GameLayer::loadFile()
 {
     sprintf(filename, "songs/%d/%s.mp3",songId,songName);
-    
-    SimpleAudioEngine::getInstance()->preloadBackgroundMusic(filename);
     
     char osuFilename[128];
     
@@ -355,7 +391,7 @@ void GameLayer::loadFile()
             if(data1==320)data1 = 2;
             if(data1==448)data1 = 3;
             
-            if(data4==1)
+            if(data4!=128)
                 this->notes.pushBack(SimpleNote::createSimpleNote(data1, data3, data4, data3));
             if(data4==128)
                 this->notes.pushBack(LongNote::createLongNote(data1, data3, data4, data6));
@@ -492,8 +528,15 @@ void GameLayer::getRate(int rate)
     
     this->score+=RATE_SCORE[rate];
     
+    sprintf(str, "%07d",score);
+    
+    this->scoreLabel->setString(str);
+    
     if(rate!=0)this->comboIncrese();
-    else this->comboClear();
+    else
+        this->comboClear();
+    
+    this->updateHp(RATE_HP[rate]);
 }
 void GameLayer::playAnimate(int col, int type)
 {
@@ -530,4 +573,20 @@ void GameLayer::comboClear()
 {
     this->comboLabel->setString("");
     this->combo=0;
+}
+void GameLayer::complete()
+{
+    
+}
+void GameLayer::updateHp(int delta)
+{
+    this->hp+=delta;
+    
+    if(this->hp<0){
+        this->hp = 0;
+    }
+    if(this->hp>MAX_HP)
+    {
+        this->hp = MAX_HP;
+    }
 }

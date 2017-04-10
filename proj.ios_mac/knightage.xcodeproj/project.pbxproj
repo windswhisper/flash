@@ -17,6 +17,7 @@
 		4731BBFA1E948EC900530117 /* ItemSelection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4731BBF81E948EC900530117 /* ItemSelection.cpp */; };
 		4731BBFD1E94923C00530117 /* songs in Resources */ = {isa = PBXBuildFile; fileRef = 4731BBFC1E94923C00530117 /* songs */; };
 		4755807C1E8A3283002A302F /* RankingList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4755807A1E8A3283002A302F /* RankingList.cpp */; };
+		476C15D31E9B45E60031FA3E /* TheFatRat - Unity.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 476C15D21E9B45E60031FA3E /* TheFatRat - Unity.mp3 */; };
 		47773AF91E78E7040053AC10 /* SongsListView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47773AF71E78E7040053AC10 /* SongsListView.cpp */; };
 		47925D7E1E6E4A58008AE59C /* RegisterPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47925D7C1E6E4A58008AE59C /* RegisterPanel.cpp */; };
 		47A159E21E88EA7B004EAFE9 /* SocketIOClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47A159E01E88EA7B004EAFE9 /* SocketIOClient.cpp */; };
@@ -26,6 +27,8 @@
 		47A6E1F01E6A652F0089E3A9 /* LoginPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47A6E1E91E6A652F0089E3A9 /* LoginPanel.cpp */; };
 		47A6E20A1E6A65800089E3A9 /* img in Resources */ = {isa = PBXBuildFile; fileRef = 47A6E1FC1E6A65800089E3A9 /* img */; };
 		47B9AC951E6E984800953ACA /* MainMenuLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47B9AC931E6E984800953ACA /* MainMenuLayer.cpp */; };
+		47F69BF91E962D54006F3F78 /* UserInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47F69BF71E962D54006F3F78 /* UserInfo.cpp */; };
+		47F69BFC1E963817006F3F78 /* 7AND5 - Remember.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 47F69BFB1E963817006F3F78 /* 7AND5 - Remember.mp3 */; };
 		503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503AE0F617EB97AB00D1A890 /* Icon.icns */; };
 		503AE10017EB989F00D1A890 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FB17EB989F00D1A890 /* AppController.mm */; };
 		503AE10117EB989F00D1A890 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FC17EB989F00D1A890 /* main.m */; };
@@ -125,6 +128,7 @@
 		4731BBFC1E94923C00530117 /* songs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = songs; sourceTree = "<group>"; };
 		4755807A1E8A3283002A302F /* RankingList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RankingList.cpp; sourceTree = "<group>"; };
 		4755807B1E8A3283002A302F /* RankingList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RankingList.h; sourceTree = "<group>"; };
+		476C15D21E9B45E60031FA3E /* TheFatRat - Unity.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "TheFatRat - Unity.mp3"; sourceTree = "<group>"; };
 		47773AF71E78E7040053AC10 /* SongsListView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SongsListView.cpp; sourceTree = "<group>"; };
 		47773AF81E78E7040053AC10 /* SongsListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongsListView.h; sourceTree = "<group>"; };
 		47925D7C1E6E4A58008AE59C /* RegisterPanel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RegisterPanel.cpp; sourceTree = "<group>"; };
@@ -142,6 +146,9 @@
 		47A6E1FC1E6A65800089E3A9 /* img */ = {isa = PBXFileReference; lastKnownFileType = folder; path = img; sourceTree = "<group>"; };
 		47B9AC931E6E984800953ACA /* MainMenuLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainMenuLayer.cpp; sourceTree = "<group>"; };
 		47B9AC941E6E984800953ACA /* MainMenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuLayer.h; sourceTree = "<group>"; };
+		47F69BF71E962D54006F3F78 /* UserInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UserInfo.cpp; sourceTree = "<group>"; };
+		47F69BF81E962D54006F3F78 /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
+		47F69BFB1E963817006F3F78 /* 7AND5 - Remember.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "7AND5 - Remember.mp3"; sourceTree = "<group>"; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		503AE0F717EB97AB00D1A890 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		503AE0FA17EB989F00D1A890 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = ios/AppController.h; sourceTree = SOURCE_ROOT; };
@@ -309,6 +316,8 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				47F69BFB1E963817006F3F78 /* 7AND5 - Remember.mp3 */,
+				476C15D21E9B45E60031FA3E /* TheFatRat - Unity.mp3 */,
 				4731BBFC1E94923C00530117 /* songs */,
 				47A6E1FC1E6A65800089E3A9 /* img */,
 			);
@@ -343,6 +352,8 @@
 				472DA5C01E77809A006D4DB7 /* SongsLayer.h */,
 				47773AF71E78E7040053AC10 /* SongsListView.cpp */,
 				47773AF81E78E7040053AC10 /* SongsListView.h */,
+				47F69BF71E962D54006F3F78 /* UserInfo.cpp */,
+				47F69BF81E962D54006F3F78 /* UserInfo.h */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -508,7 +519,9 @@
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
+				47F69BFC1E963817006F3F78 /* 7AND5 - Remember.mp3 in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
+				476C15D31E9B45E60031FA3E /* TheFatRat - Unity.mp3 in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
 				521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */,
 				47A6E20A1E6A65800089E3A9 /* img in Resources */,
@@ -548,6 +561,7 @@
 				47A6E1EE1E6A652F0089E3A9 /* GameLayer.cpp in Sources */,
 				472DA5C51E77E44A006D4DB7 /* SongsInfo.cpp in Sources */,
 				4731BBFA1E948EC900530117 /* ItemSelection.cpp in Sources */,
+				47F69BF91E962D54006F3F78 /* UserInfo.cpp in Sources */,
 				47A6E1ED1E6A652F0089E3A9 /* AppDelegate.cpp in Sources */,
 				47B9AC951E6E984800953ACA /* MainMenuLayer.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,

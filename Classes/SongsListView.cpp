@@ -188,7 +188,7 @@ void SongsListView::selectItem(int i)
     this->isPause = true;
     this->selectId = SongsInfo::getInstance()->songs[i]->id;
     auto songsLayer = (SongsLayer*)this->getParent();
-    songsLayer->changeCover(SongsInfo::getInstance()->songs[i]->id);
+    songsLayer->changeCover(SongsInfo::getInstance()->songs[i]->id,SongsInfo::getInstance()->songs[i]->name);
 
     for(int n=0;n<5;n++)
     {

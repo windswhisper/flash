@@ -100,6 +100,7 @@ void LoginPanel::login()
     char msg[128];
     sprintf(msg, "{\"username\":\"%s\",\"password\":\"%s\"}",this->usernameText->getString().c_str(),this->passwordText->getString().c_str());
     SocketIOClient::getInstance()->send("login",msg);
+    SocketIOClient::getInstance()->lock();
     SocketIOClient::getInstance()->listen("loginRes", [=](SIOClient* client, std::string msg){
         if(msg.compare("succeed")==0)
         {
@@ -111,6 +112,7 @@ void LoginPanel::login()
         {
             //TODO
         }
+        SocketIOClient::getInstance()->unlock();
     });
 
     
