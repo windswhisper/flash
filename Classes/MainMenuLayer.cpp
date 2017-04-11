@@ -1,6 +1,7 @@
 #include "MainMenuLayer.h"
 #include "SongsInfo.h"
 #include "SongsLayer.h"
+#include "shop\ShopLayer.h"
 
 bool MainMenuLayer::init()
 {
@@ -87,14 +88,13 @@ void MainMenuLayer::classic()
 
 void MainMenuLayer::duel()
 {
-    
-<<<<<<< HEAD
-    
-=======
->>>>>>> origin/master
+
 }
 void MainMenuLayer::shop()
 {
+	this->close(CallFunc::create([=](){
+		this->getParent()->addChild(ShopLayer::create());
+	}));
 }
 void MainMenuLayer::setting()
 {
