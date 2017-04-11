@@ -6,8 +6,14 @@
 #include "RankingList.h"
 #include "ItemSelection.h"
 
+#include "SimpleAudioEngine.h"
+
+using namespace CocosDenshion;
+
+
 bool SongsLayer::init()
 {
+    this->isSelected = false;
     
     this->btn_mainmenu = MenuItemImage::create("img/selectsongs/btn_mainmenu.png", "img/selectsongs/btn_mainmenu_p.png", CC_CALLBACK_0(SongsLayer::backToMenu, this));
     
@@ -96,23 +102,25 @@ bool SongsLayer::init()
     
     this->coverScreen->addChild(this->songCover);
 
-	/**************************************************************************************************/
+    
+    
 	this->rankingList = RankingList::create();
 
-	this->rankingList->setPosition(1220 + 800, 280);
-
-//	this->rankList->runAction(Sequence::create(DelayTime::create(1), FadeTo::create(0.5f, 255), NULL));
+	this->rankingList->setPosition(1220 , 280-1000);
+    
+    this->rankingList->setCascadeOpacityEnabled(true);
     
 	this->addChild(this->rankingList);
 
-	this->rankingList->setVisible(false);
 
 
 	this->itemSelection = ItemSelection::create();
 
-	this->itemSelection->setPosition(1408 + 800,680);
+	this->itemSelection->setPosition(1408 + 1000,680);
 
-	this->itemSelection->setVisible(false);
+    this->itemSelection->setCascadeOpacityEnabled(true);
+    
+	this->itemSelection->setOpacity(0);
 
 	this->addChild(this->itemSelection);
 
@@ -137,25 +145,36 @@ void SongsLayer::close(CallFunc* callfunc)
 {
     this->getEventDispatcher()->removeEventListenersForTarget(this,true);
     
+    this->btn_back->setVisible(false);
     this->playButton->runAction(FadeTo::create(0.5f,0));
     this->songCover->runAction(FadeTo::create(0.5f,0));
     this->coverScreen->runAction(Sequence::create(DelayTime::create(0.5f),EaseSineIn::create(ScaleTo::create(0.5f, 1,0)),NULL));
     this->songsList->runAction(Sequence::create(DelayTime::create(0.1f),(EaseSineOut::create(MoveBy::create(1,Vec2(-800,0)))),NULL));
     this->btn_mainmenu->runAction(Sequence::create(DelayTime::create(0.3f),(EaseSineOut::create(MoveBy::create(1,Vec2(0,300)))),NULL));
+    this->rankingList->runAction(Sequence::create(Spawn::create(EaseSineOut::create(MoveBy::create(0.4f, Vec2(0,-1000))),FadeTo::create(0.4f, 0), NULL), NULL));
+    this->itemSelection->runAction(Sequence::create(Spawn::create(EaseSineOut::create(MoveBy::create(0.4f, Vec2(1000,0))),FadeTo::create(0.4f, 0), NULL), NULL));
     this->btn_setting->runAction(Sequence::create(DelayTime::create(0.3f),(EaseSineOut::create(MoveBy::create(1,Vec2(0,300)))),callfunc,CallFunc::create(CC_CALLBACK_0(SongsLayer::removeFromParent, this)),NULL));
 }
 
-void SongsLayer::changeCover(int id)
+void SongsLayer::changeCover(int id,char* name)
 {
+    
     this->songCover->runAction(Sequence::create(FadeTo::create(0.3f,0),CallFunc::create([=](){
         char fileName[64];
         sprintf(fileName,"songs/%d/cover.jpg",id);
         this->songCover->setTexture(fileName);
+        
+        sprintf(fileName, "songs/%d/%s.mp3",id,name);
+        SimpleAudioEngine::getInstance()->playBackgroundMusic(fileName,true);
     }),FadeTo::create(0.3f,255), NULL));
 }
 
 void SongsLayer::selectSong(int id,char* name, char* diff)
 {
+    if(isSelected)return;
+    
+    isSelected = true;
+    
     this->songId = id;
     
     strcpy(songDiff, diff);
@@ -166,30 +185,33 @@ void SongsLayer::selectSong(int id,char* name, char* diff)
     auto action = EaseSineOut::create(MoveBy::create(1.0f, Vec2(-800,0)));
 
 	this->songsList->runAction(action->clone());
-
-	this->rankingList->setVisible(true);
-
-	this->rankingList->runAction(Sequence::create(action, CallFunc::create([=](){this->btn_back->setVisible(true); }), NULL));
     
-	this->itemSelection->setVisible(true);
-
-	this->itemSelection->runAction(action->clone());
+    this->rankingList->runAction(Sequence::create(DelayTime::create(1.0f),Spawn::create(EaseSineOut::create(MoveBy::create(0.6f, Vec2(0,1000))),FadeTo::create(0.6f, 255), NULL), NULL));
+    
+    this->itemSelection->runAction(Sequence::create(DelayTime::create(0.8f),Spawn::create(EaseSineOut::create(MoveBy::create(0.4f, Vec2(-1000,0))),FadeTo::create(0.4f, 255), NULL), NULL));
 
     this->coverScreen->runAction(action->clone());
     
-    this->playButton->runAction(action->clone());
+    this->playButton->runAction(Sequence::create(action->clone(),CallFunc::create([=](){
+        this->btn_back->setVisible(true);
+    }),NULL));
+ 
 }
 void SongsLayer::backToList()
 {
+    if(!isSelected)return;
+    
+    isSelected=false;
+    
     auto action = EaseSineOut::create(MoveBy::create(1.0f, Vec2(800,0)));
     
     this->songsList->runAction(action->clone());
     
     this->coverScreen->runAction(action->clone());
 
-	this->rankingList->runAction(Sequence::create(action->clone(), CallFunc::create([=](){this->rankingList->setVisible(false); }), NULL));
-
-	this->itemSelection->runAction(Sequence::create(action, CallFunc::create([=](){this->itemSelection->setVisible(false); }), NULL));
+    this->rankingList->runAction(Sequence::create(Spawn::create(EaseSineOut::create(MoveBy::create(0.4f, Vec2(0,-1000))),FadeTo::create(0.4f, 0), NULL), NULL));
+    
+    this->itemSelection->runAction(Sequence::create(Spawn::create(EaseSineOut::create(MoveBy::create(0.4f, Vec2(1000,0))),FadeTo::create(0.4f, 0), NULL), NULL));
     
     this->playButton->runAction(action->clone());
     
@@ -199,6 +221,7 @@ void SongsLayer::backToList()
 void SongsLayer::play()
 {
     this->close(CallFunc::create([=]{
+        SimpleAudioEngine::getInstance()->stopBackgroundMusic();
         this->getParent()->addChild(GameLayer::createWithId(this->songId , this->songName, this->songDiff, 0));
     }));
 }

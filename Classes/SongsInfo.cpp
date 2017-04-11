@@ -14,9 +14,8 @@ SongsInfo* SongsInfo::getInstance()
 void SongsInfo::load()
 {
     SocketIOClient::getInstance()->send("songsList", "");
+    SocketIOClient::getInstance()->lock();
     SocketIOClient::getInstance()->listen("songsListRes", [=](SIOClient* client, std::string msg){
-        
-
         rapidjson::Document doc;
         doc.Parse<0>(msg.c_str());
         
@@ -25,7 +24,7 @@ void SongsInfo::load()
             this->addSong(doc[i]["songId"].GetInt(), doc[i]["name"].GetString(), "", "");
         }
         
-        log("%s",doc[0]["name"].GetString());
+        SocketIOClient::getInstance()->unlock();
     });
 
 }

@@ -12,7 +12,24 @@ public:
     
     CREATE_FUNC(GameScene);
     
+    static GameScene* getInstance();
+    
+    void lockScreen();
+    
+    void unlockScreen();
+    
     Sprite* bg;
+    
+    Layer* lockLayer;
+    
+    int lockCount;
+    
+    Sprite* ringIn;
+    
+    Sprite* ringOut;
+    
+    Sprite* lockText;
 };
+static GameScene* _gamescene;
 
 #endif

@@ -115,6 +115,10 @@ public:
     
     void comboClear();
 
+    void complete();
+    
+    void updateHp(int delta);
+    
     float t;
     
 	float speed;
@@ -143,15 +147,25 @@ public:
     
     Sprite* hitEffect[4];
     
+    Sprite* comboFrame;
+    
+    Sprite* hpFrame;
+    
+    Sprite* comboBar;
+    
+    Sprite* hpBar;
+    
     Vector<Note*> notes;
     
     Vector<Note*> tags[4];
 
 	Sprite* rate;
 
+    int hp;
+    
     int score;
     
-	Label* socreLabel;
+	Label* scoreLabel;
     
     LabelAtlas* comboLabel;
     

@@ -105,6 +105,7 @@ void RegisterPanel::reg()
     char msg[128];
     sprintf(msg, "{\"username\":\"%s\",\"password\":\"%s\"}",this->usernameText->getString().c_str(),this->passwordText->getString().c_str());
     SocketIOClient::getInstance()->send("register",msg);
+    SocketIOClient::getInstance()->lock();
     SocketIOClient::getInstance()->listen("registerRes", [=](SIOClient* client, std::string msg){
         if(msg.compare("succeed")==0)
         {
@@ -116,7 +117,7 @@ void RegisterPanel::reg()
         {
             //TODO
         }
-    });
+        SocketIOClient::getInstance()->unlock();    });
 }
 
 void RegisterPanel::close(CallFunc* callfunc)
