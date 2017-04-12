@@ -1,6 +1,7 @@
 #include "GameScene.h"
 #include "GameLayer.h"
 #include "LoginPanel.h"
+#include "shop/ShopLayer.h"
 
 #include "SocketIOClient.h"
 
