@@ -11,6 +11,7 @@ using namespace CocosDenshion;
 int RATE_SCORE[4] = {0,100,80,40};//{miss,cool,good,poor}
 int RATE_HP[4] = {-10,4,2,-4};
 int MAX_HP = 100;
+int MAX_COMBO = 100;
 
 void Note::remove()
 {
@@ -255,25 +256,45 @@ bool GameLayer::init()
     
     this->hpFrame = Sprite::create("img/game/hpFrame.png");
     
-    this->hpFrame->setPosition(1920-100,540);
+    this->hpFrame->setPosition(1920-100+400,540);
+    
+    this->hpFrame->runAction(EaseSineOut::create(MoveBy::create(0.4f, Vec2(-400,0))));
     
     this->addChild(hpFrame);
     
-    this->hpBar = Sprite::create("img/game/hpBar.png");
+    this->hpBar = ProgressTimer::create(Sprite::create("img/game/hpBar.png"));
     
-    this->hpBar->setPosition(50,280);
+    this->hpBar->setType(ProgressTimer::Type::BAR);
+    
+    this->hpBar->setMidpoint(Point(1, 0));
+    
+    this->hpBar->setBarChangeRate(Point(0, 1));
+    
+    this->hpBar->setPercentage(100);
+    
+    this->hpBar->setPosition(93,310);
     
     this->hpFrame->addChild(hpBar);
     
     this->comboFrame = Sprite::create("img/game/comboFrame.png");
     
-    this->comboFrame->setPosition(100,540);
+    this->comboFrame->setPosition(100-400,540);
+    
+    this->comboFrame->runAction(EaseSineOut::create(MoveBy::create(0.4f, Vec2(400,0))));
     
     this->addChild(comboFrame);
     
-    this->comboBar = Sprite::create("img/game/comboBar.png");
+    this->comboBar = ProgressTimer::create(Sprite::create("img/game/comboBar.png"));
     
-    this->comboBar->setPosition(120,280);
+    this->comboBar->setType(ProgressTimer::Type::BAR);
+    
+    this->comboBar->setMidpoint(Point(1, 0));
+    
+    this->comboBar->setBarChangeRate(Point(0, 1));
+    
+    this->comboBar->setPercentage(0);
+    
+    this->comboBar->setPosition(179,310);
     
     this->comboFrame->addChild(comboBar);
     
@@ -568,11 +589,14 @@ void GameLayer::comboIncrese()
     this->comboLabel->setPositionY(680);
     this->comboLabel->stopAllActions();
     this->comboLabel->runAction(MoveBy::create(0.2f, Vec2(0,20)));
+    
+    this->comboBar->setPercentage(combo*100.0f/MAX_COMBO);
 }
 void GameLayer::comboClear()
 {
     this->comboLabel->setString("");
     this->combo=0;
+    this->comboBar->setPercentage(combo*100.0f/MAX_COMBO);
 }
 void GameLayer::complete()
 {
@@ -589,4 +613,6 @@ void GameLayer::updateHp(int delta)
     {
         this->hp = MAX_HP;
     }
+    
+    this->hpBar->setPercentage(hp*100.0f/MAX_HP);
 }

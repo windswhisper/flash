@@ -151,9 +151,9 @@ public:
     
     Sprite* hpFrame;
     
-    Sprite* comboBar;
+    ProgressTimer* comboBar;
     
-    Sprite* hpBar;
+    ProgressTimer* hpBar;
     
     Vector<Note*> notes;
     
