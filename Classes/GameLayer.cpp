@@ -359,7 +359,7 @@ void GameLayer::loadFile()
     
     char osuFilename[128];
     
-    sprintf(osuFilename, "songs/%d/%s.osu",songId,diff);
+    sprintf(osuFilename, "songs/%d/%s[%s].osu",songId,songName,diff);
     
     std::string str = FileUtils::getInstance()->getStringFromFile(osuFilename);
     

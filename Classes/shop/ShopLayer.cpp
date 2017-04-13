@@ -1,8 +1,13 @@
 #include "ShopLayer.h"
 #include "SongsExtraction.h"
-#include "SongsPackage.h"
 #include "MainMenuLayer.h"
 
+ShopLayer::ShopLayer()
+{
+}
+ShopLayer::~ShopLayer()
+{
+}
 bool ShopLayer::init()
 {
 	Size visiblesize = Director::getInstance()->getVisibleSize();

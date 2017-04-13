@@ -2,7 +2,7 @@
 #include "UserInfo.h"
 #include "SongsInfo.h"
 #include "SongsLayer.h"
-#include "shop\ShopLayer.h"
+#include "shop/ShopLayer.h"
 
 #include "SimpleAudioEngine.h"
 
@@ -95,11 +95,7 @@ void MainMenuLayer::classic()
 
 void MainMenuLayer::duel()
 {
-<<<<<<< HEAD
-
-=======
     
->>>>>>> origin/master
 }
 void MainMenuLayer::shop()
 {

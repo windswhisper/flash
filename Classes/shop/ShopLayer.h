@@ -10,6 +10,8 @@ USING_NS_CC;
 
 class ShopLayer : public Layer
 {
+    ShopLayer();
+    ~ShopLayer();
 public:
 	virtual bool init();
 

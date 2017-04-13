@@ -21,25 +21,40 @@ void SongsInfo::load()
         
         for(int i=0;i<doc.Size();i++)
         {
-            this->addSong(doc[i]["songId"].GetInt(), doc[i]["name"].GetString(), "", "");
+            this->addSong(doc[i]["id"].GetInt(), doc[i]["name"].GetString(), "", "",doc[i]["diffName"].GetString(),doc[i]["diffLevel"].GetInt());
         }
         
         SocketIOClient::getInstance()->unlock();
     });
-
+    
 }
 
-void SongsInfo::addSong(int id,const char *name,const char *length,const char *artist)
+void SongsInfo::addSong(int id,const char *name,const char *length,const char *artist,const char* diffName,int diffLevel)
 {
-    auto song = new Song();
+    if(this->songs.empty()||this->songs.at(this->songs.size()-1)->id != id)
+    {
+        auto song = new Song();
+        
+        song->id = id;
+        
+        strcpy(song->name, name);
+        
+        strcpy(song->length, length);
+        
+        strcpy(song->artist, artist);
+        
+        this->songs.push_back(song);
+    }
+    auto diff = new Diffcult();
     
-    song->id = id;
+    strcpy(diff->name , diffName);
     
-    strcpy(song->name, name);
+    diff->level = diffLevel;
     
-    strcpy(song->length, length);
-    
-    strcpy(song->artist, artist);
+    this->songs.at(this->songs.size()-1)->diffs.push_back(diff);
+}
 
-    this->songs.push_back(song);
+Song* SongsInfo::getInfoById(int id)
+{
+    //TODO
 }
