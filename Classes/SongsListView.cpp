@@ -210,14 +210,15 @@ void SongsListView::selectItem(int i)
 void SongsListView::showDiffList(int i)
 {
     diffList = Menu::create();
-    for(int n=0;n<3;n++)
+    auto info = SongsInfo::getInstance()->songs[i];
+    for(int n=0;n<info->diffs.size();n++)
     {
         MenuItemImage* btn = MenuItemImage::create("img/selectsongs/btn_song.png","img/selectsongs/btn_song_p.png",[=](Ref* pSender){
             auto songsLayer = (SongsLayer*)this->getParent();
-            songsLayer->selectSong(SongsInfo::getInstance()->songs[i]->id,SongsInfo::getInstance()->songs[i]->name, "1");
+            songsLayer->selectSong(info->id,info->name, info->diffs.at(n)->name);
         });
         
-        auto title = Label::createWithSystemFont("Easy","",72);
+        auto title = Label::createWithSystemFont(info->diffs.at(n)->name,"",72);
         
         title->setAnchorPoint(Vec2(0,0.5));
         

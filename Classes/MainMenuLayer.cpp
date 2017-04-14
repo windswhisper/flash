@@ -2,8 +2,12 @@
 #include "UserInfo.h"
 #include "SongsInfo.h"
 #include "SongsLayer.h"
+<<<<<<< HEAD
 #include "shop\ShopLayer.h"
 #include "PK/PKSelectDiff.h"
+=======
+#include "shop/ShopLayer.h"
+>>>>>>> b952feb8cf78420ce062dd740a637d456f039900
 
 #include "SimpleAudioEngine.h"
 
@@ -96,9 +100,13 @@ void MainMenuLayer::classic()
 
 void MainMenuLayer::duel()
 {
+<<<<<<< HEAD
 	this->close(CallFunc::create([=](){
 		this->getParent()->addChild(PKSelectDiff::create());
 	}));
+=======
+    
+>>>>>>> b952feb8cf78420ce062dd740a637d456f039900
 }
 void MainMenuLayer::shop()
 {
