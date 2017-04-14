@@ -37,6 +37,8 @@ private:
 
 	Button* items[20];
 
+
+
 //	Sprite* btn_sel;
 
 //	Sprite* itemSel;

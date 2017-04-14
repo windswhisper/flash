@@ -39,7 +39,7 @@ ShopItemInfo* ShopItemInfo::createWithInfo(char* ShopItemID)
 
 void ShopItemInfo::setShopItemID()
 {
-	shopItemIdText = Text::create(shopItemID, "Arial", 72);
+	shopItemIdText = Text::create(shopItemID, "", 72);
 
 	shopItemIdText->setPosition(Vec2(250, 850));
 
