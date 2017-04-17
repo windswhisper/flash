@@ -171,6 +171,8 @@ public:
     
     int combo;
     
+    int maxCombo;
+    
     int rateCount[3];
 };
 

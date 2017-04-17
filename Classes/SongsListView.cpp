@@ -224,13 +224,29 @@ void SongsListView::showDiffList(int i)
         
         title->setPosition(80,100);
         
+        char str[10];
+        
+        sprintf(str, "Lv.%d",info->diffs.at(n)->level);
+        
+        auto level = Label::createWithSystemFont(str,"",72);
+        
+        level->setAnchorPoint(Vec2(0,0.5));
+        
+        level->setPosition(500,100);
+        
+        btn->addChild(level);
+        
         btn->addChild(title);
         
         btn->setPosition(0,-n*160);
         
         diffList->addChild(btn);
     }
-
+    MenuItemImage* backBtn = MenuItemImage::create("img/selectsongs/btn_song.png","img/selectsongs/btn_song_p.png",[=](Ref* pSender){
+        this->cancelSelect();
+    });
+    backBtn->setPosition(0,160);
+    diffList->addChild(backBtn);
     diffList->setPosition(0,this->itemSong.at(i)->getPositionY()-option_height);
     this->root->addChild(diffList);
 }
@@ -242,10 +258,13 @@ void SongsListView::cancelSelect()
             this->itemSong.at(selectId+n+1)->runAction(Sequence::create(DelayTime::create(0.5f),FadeTo::create(0.2f,255),NULL));
     }
     
+    Director::getInstance()->getEventDispatcher()->removeEventListenersForTarget(this->diffList);
+    
     this->diffList->runAction(FadeTo::create(0.2f,0));
 
     this->root->runAction(Sequence::create(DelayTime::create(0.5f),CallFunc::create([=](){
         this->isPause = false;
+        this->diffList->removeFromParent();
     }), NULL));
 }
 

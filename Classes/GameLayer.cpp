@@ -1,5 +1,6 @@
 #include "GameLayer.h"
 #include "SongsInfo.h"
+#include "SocketIOClient.h"
 
 #include  <iostream>
 #include  <fstream>
@@ -10,8 +11,9 @@ using namespace CocosDenshion;
 
 int RATE_SCORE[4] = {0,100,80,40};//{miss,cool,good,poor}
 int RATE_HP[4] = {-10,4,2,-4};
+int RATE_STD[4] = {0,40,80,100};
 int MAX_HP = 100;
-int MAX_COMBO = 100;
+int MAX_POWER = 100;
 
 void Note::remove()
 {
@@ -184,6 +186,8 @@ bool GameLayer::init()
     this->rateCount[2] = 0;
     this->rateCount[3] = 0;
     this->score = 0;
+    this->maxCombo = 0;
+    this->combo = 0;
     
     this->hp = 100;
     
@@ -349,6 +353,7 @@ void GameLayer::update(float dt)
     
     if(this->notes.empty())
     {
+        this->unscheduleUpdate();
         this->complete();
     }
 }
@@ -508,10 +513,10 @@ void GameLayer::click(int col)
 
     Note* tag = this->tags[col].at(0);
     
-    if (abs((this->t - this->offset) * 1000 - tag->t) > 200) return;
-	else if (abs((this->t - this->offset) * 1000 - tag->t) > 150) this->getRate(3);
-	else if (abs((this->t - this->offset) * 1000 - tag->t) > 60) this->getRate(2);
-	else if (abs((this->t - this->offset) * 1000 - tag->t) > 0) this->getRate(1);
+    if (abs((this->t - this->offset) * 1000 - tag->t) > RATE_STD[3]) return;
+	else if (abs((this->t - this->offset) * 1000 - tag->t) > RATE_STD[2]) this->getRate(3);
+	else if (abs((this->t - this->offset) * 1000 - tag->t) > RATE_STD[1]) this->getRate(2);
+	else if (abs((this->t - this->offset) * 1000 - tag->t) > RATE_STD[0]) this->getRate(1);
     
     tag->click();
     
@@ -581,6 +586,7 @@ void GameLayer::playAnimate(int col, int type)
 void GameLayer::comboIncrese()
 {
     this->combo++;
+    if(this->combo>this->maxCombo)this->maxCombo = this->combo;
     
     char str[20];
     sprintf(str, "%d",this->combo);
@@ -590,17 +596,20 @@ void GameLayer::comboIncrese()
     this->comboLabel->stopAllActions();
     this->comboLabel->runAction(MoveBy::create(0.2f, Vec2(0,20)));
     
-    this->comboBar->setPercentage(combo*100.0f/MAX_COMBO);
+    this->comboBar->setPercentage(combo*100.0f/MAX_POWER);
 }
 void GameLayer::comboClear()
 {
     this->comboLabel->setString("");
     this->combo=0;
-    this->comboBar->setPercentage(combo*100.0f/MAX_COMBO);
+    this->comboBar->setPercentage(combo*100.0f/MAX_POWER);
 }
 void GameLayer::complete()
 {
-    
+    this->removeFromParent();
+    char str[256];
+    sprintf(str, "{\"songId\":%d,\"diffName\":\"%s\",\"score\":%d,\"grade\":%d,\"combo\":%d,\"missCount\":%d,\"poorCount\":%d,\"goodCount\":%d,\"coolCount\":%d,\"acc\":%d}",songId,diff,score,1,maxCombo,rateCount[0],rateCount[3],rateCount[2],rateCount[1],100);
+    SocketIOClient::getInstance()->send("uploadScore", str);
 }
 void GameLayer::updateHp(int delta)
 {
