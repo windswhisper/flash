@@ -1,12 +1,9 @@
 #include "GameScene.h"
 #include "GameLayer.h"
 #include "LoginPanel.h"
-<<<<<<< HEAD
 #include "shop/ShopLayer.h"
 #include "PK/PKSelectDiff.h"
 #include "GameOver.h"
-=======
->>>>>>> b952feb8cf78420ce062dd740a637d456f039900
 
 #include "SocketIOClient.h"
 
@@ -26,8 +23,8 @@ bool GameScene::init()
     
     this->addChild(this->bg);
     
-//    this->addChild(LoginPanel::create());
-	this->addChild(GameOver::create());
+    this->addChild(LoginPanel::create());
+//	this->addChild(PKSelectDiff::create());
 
     
 

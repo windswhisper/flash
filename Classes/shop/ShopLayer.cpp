@@ -97,13 +97,6 @@ bool ShopLayer::init()
 	return true;
 }
 
-void ShopLayer::backToMenu()
-{
-	this->removeAllChildren();
-
-	this->getParent()->addChild(MainMenuLayer::create());
-}
-
 Sprite* ShopLayer::addPressSprite()
 {
 	tabSelect = Sprite::create("img/shop/tab_select.png");
@@ -202,4 +195,11 @@ void ShopLayer::close()
 	this->removeChild(node);
 
 	button->removeChild(tabSelect);
+}
+
+void ShopLayer::backToMenu()
+{
+	this->removeAllChildren();
+
+	this->getParent()->addChild(MainMenuLayer::create());
 }

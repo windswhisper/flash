@@ -27,6 +27,8 @@ public:
 
 	void unlockScreen();
 
+	void close(CallFunc* callfunc);
+
 	MenuItemImage* btn_mainMenu;
 
 	MenuItemImage* btn_setting;
@@ -39,6 +41,8 @@ public:
 
 	Sprite* diff_difficult;
 
+	Sprite* ornament;
+
 	RankingList* rankingList;
 
 	Layer* lockLayer;
@@ -50,6 +54,12 @@ public:
 	Sprite* ringOut;
 
 	Sprite* lockText;
+
+	Sprite* diffUp;
+
+	Sprite* diffMid;
+
+	Sprite* diffDown;
 };
 
 #endif

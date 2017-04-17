@@ -95,7 +95,7 @@ bool GameOver::init()
 
 	this->addChild(menu);
 
-
+	//ÆÀ¼Û
 	evaluation = Sprite::create("img/GameOver/ranking-SSS@2x.png");
 
 	evaluation->setScale(0.6);
