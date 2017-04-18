@@ -173,7 +173,7 @@ public:
     
     int maxCombo;
     
-    int rateCount[3];
+    int rateCount[4];
 };
 
 static GameLayer* _gamelayer;

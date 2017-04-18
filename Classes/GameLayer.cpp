@@ -1,6 +1,7 @@
 #include "GameLayer.h"
 #include "SongsInfo.h"
 #include "SocketIOClient.h"
+#include "GameOver.h"
 
 #include  <iostream>
 #include  <fstream>
@@ -14,6 +15,7 @@ int RATE_HP[4] = {-10,4,2,-4};
 int RATE_STD[4] = {0,40,80,100};
 int MAX_HP = 100;
 int MAX_POWER = 100;
+float COMBO_BUFF = 2.0f;
 
 void Note::remove()
 {
@@ -114,7 +116,7 @@ void LongNote::display()
     this->pics.pushBack(p);
     
     this->pics.reverse();
-
+    
     this->runAction(Sequence::create(MoveBy::create(_gamelayer->offset+0.2f, Vec2(0,-3000*(_gamelayer->offset+0.2f)/_gamelayer->offset)),CallFunc::create([=]{this->miss();}),MoveBy::create((this->endt-this->t)/1000.0f, Vec2(0,-2*(this->endt-this->t))),CallFunc::create([=]{this->remove();}),NULL));
 }
 void LongNote::miss()
@@ -127,11 +129,11 @@ void LongNote::miss()
 }
 void LongNote::click()
 {    if(this->status == 0)
-    {
-        this->status = 1;
-        _gamelayer->playAnimate(this->x, 1);
-        this->scheduleUpdate();
-    }
+{
+    this->status = 1;
+    _gamelayer->playAnimate(this->x, 1);
+    this->scheduleUpdate();
+}
 }
 void LongNote::release()
 {
@@ -175,8 +177,8 @@ bool GameLayer::init()
 {
     _gamelayer = this;
     
-	this->speed = 1.5;
-	this->offset = 2 / speed;
+    this->speed = 1.5;
+    this->offset = 2 / speed;
     
     this->key1Pos = Vec2(229,350);
     this->keyDis = 318;
@@ -203,6 +205,12 @@ bool GameLayer::init()
     
     board->setRotation3D(Vec3(-40,0,0));
     
+    board->setCascadeOpacityEnabled(true);
+    
+    board->setOpacity(0);
+    
+    board->runAction(FadeTo::create(0.4f, 255));
+    
     board->setScale(0.25);
     
     board->setPosition(0,250);
@@ -220,7 +228,7 @@ bool GameLayer::init()
     this->addChild(this->comboLabel);
     
     this->scoreLabel = Label::createWithSystemFont("0000000", "Arial", 80);
-   
+    
     this->scoreLabel->setPosition(1920,1080);
     
     this->scoreLabel->setAnchorPoint(Vec2(1,1));
@@ -319,10 +327,10 @@ bool GameLayer::init()
     _eventDispatcher->addEventListenerWithSceneGraphPriority(listenerKeyPad, this);
     
     
-	this->rate = Sprite::create();
-	this->rate->setPosition(960, 450);
-	this->addChild(this->rate);
-
+    this->rate = Sprite::create();
+    this->rate->setPosition(960, 450);
+    this->addChild(this->rate);
+    
     
     return true;
 }
@@ -340,11 +348,11 @@ GameLayer* GameLayer::createWithId(int id,char* name ,char* diff, int mode)
 void GameLayer::update(float dt)
 {
     this->t+=dt;
-
-	if (this->t > this->offset&&this->t-dt <= this->offset)
-	{
-		SimpleAudioEngine::getInstance()->playBackgroundMusic(filename,false);
-	}
+    
+    if (this->t > this->offset&&this->t-dt <= this->offset)
+    {
+        SimpleAudioEngine::getInstance()->playBackgroundMusic(filename,false);
+    }
     
     while(!this->notes.empty()&&this->notes.at(0)->t < this->t*1000)
     {
@@ -353,8 +361,18 @@ void GameLayer::update(float dt)
     
     if(this->notes.empty())
     {
-        this->unscheduleUpdate();
-        this->complete();
+        bool empty = true;
+        for(int i=0;i<4;i++)
+        {
+            if(!tags[i].empty())empty = false;
+        }
+        if(empty)
+        {
+            this->unscheduleUpdate();
+            this->board->runAction(Sequence::create(DelayTime::create(2),CallFunc::create([=](){
+                this->complete();
+            }),NULL));
+        }
     }
 }
 
@@ -491,32 +509,32 @@ void GameLayer::onKeyReleased(EventKeyboard::KeyCode keyCode, cocos2d::Event *ev
 
 void GameLayer::dropTag(int col)
 {
-	Note* tag = this->notes.at(0);
-
+    Note* tag = this->notes.at(0);
+    
     tag->display();
-
+    
     tag->setPosition(key1Pos+Vec2(keyDis*col,3000));
     
     this->board->addChild(tag);
     
     this->tags[col].pushBack(tag);
     
-	this->notes.erase(0);
+    this->notes.erase(0);
 }
 
 void GameLayer::click(int col)
 {
     this->pressLight[col]->stopAllActions();
     this->pressLight[col]->setOpacity(255);
-
+    
     if(this->tags[col].size()==0)return;
-
+    
     Note* tag = this->tags[col].at(0);
     
     if (abs((this->t - this->offset) * 1000 - tag->t) > RATE_STD[3]) return;
-	else if (abs((this->t - this->offset) * 1000 - tag->t) > RATE_STD[2]) this->getRate(3);
-	else if (abs((this->t - this->offset) * 1000 - tag->t) > RATE_STD[1]) this->getRate(2);
-	else if (abs((this->t - this->offset) * 1000 - tag->t) > RATE_STD[0]) this->getRate(1);
+    else if (abs((this->t - this->offset) * 1000 - tag->t) > RATE_STD[2]) this->getRate(3);
+    else if (abs((this->t - this->offset) * 1000 - tag->t) > RATE_STD[1]) this->getRate(2);
+    else if (abs((this->t - this->offset) * 1000 - tag->t) > RATE_STD[0]) this->getRate(1);
     
     tag->click();
     
@@ -606,9 +624,20 @@ void GameLayer::comboClear()
 }
 void GameLayer::complete()
 {
-    this->removeFromParent();
+    auto shadow = LayerColor::create(Color4B(0,0,0,255));
+    shadow->setOpacity(0);
+    shadow->runAction(Sequence::create(FadeTo::create(0.5f, 255),DelayTime::create(0.4f),CallFunc::create([=](){
+        auto overLayer = GameOver::create();
+        overLayer->setData(songId,songName, diff,3, score, maxCombo, 100,rateCount[0],rateCount[3],rateCount[2],rateCount[1]);
+        this->getParent()->addChild(overLayer);
+        this->removeFromParent();
+    }),FadeTo::create(0.5f, 255),CallFunc::create([=](){
+        shadow->removeFromParent();
+    }), NULL));
+    this->getParent()->addChild(shadow);
+    
     char str[256];
-    sprintf(str, "{\"songId\":%d,\"diffName\":\"%s\",\"score\":%d,\"grade\":%d,\"combo\":%d,\"missCount\":%d,\"poorCount\":%d,\"goodCount\":%d,\"coolCount\":%d,\"acc\":%d}",songId,diff,score,1,maxCombo,rateCount[0],rateCount[3],rateCount[2],rateCount[1],100);
+    sprintf(str, "{\"songId\":%d,\"diffName\":\"%s\",\"score\":%d,\"grade\":%d,\"combo\":%d,\"missCount\":%d,\"poorCount\":%d,\"goodCount\":%d,\"coolCount\":%d,\"acc\":%d}",songId,diff,score,3,maxCombo,rateCount[0],rateCount[3],rateCount[2],rateCount[1],100);
     SocketIOClient::getInstance()->send("uploadScore", str);
 }
 void GameLayer::updateHp(int delta)

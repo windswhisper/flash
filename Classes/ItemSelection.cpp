@@ -78,6 +78,19 @@ void ItemSelection::setItem()
 
 		node->addChild(items[i]);
 
+		char itemIconName[100];
+
+		sprintf(itemIconName, "img/selectsongs/itemIcon/itemIcon%d.png", i + 1);
+
+		auto itemIcon = Sprite::create(itemIconName);
+
+		itemIcon->setScale(0.3);
+
+		itemIcon->setPosition(Vec2(items[i]->getContentSize().width/2,items[i]->getContentSize().height/2));
+
+		items[i]->addChild(itemIcon);
+
+
 		auto btn_sel = Sprite::create("img/selectsongs/items_p.png");
 
 		auto itemSel = Sprite::create("img/selectsongs/items_s.png");
