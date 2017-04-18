@@ -25,7 +25,7 @@ public:
 
 	CREATE_FUNC(RankingList);
 
-	void setData(vector<RankInfo*> rankItem);
+	void setData(vector<RankInfo*> rankItem,RankInfo* localItem);
 
 	void addData(const char* name, const char* score, const char* comble);
 
@@ -41,6 +41,7 @@ private:
 //	char RankInfo[20][3][32];
 	vector<RankInfo*> rankItem;
 
+	RankInfo* localItem;
 };
 
 #endif

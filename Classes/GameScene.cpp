@@ -6,7 +6,7 @@
 #include "GameOver.h"
 
 #include "SocketIOClient.h"
-
+#include "SocketClient.h"
 GameScene* GameScene::getInstance()
 {
     return _gamescene;
@@ -26,7 +26,7 @@ bool GameScene::init()
     this->addChild(LoginPanel::create());
 //	this->addChild(PKSelectDiff::create());
 
-    
+
 
     
     this->lockLayer = Layer::create();

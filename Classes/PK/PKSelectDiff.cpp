@@ -46,7 +46,7 @@ bool PKSelectDiff::init()
 
 	this->addChild(menu);
 
-
+	
 	ornament = Sprite::create("img/PK/ornament.png");
 
 	ornament->setPosition(-430,520);
@@ -173,45 +173,66 @@ void PKSelectDiff::setDiff()
 
 		if (target == diff_easy)
 		{
-			diff_easy->setZOrder(100);
-			diff_medium->setZOrder(0);
-			diff_difficult->setZOrder(0);
-			log("diff_easy");
-			diff_easy->runAction(MoveTo::create(1.0f,Vec2(1000,500)));
-			diff_medium->runAction(MoveTo::create(1.0f, Vec2(1300, 300)));
-			diff_difficult->runAction(MoveTo::create(1.0f, Vec2(1300, 700)));
-			diffMid = diff_easy;
-			diffUp = diff_difficult;
-			diffDown = diff_medium;
-			//rankingList->runAction(FlipXLeftOver::);
+			this->diffAction(diff_difficult, diff_easy, diff_medium);
+			//diff_easy->setZOrder(100);
+			//diff_medium->setZOrder(0);
+			//diff_difficult->setZOrder(0);
+			//log("diff_easy");
+			//diff_easy->setScale(1.1);
+			//diff_medium->setScale(1);
+			//diff_difficult->setScale(1);
+			//diff_easy->stopAllActions();
+			//diff_medium->stopAllActions();
+			//diff_difficult->stopAllActions();
+			//diff_easy->runAction(MoveTo::create(1.0f,Vec2(1000,500)));
+			//diff_medium->runAction(MoveTo::create(1.0f, Vec2(1300, 300)));
+			//diff_difficult->runAction(MoveTo::create(1.0f, Vec2(1300, 700)));
+			//diffMid = diff_easy;
+			//diffUp = diff_difficult;
+			//diffDown = diff_medium;
+			////rankingList->runAction(FlipXLeftOver::);
 		}
 
 		else if (target == diff_medium)
 		{
-			diff_easy->setZOrder(0);
+			this->diffAction(diff_easy, diff_medium, diff_difficult);
+			/*diff_easy->setZOrder(0);
 			diff_medium->setZOrder(100);
 			diff_difficult->setZOrder(0);
+			diff_easy->setScale(1);
+			diff_medium->setScale(1.1);
+			diff_difficult->setScale(1);
 			log("diff_medium");
+			diff_easy->stopAllActions();
+			diff_medium->stopAllActions();
+			diff_difficult->stopAllActions();
 			diff_medium->runAction(MoveTo::create(1.0f, Vec2(1000, 500)));
 			diff_difficult->runAction(MoveTo::create(1.0f, Vec2(1300, 300)));
 			diff_easy->runAction(MoveTo::create(1.0f, Vec2(1300, 700)));
 			diffMid = diff_medium;
 			diffUp = diff_easy;
-			diffDown = diff_difficult;
+			diffDown = diff_difficult;*/
 		}
 
 		else
 		{
-			diff_easy->setZOrder(0);
+			this->diffAction(diff_medium, diff_difficult, diff_easy);
+			/*diff_easy->setZOrder(0);
 			diff_medium->setZOrder(0);
 			diff_difficult->setZOrder(100);
+			diff_easy->setScale(1);
+			diff_medium->setScale(1);
+			diff_difficult->setScale(1.1);
 			log("diff_difficult");
+			diff_easy->stopAllActions();
+			diff_medium->stopAllActions();
+			diff_difficult->stopAllActions();
 			diff_difficult->runAction(MoveTo::create(1.0f, Vec2(1000, 500)));
 			diff_easy->runAction(MoveTo::create(1.0f, Vec2(1300, 300)));
 			diff_medium->runAction(MoveTo::create(1.0f, Vec2(1300, 700)));
 			diffMid = diff_difficult;
 			diffUp = diff_medium;
-			diffDown = diff_easy;
+			diffDown = diff_easy;*/
 		}
 	};
 
@@ -220,6 +241,25 @@ void PKSelectDiff::setDiff()
 	_eventDispatcher->addEventListenerWithSceneGraphPriority(listener->clone(), diff_medium);
 
 	_eventDispatcher->addEventListenerWithSceneGraphPriority(listener->clone(), diff_difficult);
+}
+
+void PKSelectDiff::diffAction(Sprite* up, Sprite* mid, Sprite* down)
+{
+	diffUp = up;
+	diffMid = mid;
+	diffDown = down;
+	diffUp->setZOrder(0);
+	diffMid->setZOrder(1);
+	diffDown->setZOrder(0);
+	diffUp->setScale(1);
+	diffMid->setScale(1.1);
+	diffDown->setScale(1);
+	diffUp->stopAllActions();
+	diffMid->stopAllActions();
+	diffDown->stopAllActions();
+	diffMid->runAction(MoveTo::create(1.0f, Vec2(1000, 500)));
+	diffDown->runAction(MoveTo::create(1.0f, Vec2(1300, 300)));
+	diffUp->runAction(MoveTo::create(1.0f, Vec2(1300, 700)));
 }
 
 void PKSelectDiff::backToMenu()
