@@ -11,8 +11,12 @@ bool RankingList::init()
 	//	strcpy(RankInfo[i][1] , "123456");
 	//	strcpy(RankInfo[i][2] , "900x");
 	//}
+	localItem = new RankInfo();
+	strcpy(localItem->name, "localName");
+	strcpy(localItem->score, "999999");
+	strcpy(localItem->comble, "100x");
 
-	for (int i = 0; i < 21; ++i)
+	for (int i = 0; i < 20; ++i)
 	{
 		auto rankInfo = new RankInfo();
 
@@ -51,7 +55,7 @@ bool RankingList::init()
 
 	bg->addChild(listview);
 
-	this->setData(rankItem);
+	this->setData(rankItem,localItem);
 
 	
 /*
@@ -68,9 +72,9 @@ bool RankingList::init()
 
 }
 
-void RankingList::setData(vector<RankInfo*> rankItem)
+void RankingList::setData(vector<RankInfo*> rankItem, RankInfo* localItem)
 {
-	for (int i = 0; i < 20; ++i)
+	for (int i = 0; i < rankItem.size(); ++i)
 	{
 		char* name = rankItem[i]->name;
 
@@ -80,7 +84,7 @@ void RankingList::setData(vector<RankInfo*> rankItem)
 
 		this->addData(name,score,comble);
 	}
-	auto sprite_local = setLabel(rankItem[20]->name, rankItem[20]->score, rankItem[20]->comble, true);
+	auto sprite_local = setLabel(localItem->name, localItem->score, localItem->comble, true);
 
 //	sprite->setAnchorPoint(Vec2(0, 0));
 

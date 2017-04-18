@@ -23,6 +23,8 @@ public:
 
 	void setDiff();
 
+	void diffAction(Sprite* up, Sprite* mid, Sprite* down);
+
 	void lockScreen();
 
 	void unlockScreen();
