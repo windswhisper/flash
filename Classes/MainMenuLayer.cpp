@@ -2,8 +2,8 @@
 #include "UserInfo.h"
 #include "SongsInfo.h"
 #include "SongsLayer.h"
-#include "shop/ShopLayer.h"
 #include "PK/PKSelectDiff.h"
+#include "shop/ShopLayer.h"
 
 #include "SimpleAudioEngine.h"
 

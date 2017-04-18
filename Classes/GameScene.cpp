@@ -1,6 +1,13 @@
 #include "GameScene.h"
 #include "GameLayer.h"
 #include "LoginPanel.h"
+<<<<<<< HEAD
+=======
+#include "shop/ShopLayer.h"
+#include "PK/PKSelectDiff.h"
+#include "GameOver.h"
+
+>>>>>>> 2c78e927d9be16f22248ef46a13e6d5d94a89411
 #include "SocketIOClient.h"
 
 GameScene* GameScene::getInstance()
@@ -20,8 +27,6 @@ bool GameScene::init()
     this->addChild(this->bg);
     
     this->addChild(LoginPanel::create());
-    
-
     
     this->lockLayer = Layer::create();
     

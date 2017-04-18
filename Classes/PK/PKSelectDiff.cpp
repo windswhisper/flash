@@ -47,18 +47,20 @@ bool PKSelectDiff::init()
 	this->addChild(menu);
 
 
-	auto ornament = Sprite::create("img/PK/ornament.png");
+	ornament = Sprite::create("img/PK/ornament.png");
 
-	ornament->setPosition(330,520);
+	ornament->setPosition(-430,520);
+
+	ornament->runAction(Sequence::create(Spawn::create(DelayTime::create(0.2f), (EaseSineOut::create(MoveBy::create(1.0f, Vec2(700, 0)))), NULL), NULL));
 
 	this->addChild(ornament);
 
 
 	rankingList = RankingList::create();
 
-	rankingList->setPosition(400,520);
+	rankingList->setPosition(400,345);
 
-	this->addChild(rankingList);
+	ornament->addChild(rankingList);
 
 	
 	this->setDiff();
@@ -106,25 +108,39 @@ void PKSelectDiff::setDiff()
 {
 	diff_easy = Sprite::create("img/PK/easy.png");
 
-	diff_easy->setPosition(Vec2(1000,500));
+	diff_easy->setPosition(Vec2(2500,500));
 
 	diff_easy->setScale(1.1);
+
+	diff_easy->runAction(Sequence::create(DelayTime::create(0.2f), (EaseSineOut::create(MoveBy::create(1.0f, Vec2(-1500, 0)))), NULL));
 
 	this->addChild(diff_easy,3);
 
 
 	diff_medium = Sprite::create("img/PK/medium.png");
 
-	diff_medium->setPosition(Vec2(1300, 300));
+	diff_medium->setPosition(Vec2(1300, -300));
+
+	diff_medium->runAction(Sequence::create(DelayTime::create(0.3f), (EaseSineOut::create(MoveBy::create(1.0f, Vec2(0, 600)))), NULL));
 
 	this->addChild(diff_medium, 2);
 
 
 	diff_difficult = Sprite::create("img/PK/difficult.png");
 
-	diff_difficult->setPosition(Vec2(1300, 700));
+	diff_difficult->setPosition(Vec2(1300, 1300));
+
+	diff_difficult->runAction(Sequence::create(DelayTime::create(0.3f), (EaseSineOut::create(MoveBy::create(1.0f, Vec2(0, -600)))), NULL));
 
 	this->addChild(diff_difficult, 1);
+
+
+	diffMid = diff_easy;
+
+	diffUp = diff_difficult;
+
+	diffDown = diff_medium;
+
 
 	auto listener = EventListenerTouchOneByOne::create();
 
@@ -164,6 +180,10 @@ void PKSelectDiff::setDiff()
 			diff_easy->runAction(MoveTo::create(1.0f,Vec2(1000,500)));
 			diff_medium->runAction(MoveTo::create(1.0f, Vec2(1300, 300)));
 			diff_difficult->runAction(MoveTo::create(1.0f, Vec2(1300, 700)));
+			diffMid = diff_easy;
+			diffUp = diff_difficult;
+			diffDown = diff_medium;
+			//rankingList->runAction(FlipXLeftOver::);
 		}
 
 		else if (target == diff_medium)
@@ -175,6 +195,9 @@ void PKSelectDiff::setDiff()
 			diff_medium->runAction(MoveTo::create(1.0f, Vec2(1000, 500)));
 			diff_difficult->runAction(MoveTo::create(1.0f, Vec2(1300, 300)));
 			diff_easy->runAction(MoveTo::create(1.0f, Vec2(1300, 700)));
+			diffMid = diff_medium;
+			diffUp = diff_easy;
+			diffDown = diff_difficult;
 		}
 
 		else
@@ -186,6 +209,9 @@ void PKSelectDiff::setDiff()
 			diff_difficult->runAction(MoveTo::create(1.0f, Vec2(1000, 500)));
 			diff_easy->runAction(MoveTo::create(1.0f, Vec2(1300, 300)));
 			diff_medium->runAction(MoveTo::create(1.0f, Vec2(1300, 700)));
+			diffMid = diff_difficult;
+			diffUp = diff_medium;
+			diffDown = diff_easy;
 		}
 	};
 
@@ -198,9 +224,10 @@ void PKSelectDiff::setDiff()
 
 void PKSelectDiff::backToMenu()
 {
-	this->removeAllChildren();
-
-	this->getParent()->addChild(MainMenuLayer::create());
+	this->close(CallFunc::create([=]()
+	{
+		this->getParent()->addChild(MainMenuLayer::create());
+	}));
 }
 
 void PKSelectDiff::setting()
@@ -234,4 +261,23 @@ void PKSelectDiff::unlockScreen()
 
 	this->lockLayer->retain();
 	this->lockLayer->removeFromParent();
+}
+
+void PKSelectDiff::close(CallFunc* callfunc)
+{
+	this->getEventDispatcher()->removeEventListenersForTarget(this, true);
+
+	
+	diffMid->runAction(Sequence::create(DelayTime::create(0.2f), (EaseSineOut::create(MoveBy::create(1.0f, Vec2(1500, 0)))), NULL));
+
+	diffDown->runAction(Sequence::create(DelayTime::create(0.3f), (EaseSineOut::create(MoveBy::create(1.0f, Vec2(0, -600)))), NULL));
+
+	diffUp->runAction(Sequence::create(DelayTime::create(0.3f), (EaseSineOut::create(MoveBy::create(1.0f, Vec2(0, 600)))), NULL));
+
+	ornament->runAction(Sequence::create(Spawn::create(DelayTime::create(0.2f), (EaseSineOut::create(MoveBy::create(1.0f, Vec2(-700, 0)))),NULL), NULL));
+
+	btn_mainMenu->runAction(Sequence::create(DelayTime::create(0.3f), (EaseSineOut::create(MoveBy::create(1, Vec2(0, 300)))), NULL));
+
+	btn_setting->runAction(Sequence::create(DelayTime::create(0.3f), (EaseSineOut::create(MoveBy::create(1, Vec2(0, 300)))), callfunc, CallFunc::create(CC_CALLBACK_0(PKSelectDiff::removeFromParent, this)), NULL));
+
 }

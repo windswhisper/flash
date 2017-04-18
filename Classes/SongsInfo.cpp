@@ -56,6 +56,5 @@ void SongsInfo::addSong(int id,const char *name,const char *length,const char *a
 
 Song* SongsInfo::getInfoById(int id)
 {
-    //TODO
     return nullptr;
 }

@@ -99,7 +99,6 @@ bool GameOver::init()
 	this->addChild(menu);
 
 
-
 	return true;
 }
 
