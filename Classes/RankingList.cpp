@@ -2,6 +2,7 @@
 
 #include "SongsLayer.h"
 #include "SongsListView.h"
+#include "SocketIOClient.h"
 
 bool RankingList::init()
 {
@@ -11,7 +12,7 @@ bool RankingList::init()
 	//	strcpy(RankInfo[i][1] , "123456");
 	//	strcpy(RankInfo[i][2] , "900x");
 	//}
-	localItem = new RankInfo();
+	/*localItem = new RankInfo();
 	strcpy(localItem->name, "localName");
 	strcpy(localItem->score, "999999");
 	strcpy(localItem->comble, "100x");
@@ -27,7 +28,7 @@ bool RankingList::init()
 		strcpy(rankInfo->comble, "900x");
 
 		rankItem.push_back(rankInfo);
-	}
+	}*/
 
 	Size visibleSize = Director::getInstance()->getVisibleSize();
 
@@ -55,7 +56,11 @@ bool RankingList::init()
 
 	bg->addChild(listview);
 
-	this->setData(rankItem,localItem);
+    myScore = Node::create();
+    
+    this->addChild(myScore);
+    
+	//this->setData(rankItem,localItem);
 
 	
 /*
@@ -72,30 +77,41 @@ bool RankingList::init()
 
 }
 
-void RankingList::setData(vector<RankInfo*> rankItem, RankInfo* localItem)
+void RankingList::load(int songId,char* diffName)
 {
-	for (int i = 0; i < rankItem.size(); ++i)
-	{
-		char* name = rankItem[i]->name;
-
-		char* score = rankItem[i]->score;
-
-		char* comble = rankItem[i]->comble;
-
-		this->addData(name,score,comble);
-	}
-	auto sprite_local = setLabel(localItem->name, localItem->score, localItem->comble, true);
-
-//	sprite->setAnchorPoint(Vec2(0, 0));
-
-	sprite_local->setPosition(0, -185);
-
-	sprite_local->setColor(Color3B::GREEN);
-
-	this->addChild(sprite_local);
+    this->listview->removeAllItems();
+    myScore->removeAllChildren();
+    
+    char msg[128];
+    sprintf(msg, "{\"songId\":%d,\"diffName\":\"%s\"}",songId,diffName);
+    SocketIOClient::getInstance()->send("scoreList",msg);
+    SocketIOClient::getInstance()->listen("scoreListRes", [=](SIOClient* client, std::string msg){
+        rapidjson::Document doc;
+        doc.Parse<0>(msg.c_str());
+        
+        for (int i = 0; i < doc["list"].Size(); i++)
+        {
+            this->addData(doc["list"][i]["username"].GetString(),doc["list"][i]["score"].GetInt(),doc["list"][i]["combo"].GetInt());
+        }
+        if(doc["my"].Size()>0)
+        {
+            auto sprite_local = setLabel(doc["my"][0]["username"].GetString(),doc["my"][0]["score"].GetInt(),doc["my"][0]["combo"].GetInt(), true);
+            
+            sprite_local->setPosition(0, -185);
+            
+            sprite_local->setColor(Color3B::GREEN);
+            
+            myScore->addChild(sprite_local);
+        }
+    });
 }
 
-Sprite* RankingList::setLabel(const char* name, const char* score, const char* comble, bool ismine)
+void RankingList::setData(vector<RankInfo*> rankItem, RankInfo* localItem)
+{
+
+}
+
+Sprite* RankingList::setLabel(const char* name, int score, int combo, bool ismine)
 {
 	auto sprite = Sprite::create("img/selectsongs/RankingList_Score.png");
 
@@ -109,15 +125,21 @@ Sprite* RankingList::setLabel(const char* name, const char* score, const char* c
 
 	sprite->addChild(label_name);
 
-	auto label_score = Label::createWithSystemFont(score, "", 36);
+    char str[32];
+    
+    sprintf(str, "%d",score);
+    
+	auto label_score = Label::createWithSystemFont(str, "", 36);
 
 	label_score->setAnchorPoint(Vec2(0, 0));
 
 	label_score->setPosition(160, 10);
 
 	sprite->addChild(label_score);
-
-	auto label_comble = Label::createWithSystemFont(comble, "", 36);
+    
+    sprintf(str, "%d×",combo);
+    
+	auto label_comble = Label::createWithSystemFont(str, "", 36);
 
 	label_comble->setAnchorPoint(Vec2(0, 0));
 
@@ -128,9 +150,9 @@ Sprite* RankingList::setLabel(const char* name, const char* score, const char* c
 	return sprite;
 }
 
-void RankingList::addData(const char* name, const char* score, const char* comble)
+void RankingList::addData(const char* name, int score, int combo)
 {
-	auto sprite = setLabel(name, score, comble,false);
+	auto sprite = setLabel(name, score, combo,false);
 
 	Layout* item = Layout::create();
 

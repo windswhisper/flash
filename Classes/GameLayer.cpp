@@ -338,6 +338,7 @@ bool GameLayer::init()
 GameLayer* GameLayer::createWithId(int id,char* name ,char* diff, int mode)
 {
     auto gamelayer = GameLayer::create();
+    gamelayer->mode = mode;
     gamelayer->songId = id;
     strcpy(gamelayer->diff, diff);
     strcpy(gamelayer->songName, name);

@@ -129,6 +129,8 @@ public:
     
     float keyDis;
     
+    int mode;
+    
     int songId;
     
     char filename[128];
