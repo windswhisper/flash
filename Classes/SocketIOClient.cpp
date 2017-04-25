@@ -62,8 +62,6 @@ void SocketIOClient::onConnect(SIOClient* client)
 
 void SocketIOClient::onMessage(SIOClient* client, const std::string& data)
 {
-    log("onMessage");
-    log("%s received content is:%s",client->getTag(),data.c_str());
 }
 
 void SocketIOClient::onClose(SIOClient * client)

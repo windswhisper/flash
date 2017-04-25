@@ -224,6 +224,6 @@ void SongsLayer::play()
 {
     this->close(CallFunc::create([=]{
         SimpleAudioEngine::getInstance()->stopBackgroundMusic();
-        this->getParent()->addChild(GameLayer::createWithId(this->songId , this->songName, this->songDiff, 0));
+        this->getParent()->addChild(GameLayer::createWithId(this->songId , this->songDiff, 0));
     }));
 }

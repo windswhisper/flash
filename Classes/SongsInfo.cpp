@@ -31,7 +31,7 @@ void SongsInfo::load()
 
 void SongsInfo::addSong(int id,const char *name,const char *length,const char *artist,const char* diffName,int diffLevel)
 {
-    if(this->songs.empty()||this->songs.at(this->songs.size()-1)->id != id)
+    if(this->songs.empty()||this->getInfoById(id)==nullptr)
     {
         auto song = new Song();
         
@@ -51,10 +51,15 @@ void SongsInfo::addSong(int id,const char *name,const char *length,const char *a
     
     diff->level = diffLevel;
     
-    this->songs.at(this->songs.size()-1)->diffs.push_back(diff);
+    this->getInfoById(id)->diffs.push_back(diff);
 }
 
 Song* SongsInfo::getInfoById(int id)
 {
+    for(auto v: this->songs)
+    {
+        if(v->id == id)
+            return v;
+    }
     return nullptr;
 }

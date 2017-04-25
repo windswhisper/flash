@@ -86,6 +86,8 @@ void RankingList::load(int songId,char* diffName)
     sprintf(msg, "{\"songId\":%d,\"diffName\":\"%s\"}",songId,diffName);
     SocketIOClient::getInstance()->send("scoreList",msg);
     SocketIOClient::getInstance()->listen("scoreListRes", [=](SIOClient* client, std::string msg){
+        if(this == nullptr)return;
+        
         rapidjson::Document doc;
         doc.Parse<0>(msg.c_str());
         
@@ -147,6 +149,12 @@ Sprite* RankingList::setLabel(const char* name, int score, int combo, bool ismin
 
 	sprite->addChild(label_comble);
 	
+    if(ismine){
+        label_name->setTextColor(Color4B(255,255,64,255));
+        label_score->setTextColor(Color4B(255,255,64,255));
+        label_comble->setTextColor(Color4B(255,255,64,255));
+    }
+    
 	return sprite;
 }
 

@@ -25,10 +25,6 @@ public:
 
 	void diffAction(Sprite* up, Sprite* mid, Sprite* down);
 
-	void lockScreen();
-
-	void unlockScreen();
-
 	void close(CallFunc* callfunc);
 
 	MenuItemImage* btn_mainMenu;
@@ -46,14 +42,6 @@ public:
 	Sprite* ornament;
 
 	RankingList* rankingList;
-
-	Layer* lockLayer;
-
-	int lockCount;
-
-	Sprite* ringIn;
-
-	Sprite* ringOut;
 
 	Sprite* lockText;
 
