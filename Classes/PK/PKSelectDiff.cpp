@@ -1,5 +1,7 @@
 #include "PKSelectDiff.h"
 #include "MainMenuLayer.h"
+#include "SocketIOClient.h"
+#include "GameLayer.h"
 
 bool PKSelectDiff::init()
 {
@@ -64,41 +66,6 @@ bool PKSelectDiff::init()
 
 	
 	this->setDiff();
-
-	this->lockLayer = Layer::create();
-
-	ringIn = Sprite::create("img/loading/loadingRingIn.png");
-
-	ringIn->setPosition(100, 100);
-
-	lockLayer->addChild(ringIn);
-
-	ringOut = Sprite::create("img/loading/loadingRingOut.png");
-
-	ringOut->setPosition(100, 100);
-
-	lockLayer->addChild(ringOut);
-
-	lockText = Sprite::create("img/loading/loadingText.png");
-
-	lockText->setPosition(340, 70);
-
-	lockLayer->addChild(lockText);
-
-	this->addChild(this->lockLayer, 127);
-
-	auto listener1 = EventListenerTouchOneByOne::create();
-
-	listener1->setSwallowTouches(true);
-
-	listener1->onTouchBegan = [](Touch* touch, Event* event){
-		return true;
-	};
-	_eventDispatcher->addEventListenerWithSceneGraphPriority(listener1, lockLayer);
-
-	this->lockCount = 1;
-
-	this->unlockScreen();
 
 
 	return true;
@@ -174,65 +141,16 @@ void PKSelectDiff::setDiff()
 		if (target == diff_easy)
 		{
 			this->diffAction(diff_difficult, diff_easy, diff_medium);
-			//diff_easy->setZOrder(100);
-			//diff_medium->setZOrder(0);
-			//diff_difficult->setZOrder(0);
-			//log("diff_easy");
-			//diff_easy->setScale(1.1);
-			//diff_medium->setScale(1);
-			//diff_difficult->setScale(1);
-			//diff_easy->stopAllActions();
-			//diff_medium->stopAllActions();
-			//diff_difficult->stopAllActions();
-			//diff_easy->runAction(MoveTo::create(1.0f,Vec2(1000,500)));
-			//diff_medium->runAction(MoveTo::create(1.0f, Vec2(1300, 300)));
-			//diff_difficult->runAction(MoveTo::create(1.0f, Vec2(1300, 700)));
-			//diffMid = diff_easy;
-			//diffUp = diff_difficult;
-			//diffDown = diff_medium;
-			////rankingList->runAction(FlipXLeftOver::);
 		}
 
 		else if (target == diff_medium)
 		{
 			this->diffAction(diff_easy, diff_medium, diff_difficult);
-			/*diff_easy->setZOrder(0);
-			diff_medium->setZOrder(100);
-			diff_difficult->setZOrder(0);
-			diff_easy->setScale(1);
-			diff_medium->setScale(1.1);
-			diff_difficult->setScale(1);
-			log("diff_medium");
-			diff_easy->stopAllActions();
-			diff_medium->stopAllActions();
-			diff_difficult->stopAllActions();
-			diff_medium->runAction(MoveTo::create(1.0f, Vec2(1000, 500)));
-			diff_difficult->runAction(MoveTo::create(1.0f, Vec2(1300, 300)));
-			diff_easy->runAction(MoveTo::create(1.0f, Vec2(1300, 700)));
-			diffMid = diff_medium;
-			diffUp = diff_easy;
-			diffDown = diff_difficult;*/
 		}
 
 		else
 		{
 			this->diffAction(diff_medium, diff_difficult, diff_easy);
-			/*diff_easy->setZOrder(0);
-			diff_medium->setZOrder(0);
-			diff_difficult->setZOrder(100);
-			diff_easy->setScale(1);
-			diff_medium->setScale(1);
-			diff_difficult->setScale(1.1);
-			log("diff_difficult");
-			diff_easy->stopAllActions();
-			diff_medium->stopAllActions();
-			diff_difficult->stopAllActions();
-			diff_difficult->runAction(MoveTo::create(1.0f, Vec2(1000, 500)));
-			diff_easy->runAction(MoveTo::create(1.0f, Vec2(1300, 300)));
-			diff_medium->runAction(MoveTo::create(1.0f, Vec2(1300, 700)));
-			diffMid = diff_difficult;
-			diffUp = diff_medium;
-			diffDown = diff_easy;*/
 		}
 	};
 
@@ -272,35 +190,26 @@ void PKSelectDiff::backToMenu()
 
 void PKSelectDiff::setting()
 {
-
+    
 }
 
 void PKSelectDiff::matching()
 {
-	this->lockScreen();
-}
-
-void PKSelectDiff::lockScreen()
-{
-	lockCount++;
-
-	if (lockCount>1)return;
-
-	this->addChild(this->lockLayer, 127);
-
-	ringIn->runAction(RepeatForever::create(RotateBy::create(4, 360)));
-
-	ringOut->runAction(RepeatForever::create(RotateBy::create(4, -360)));
-}
-
-void PKSelectDiff::unlockScreen()
-{
-	lockCount--;
-
-	if (lockCount>0)return;
-
-	this->lockLayer->retain();
-	this->lockLayer->removeFromParent();
+    SocketIOClient::getInstance()->send("match","");
+    SocketIOClient::getInstance()->lock();
+    SocketIOClient::getInstance()->listen("matchRes", [=](SIOClient* client, std::string msg){
+        rapidjson::Document doc;
+        doc.Parse<0>(msg.c_str());
+        
+        int songId = doc["songId"].GetInt();
+        char diffName[64];
+        strcpy(diffName, doc["diffName"].GetString());
+        
+        this->close(CallFunc::create([=](){
+            this->getParent()->addChild(GameLayer::createWithId(songId , diffName, 1));
+        }));
+        SocketIOClient::getInstance()->unlock();
+    });
 }
 
 void PKSelectDiff::close(CallFunc* callfunc)

@@ -182,6 +182,8 @@ void SongsLayer::selectSong(int id,char* name, char* diff)
     strcpy(songName, name);
     
     
+    ((RankingList*)this->rankingList)->load(id,diff);
+    
     auto action = EaseSineOut::create(MoveBy::create(1.0f, Vec2(-800,0)));
 
 	this->songsList->runAction(action->clone());
@@ -222,6 +224,6 @@ void SongsLayer::play()
 {
     this->close(CallFunc::create([=]{
         SimpleAudioEngine::getInstance()->stopBackgroundMusic();
-        this->getParent()->addChild(GameLayer::createWithId(this->songId , this->songName, this->songDiff, 0));
+        this->getParent()->addChild(GameLayer::createWithId(this->songId , this->songDiff, 0));
     }));
 }

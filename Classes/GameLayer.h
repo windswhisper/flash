@@ -83,7 +83,7 @@ public:
     
     CREATE_FUNC(GameLayer);
     
-    static GameLayer* createWithId(int id,char* diff,char* name,int mode);
+    static GameLayer* createWithId(int id,const char* diff,int pkMode);
     
     void update(float dt);
     
@@ -119,6 +119,12 @@ public:
     
     void updateHp(int delta);
     
+    void initPKMode();
+    
+    void updateScore(float dt);
+    
+    void showTitle();
+    
     float t;
     
 	float speed;
@@ -128,6 +134,8 @@ public:
     Vec2 key1Pos;
     
     float keyDis;
+    
+    int mode;
     
     int songId;
     
@@ -166,6 +174,8 @@ public:
     int score;
     
 	Label* scoreLabel;
+    
+    Label* scoreLabel_OP;
     
     LabelAtlas* comboLabel;
     

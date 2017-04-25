@@ -310,7 +310,7 @@ bool GameLayer::init()
     
     this->comboFrame->addChild(comboBar);
     
-    this->t = 0;
+    this->t = -2;
     
     this->scheduleUpdate();
     
@@ -335,14 +335,51 @@ bool GameLayer::init()
     return true;
 }
 
-GameLayer* GameLayer::createWithId(int id,char* name ,char* diff, int mode)
+GameLayer* GameLayer::createWithId(int id,const char* diff, int pkMode)
 {
     auto gamelayer = GameLayer::create();
+    gamelayer->mode = pkMode;
     gamelayer->songId = id;
     strcpy(gamelayer->diff, diff);
-    strcpy(gamelayer->songName, name);
+    strcpy(gamelayer->songName, SongsInfo::getInstance()->getInfoById(id)->name);
     gamelayer->loadFile();
+    gamelayer->showTitle();
+    if(pkMode)
+    {
+        gamelayer->initPKMode();
+    }
     return gamelayer;
+}
+void GameLayer::initPKMode()
+{
+    this->scoreLabel_OP = Label::createWithSystemFont("0000000", "Arial", 80);
+    
+    this->scoreLabel_OP->setPosition(0,1080);
+    
+    this->scoreLabel_OP->setAnchorPoint(Vec2(0,1));
+    
+    this->addChild(this->scoreLabel_OP);
+    
+    SocketIOClient::getInstance()->listen("sendScore", [=](SIOClient* client, std::string msg){
+        rapidjson::Document doc;
+        doc.Parse<0>(msg.c_str());
+        
+        char score[32];
+        
+        sprintf(score, "%07d",doc["score"].GetInt());
+        
+        this->scoreLabel_OP->setString(score);
+    });
+    
+    this->schedule(schedule_selector(GameLayer::updateScore),0.2f);
+    
+}
+
+void GameLayer::updateScore(float dt)
+{
+    char msg[128];
+    sprintf(msg, "{\"score\":%d,\"combo\":%d}",this->score,this->combo);
+    SocketIOClient::getInstance()->send("updateScore",msg);
 }
 
 void GameLayer::update(float dt)
@@ -430,10 +467,10 @@ void GameLayer::loadFile()
             line = line.erase(0,n+1);
             int data6 = atoi(number.c_str());
             
-            if(data1==64)data1 = 0;
-            if(data1==192)data1 = 1;
-            if(data1==320)data1 = 2;
-            if(data1==448)data1 = 3;
+            if(data1<=120)data1 = 0;
+            if(data1>120&&data1<=240)data1 = 1;
+            if(data1>240&&data1<=360)data1 = 2;
+            if(data1>360&&data1<=480)data1 = 3;
             
             if(data4!=128)
                 this->notes.pushBack(SimpleNote::createSimpleNote(data1, data3, data4, data3));
@@ -454,7 +491,7 @@ bool GameLayer::onTouchBegan(Touch *touch, Event *pEvent)
     
     for(int i=0;i<4;i++)
     {
-        if(p.x>i*1920/4&&p.x<(i+1)*1920/4&&p.y<300)
+        if(p.x>i*1920/4&&p.x<(i+1)*1920/4&&p.y<500)
         {
             this->click(i);
             break;
@@ -470,7 +507,7 @@ void GameLayer::onTouchMoved(Touch *touch, Event *pEvent)
     
     for(int i=0;i<4;i++)
     {
-        if(p.x>i*1920/4&&p.x<(i+1)*1920/4&&p.y<300)
+        if(p.x>i*1920/4&&p.x<(i+1)*1920/4&&p.y<500)
         {
             break;
         }
@@ -634,7 +671,7 @@ void GameLayer::complete()
     }),FadeTo::create(0.5f, 255),CallFunc::create([=](){
         shadow->removeFromParent();
     }), NULL));
-    this->getParent()->addChild(shadow);
+    this->getParent()->addChild(shadow,9);
     
     char str[256];
     sprintf(str, "{\"songId\":%d,\"diffName\":\"%s\",\"score\":%d,\"grade\":%d,\"combo\":%d,\"missCount\":%d,\"poorCount\":%d,\"goodCount\":%d,\"coolCount\":%d,\"acc\":%d}",songId,diff,score,3,maxCombo,rateCount[0],rateCount[3],rateCount[2],rateCount[1],100);
@@ -653,4 +690,30 @@ void GameLayer::updateHp(int delta)
     }
     
     this->hpBar->setPercentage(hp*100.0f/MAX_HP);
+}
+void GameLayer::showTitle()
+{
+    auto name = Label::createWithSystemFont(this->songName,"",200);
+    
+    name->setPosition(810,740);
+    
+    name->setOpacity(0);
+    
+    name->runAction(MoveBy::create(2.0f, Vec2(300,0)));
+                    
+    name->runAction(Sequence::create(FadeTo::create(1.0f, 255),FadeTo::create(1.0f, 0),NULL));
+    
+    this->addChild(name);
+    
+    auto diff = Label::createWithSystemFont(this->diff, "", 128);
+    
+    diff->setPosition(1110,500);
+    
+    diff->setOpacity(0);
+    
+    diff->runAction(MoveBy::create(2.0f, Vec2(-300,0)));
+    
+    diff->runAction(Sequence::create(FadeTo::create(1.0f, 255),FadeTo::create(1.0f, 0),NULL));
+    
+    this->addChild(diff);
 }

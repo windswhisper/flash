@@ -25,11 +25,13 @@ public:
 
 	CREATE_FUNC(RankingList);
 
+    void load(int songId,char* diffName);
+    
 	void setData(vector<RankInfo*> rankItem,RankInfo* localItem);
 
-	void addData(const char* name, const char* score, const char* comble);
-
-	Sprite* setLabel(const char* name, const char* score, const char* comble,bool ismine);
+	void addData(const char* name,  int score, int combo);
+    
+	Sprite* setLabel(const char* name, int score, int combo,bool ismine);
 
 private:
 	Sprite * bg;
@@ -42,6 +44,8 @@ private:
 	vector<RankInfo*> rankItem;
 
 	RankInfo* localItem;
+    
+    Node* myScore;
 };
 
 #endif

@@ -270,6 +270,6 @@ void GameOver::back()
 
 void GameOver::playAgain()
 {
-    this->getParent()->addChild(GameLayer::createWithId(this->songId , this->songName, this->diffName, 0));
+    this->getParent()->addChild(GameLayer::createWithId(this->songId , this->diffName, 0));
     this->removeFromParent();
 }
