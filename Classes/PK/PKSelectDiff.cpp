@@ -198,14 +198,15 @@ void PKSelectDiff::matching()
     SocketIOClient::getInstance()->send("match","");
     SocketIOClient::getInstance()->lock();
     SocketIOClient::getInstance()->listen("matchRes", [=](SIOClient* client, std::string msg){
-        rapidjson::Document doc;
-        doc.Parse<0>(msg.c_str());
+
         
-        int songId = doc["songId"].GetInt();
-        char diffName[64];
-        strcpy(diffName, doc["diffName"].GetString());
-        
-        this->close(CallFunc::create([=](){
+		this->close(CallFunc::create([=](){
+			rapidjson::Document doc;
+		doc.Parse<0>(msg.c_str());
+
+		int songId = doc["songId"].GetInt();
+		char diffName[64];
+		strcpy(diffName, doc["diffName"].GetString());
             this->getParent()->addChild(GameLayer::createWithId(songId , diffName, 1));
         }));
         SocketIOClient::getInstance()->unlock();

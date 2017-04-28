@@ -2,6 +2,8 @@
 #include "SongsInfo.h"
 #include "SocketIOClient.h"
 #include "GameOver.h"
+#include "PauseLayer.h"
+#include "SongsLayer.h"
 
 #include  <iostream>
 #include  <fstream>
@@ -265,6 +267,26 @@ bool GameLayer::init()
         
         
     }
+
+	btn_pause = MenuItemImage::create("img/game/btn_pause.png", "img/game/btn_pause_p.png", CC_CALLBACK_0(GameLayer::pause, this));
+
+	btn_pause->setPosition(Vec2(btn_pause->getContentSize().width/2,980));
+
+
+	auto ring = Sprite::create("img/selectsongs/ring.png");
+
+	ring->setPosition(130,100);
+
+	ring->runAction(RepeatForever::create(RotateBy::create(4, 360)));
+
+	btn_pause->addChild(ring);
+
+
+	Menu* menu = Menu::create(btn_pause,NULL);
+
+	menu->setPosition(Point::ZERO);
+
+	this->addChild(menu);
     
     this->hpFrame = Sprite::create("img/game/hpFrame.png");
     
@@ -716,4 +738,29 @@ void GameLayer::showTitle()
     diff->runAction(Sequence::create(FadeTo::create(1.0f, 255),FadeTo::create(1.0f, 0),NULL));
     
     this->addChild(diff);
+}
+
+void GameLayer::pause()
+{
+	SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
+//	RenderTexture* renderTexture = RenderTexture::create(1920,1080);
+//	renderTexture->begin();
+//	this->getParent()->visit();
+//	renderTexture->end();
+//	Director::sharedDirector()->pushScene(PauseLayer::createWithSong(this->songId, this->diff, 0, renderTexture));
+	Director::sharedDirector()->pause();
+
+	pauseLayer = PauseLayer::createWithSong(this->songId,this->diff,0);
+
+	this->addChild(pauseLayer);
+}
+
+void GameLayer::backToList()
+{
+//	Director::getInstance()->resume();
+
+	this->getParent()->addChild(SongsLayer::create());
+
+	this->removeFromParent();
+
 }

@@ -4,6 +4,8 @@
 #include "shop/ShopLayer.h"
 #include "PK/PKSelectDiff.h"
 #include "GameOver.h"
+#include "PK/PKGameOverLayer.h"
+#include "PauseLayer.h"
 
 #include "SocketIOClient.h"
 #include "SocketClient.h"
@@ -25,7 +27,7 @@ bool GameScene::init()
     
     this->addChild(LoginPanel::create());
     
-//	this->addChild(GameOver::create());
+//	this->addChild(PKGameOverLayer::create());
 
     
     this->lockLayer = Layer::create();

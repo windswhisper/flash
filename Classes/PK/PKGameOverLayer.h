@@ -2,8 +2,10 @@
 #define __PK_GAMEOVER_LAYER_H__
 
 #include "cocos2d.h"
+#include "ui/CocosGUI.h"
 
 USING_NS_CC;
+using namespace ui;
 
 class PKGameOverLayer : public Layer
 {
@@ -14,9 +16,11 @@ public :
 
 	void backToPK();
 
-	void playAgain();
+	void close(CallFunc* callfunc);
 
-	void setData(char* songName,char* songDiff,char* winnerName,char* loserName,int winnerScore,int winnerCombo,int winnerAcc,int loserScore,int loserCombo,int loserAcc);
+	void setData(char* songName,char* songDiff,char* winnerName,char* loserName,int winnerScore,int winnerCombo,int winnerAcc,int loserScore,int loserCombo,int loserAcc,int winnerGrade,int loserGrade);
+
+	void setGrade(int score,int combo,int acc,bool isWinner,int playerGrade);
 
 private:
 	Sprite* PK_bg;
@@ -36,6 +40,10 @@ private:
 	Sprite* winner;
 
 	Sprite* loser;
+
+	Sprite* evaluation;
+
+	Button* back;
 
 	char winner_score[16];
 
