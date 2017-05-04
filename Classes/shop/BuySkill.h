@@ -8,12 +8,12 @@
 USING_NS_CC;
 using namespace ui;
 
-class Skill : public Layer
+class BuySkill : public Layer
 {
 public:
 	virtual bool init();
 
-	CREATE_FUNC(Skill);
+	CREATE_FUNC(BuySkill);
 
 	void skillSelect(char* skillId);
 

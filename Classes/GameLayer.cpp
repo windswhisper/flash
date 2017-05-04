@@ -2,6 +2,7 @@
 #include "SongsInfo.h"
 #include "SocketIOClient.h"
 #include "GameOver.h"
+#include "SongsLayer.h"
 
 #include  <iostream>
 #include  <fstream>
@@ -388,6 +389,9 @@ void GameLayer::update(float dt)
     
     if (this->t > this->offset&&this->t-dt <= this->offset)
     {
+        this->backToList();
+        return;
+        
         SimpleAudioEngine::getInstance()->playBackgroundMusic(filename,false);
     }
     
@@ -716,4 +720,11 @@ void GameLayer::showTitle()
     diff->runAction(Sequence::create(FadeTo::create(1.0f, 255),FadeTo::create(1.0f, 0),NULL));
     
     this->addChild(diff);
+}
+
+void GameLayer::backToList()
+{
+    this->getParent()->addChild(SongsLayer::create());
+    
+    this->removeFromParent();
 }

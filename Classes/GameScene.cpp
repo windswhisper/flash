@@ -25,7 +25,7 @@ bool GameScene::init()
     
     this->addChild(LoginPanel::create());
     
-    //	this->addChild(PKSelectDiff::create());
+    	//this->addChild(ShopLayer::create());
     
     this->lockLayer = Layer::create();
     

@@ -1,6 +1,7 @@
 #include "ShopLayer.h"
 #include "SongsExtraction.h"
 #include "MainMenuLayer.h"
+#include "UserInfo.h"
 
 ShopLayer::ShopLayer()
 {
@@ -75,7 +76,17 @@ bool ShopLayer::init()
 	money->setPosition(240,790);
 
 	this->addChild(money);
+    
+    moneyLabel = Label::create("","Arial",48);
+    
+    moneyLabel->setPosition(340,790);
+    
+    moneyLabel->setAnchorPoint(Vec2(1,0.5));
+    
+    this->addChild(moneyLabel);
 
+    this->updateMoney();
+    
 //	tabSelect = Sprite::create("img/shop/tab_select.png");
 
 //	tabSelect->setPosition(btn_skin->getContentSize().width / 2, btn_skin->getContentSize().height / 2);
@@ -154,7 +165,7 @@ void ShopLayer::skillSelect()
 
 	node = Node::create();
 
-	skill = Skill::create();
+	skill = BuySkill::create();
 
 	skill->setPosition(-300, -300);
 
@@ -165,11 +176,21 @@ void ShopLayer::skillSelect()
 
 void ShopLayer::itemSelect()
 {
-	this->close();
-
-	button = btn_item;
-
-	button->addChild(this->addPressSprite());
+    this->close();
+    
+    button = btn_item;
+    
+    button->addChild(this->addPressSprite());
+    
+    node = Node::create();
+    
+    buyItems = BuyItems::create();
+    
+    buyItems->setPosition(-300, -300);
+    
+    node->addChild(buyItems);
+    
+    this->addChild(node);
 }
 
 void ShopLayer::duelSelect()
@@ -202,4 +223,13 @@ void ShopLayer::backToMenu()
 	this->removeAllChildren();
 
 	this->getParent()->addChild(MainMenuLayer::create());
+}
+
+void ShopLayer::updateMoney()
+{
+    char str[32];
+    
+    sprintf(str,"%dG",UserInfo::getInstance()->coin);
+    
+    this->moneyLabel->setString(str);
 }

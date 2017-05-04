@@ -1,0 +1,143 @@
+{
+    "drawOneSong": {
+        "price": 100,
+        "title": "抽取一首",
+        "info": ""
+    },
+    "drawTenSong": {
+        "price": 800,
+        "title": "抽取十首",
+        "info": ""
+    },
+    "songPack1": {
+        "price": 20000,
+        "title": "曲包一",
+        "info": "包含4首流行音乐,《梁非凡吔屎啦》，《德国骨科》，《金坷垃》，《我的滑板鞋》"
+    },
+    "songPack2": {
+        "price": 20000,
+        "title": "曲包二",
+        "info": "包含4首古典音乐"
+    },
+    "songPack3": {
+        "price": 20000,
+        "title": "曲包三",
+        "info": "包含4首摇滚音乐"
+    },
+    "songPack4": {
+        "price": 20000,
+        "title": "曲包四",
+        "info": "包含4首欧美音乐"
+    },
+    "item1": {
+        "price": 60,
+        "title": "连击护盾",
+        "info": "用来抵御miss的护盾，能够将%d次miss变成poor"
+    },
+    "item2": {
+        "price": 150,
+        "title": "补正芯片",
+        "info": "帮助使用者修正打击时机的芯片，能够将%d次poor变成great"
+    },
+    "item3": {
+        "price": 100,
+        "title": "治疗强化",
+        "info": "一股来自东方的神秘力量，使用后该局里提升%d%的回复量"
+    },
+    "item4": {
+        "price": 200,
+        "title": "连击护盾×5",
+        "info": "用来抵御miss的护盾，能够将%d次miss变成poor"
+    },
+    "item5": {
+        "price": 600,
+        "title": "补正芯片×5",
+        "info": "帮助使用者修正打击时机的芯片，能够将%d次poor变成great"
+    },
+    "item6": {
+        "price": 400,
+        "title": "治疗强化×5",
+        "info": "一股来自东方的神秘力量，使用后该局里提升%d%的回复量"
+    },
+    "skill1": [
+        {
+            "price": 200,
+            "title": "提升血量Lv1",
+            "info": "将血量上限提升至%d点"
+        },
+        {
+            "price": 500,
+            "title": "提升血量Lv2",
+            "info": "将血量上限提升至%d点"
+        },
+        {
+            "price": 2000,
+            "title": "提升血量Lv3",
+            "info": "将血量上限提升至%d点"
+        },
+	{
+            "price": 10000,
+            "title": "提升血量Lv4",
+            "info": "将血量上限提升至%d点"
+        },
+	{
+            "price": 50000,
+            "title": "提升血量Lv5",
+            "info": "将血量上限提升至%d点"
+        }
+    ],
+    "skill2": [
+        {
+            "price": 200,
+            "title": "道具精通Lv1",
+            "info": "提升消耗性道具的效果Lv1"
+        },
+        {
+            "price": 500,
+            "title": "道具精通Lv2",
+            "info": "提升消耗性道具的效果Lv2"
+        },
+        {
+            "price": 2000,
+            "title": "道具精通Lv3",
+            "info": "提升消耗性道具的效果Lv3"
+        },
+	{
+            "price": 10000,
+            "title": "道具精通Lv4",
+            "info": "提升消耗性道具的效果Lv4"
+        },
+	{
+            "price": 50000,
+            "title": "道具精通Lv5",
+            "info": "提升消耗性道具的效果Lv5"
+        }
+    ],
+    "skill3": [
+        {
+            "price": 200,
+            "title": "贪婪之手Lv1",
+            "info": "提高%d%的金币获取量"
+        },
+        {
+            "price": 500,
+            "title": "贪婪之手Lv2",
+            "info": "提高%d%的金币获取量"
+        },
+        {
+            "price": 2000,
+            "title": "贪婪之手Lv3",
+            "info": "提高%d%的金币获取量"
+        },
+	{
+            "price": 10000,
+            "title": "贪婪之手Lv4",
+            "info": "提高%d%的金币获取量"
+        },
+	{
+            "price": 50000,
+            "title": "贪婪之手Lv5",
+            "info": "提高%d%的金币获取量"
+        }
+    ]
+}

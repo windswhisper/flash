@@ -125,6 +125,8 @@ public:
     
     void showTitle();
     
+    void backToList();
+    
     float t;
     
 	float speed;

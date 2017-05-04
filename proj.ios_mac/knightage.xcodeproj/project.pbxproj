@@ -22,6 +22,9 @@
 		476C15D31E9B45E60031FA3E /* TheFatRat - Unity.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 476C15D21E9B45E60031FA3E /* TheFatRat - Unity.mp3 */; };
 		47773AF91E78E7040053AC10 /* SongsListView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47773AF71E78E7040053AC10 /* SongsListView.cpp */; };
 		47925D7E1E6E4A58008AE59C /* RegisterPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47925D7C1E6E4A58008AE59C /* RegisterPanel.cpp */; };
+		479298D41EB18E3C001996EC /* ShopConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 479298D21EB18E3C001996EC /* ShopConfig.cpp */; };
+		479298D81EB1CB35001996EC /* s in Resources */ = {isa = PBXBuildFile; fileRef = 479298D71EB1CB35001996EC /* s */; };
+		479298DB1EB1DF29001996EC /* BuyItems.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 479298D91EB1DF29001996EC /* BuyItems.cpp */; };
 		47A159E21E88EA7B004EAFE9 /* SocketIOClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47A159E01E88EA7B004EAFE9 /* SocketIOClient.cpp */; };
 		47A6E1ED1E6A652F0089E3A9 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47A6E1E31E6A652F0089E3A9 /* AppDelegate.cpp */; };
 		47A6E1EE1E6A652F0089E3A9 /* GameLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47A6E1E51E6A652F0089E3A9 /* GameLayer.cpp */; };
@@ -31,7 +34,7 @@
 		47B9AC951E6E984800953ACA /* MainMenuLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47B9AC931E6E984800953ACA /* MainMenuLayer.cpp */; };
 		47E6BF621E9F080C00D742FB /* ShopItemInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47E6BF581E9F080B00D742FB /* ShopItemInfo.cpp */; };
 		47E6BF631E9F080C00D742FB /* ShopLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47E6BF5A1E9F080B00D742FB /* ShopLayer.cpp */; };
-		47E6BF641E9F080C00D742FB /* skill.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47E6BF5C1E9F080B00D742FB /* skill.cpp */; };
+		47E6BF641E9F080C00D742FB /* BuySkill.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47E6BF5C1E9F080B00D742FB /* BuySkill.cpp */; };
 		47E6BF651E9F080C00D742FB /* SongsExtraction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47E6BF5E1E9F080B00D742FB /* SongsExtraction.cpp */; };
 		47E6BF661E9F080C00D742FB /* SongsPackage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47E6BF601E9F080B00D742FB /* SongsPackage.cpp */; };
 		47F69BF91E962D54006F3F78 /* UserInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47F69BF71E962D54006F3F78 /* UserInfo.cpp */; };
@@ -144,6 +147,11 @@
 		47773AF81E78E7040053AC10 /* SongsListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongsListView.h; sourceTree = "<group>"; };
 		47925D7C1E6E4A58008AE59C /* RegisterPanel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RegisterPanel.cpp; sourceTree = "<group>"; };
 		47925D7D1E6E4A58008AE59C /* RegisterPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterPanel.h; sourceTree = "<group>"; };
+		479298D21EB18E3C001996EC /* ShopConfig.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ShopConfig.cpp; path = shop/ShopConfig.cpp; sourceTree = "<group>"; };
+		479298D31EB18E3C001996EC /* ShopConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShopConfig.h; path = shop/ShopConfig.h; sourceTree = "<group>"; };
+		479298D71EB1CB35001996EC /* s */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = s; sourceTree = "<group>"; };
+		479298D91EB1DF29001996EC /* BuyItems.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BuyItems.cpp; path = shop/BuyItems.cpp; sourceTree = "<group>"; };
+		479298DA1EB1DF29001996EC /* BuyItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BuyItems.h; path = shop/BuyItems.h; sourceTree = "<group>"; };
 		47A159E01E88EA7B004EAFE9 /* SocketIOClient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SocketIOClient.cpp; sourceTree = "<group>"; };
 		47A159E11E88EA7B004EAFE9 /* SocketIOClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOClient.h; sourceTree = "<group>"; };
 		47A6E1E31E6A652F0089E3A9 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppDelegate.cpp; sourceTree = "<group>"; };
@@ -161,8 +169,8 @@
 		47E6BF591E9F080B00D742FB /* ShopItemInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShopItemInfo.h; path = shop/ShopItemInfo.h; sourceTree = "<group>"; };
 		47E6BF5A1E9F080B00D742FB /* ShopLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ShopLayer.cpp; path = shop/ShopLayer.cpp; sourceTree = "<group>"; };
 		47E6BF5B1E9F080B00D742FB /* ShopLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShopLayer.h; path = shop/ShopLayer.h; sourceTree = "<group>"; };
-		47E6BF5C1E9F080B00D742FB /* skill.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = skill.cpp; path = shop/skill.cpp; sourceTree = "<group>"; };
-		47E6BF5D1E9F080B00D742FB /* skill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = skill.h; path = shop/skill.h; sourceTree = "<group>"; };
+		47E6BF5C1E9F080B00D742FB /* BuySkill.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BuySkill.cpp; path = shop/BuySkill.cpp; sourceTree = "<group>"; };
+		47E6BF5D1E9F080B00D742FB /* BuySkill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BuySkill.h; path = shop/BuySkill.h; sourceTree = "<group>"; };
 		47E6BF5E1E9F080B00D742FB /* SongsExtraction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SongsExtraction.cpp; path = shop/SongsExtraction.cpp; sourceTree = "<group>"; };
 		47E6BF5F1E9F080B00D742FB /* SongsExtraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SongsExtraction.h; path = shop/SongsExtraction.h; sourceTree = "<group>"; };
 		47E6BF601E9F080B00D742FB /* SongsPackage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SongsPackage.cpp; path = shop/SongsPackage.cpp; sourceTree = "<group>"; };
@@ -337,6 +345,7 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				479298D71EB1CB35001996EC /* s */,
 				47F69BFB1E963817006F3F78 /* 7AND5 - Remember.mp3 */,
 				476C15D21E9B45E60031FA3E /* TheFatRat - Unity.mp3 */,
 				4731BBFC1E94923C00530117 /* songs */,
@@ -396,12 +405,16 @@
 		47E6BF681E9F263F00D742FB /* shop */ = {
 			isa = PBXGroup;
 			children = (
+				479298D21EB18E3C001996EC /* ShopConfig.cpp */,
+				479298D31EB18E3C001996EC /* ShopConfig.h */,
 				47E6BF581E9F080B00D742FB /* ShopItemInfo.cpp */,
 				47E6BF591E9F080B00D742FB /* ShopItemInfo.h */,
 				47E6BF5A1E9F080B00D742FB /* ShopLayer.cpp */,
 				47E6BF5B1E9F080B00D742FB /* ShopLayer.h */,
-				47E6BF5C1E9F080B00D742FB /* skill.cpp */,
-				47E6BF5D1E9F080B00D742FB /* skill.h */,
+				47E6BF5C1E9F080B00D742FB /* BuySkill.cpp */,
+				47E6BF5D1E9F080B00D742FB /* BuySkill.h */,
+				479298D91EB1DF29001996EC /* BuyItems.cpp */,
+				479298DA1EB1DF29001996EC /* BuyItems.h */,
 				47E6BF5E1E9F080B00D742FB /* SongsExtraction.cpp */,
 				47E6BF5F1E9F080B00D742FB /* SongsExtraction.h */,
 				47E6BF601E9F080B00D742FB /* SongsPackage.cpp */,
@@ -575,6 +588,7 @@
 				476C15D31E9B45E60031FA3E /* TheFatRat - Unity.mp3 in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
 				521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */,
+				479298D81EB1CB35001996EC /* s in Resources */,
 				47A6E20A1E6A65800089E3A9 /* img in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
@@ -611,14 +625,16 @@
 				472DA5C11E77809A006D4DB7 /* SongsLayer.cpp in Sources */,
 				4734700D1EA45674008EF475 /* PKSelectDiff.cpp in Sources */,
 				47773AF91E78E7040053AC10 /* SongsListView.cpp in Sources */,
-				47E6BF641E9F080C00D742FB /* skill.cpp in Sources */,
+				47E6BF641E9F080C00D742FB /* BuySkill.cpp in Sources */,
 				47A6E1EE1E6A652F0089E3A9 /* GameLayer.cpp in Sources */,
 				472DA5C51E77E44A006D4DB7 /* SongsInfo.cpp in Sources */,
 				4731BBFA1E948EC900530117 /* ItemSelection.cpp in Sources */,
 				47F69BF91E962D54006F3F78 /* UserInfo.cpp in Sources */,
 				47A6E1ED1E6A652F0089E3A9 /* AppDelegate.cpp in Sources */,
+				479298DB1EB1DF29001996EC /* BuyItems.cpp in Sources */,
 				473470121EA458AD008EF475 /* GameOver.cpp in Sources */,
 				47B9AC951E6E984800953ACA /* MainMenuLayer.cpp in Sources */,
+				479298D41EB18E3C001996EC /* ShopConfig.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				47E6BF651E9F080C00D742FB /* SongsExtraction.cpp in Sources */,

@@ -1,5 +1,5 @@
 #include "ItemSelection.h"
-
+#include "UserInfo.h"
 //#include "SongsLayer.h"
 
 bool ItemSelection::init()
@@ -103,6 +103,26 @@ void ItemSelection::setItem()
 
 		itemButtonSelect.pushBack(btn_sel);
 	}
+    
+    for(int i = 0;i<3;i++)
+    {
+        auto numBg = Sprite::create("img/selectsongs/iitems_n.png");
+        
+        numBg->setPosition(149,150);
+        
+        char numCh[8];
+        
+        sprintf(numCh, "%d",UserInfo::getInstance()->item[i]);
+        
+        auto numLabel = Label::create(numCh,"",48);
+        
+        numLabel->setPosition(30,25);
+        
+        numBg->addChild(numLabel);
+        
+        items[i]->addChild(numBg);
+        
+    }
 /*
 	node->addChild(item1);
 
