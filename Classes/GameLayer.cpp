@@ -743,24 +743,10 @@ void GameLayer::showTitle()
 void GameLayer::pause()
 {
 	SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
-//	RenderTexture* renderTexture = RenderTexture::create(1920,1080);
-//	renderTexture->begin();
-//	this->getParent()->visit();
-//	renderTexture->end();
-//	Director::sharedDirector()->pushScene(PauseLayer::createWithSong(this->songId, this->diff, 0, renderTexture));
+
 	Director::sharedDirector()->pause();
 
 	pauseLayer = PauseLayer::createWithSong(this->songId,this->diff,0);
 
 	this->addChild(pauseLayer);
-}
-
-void GameLayer::backToList()
-{
-//	Director::getInstance()->resume();
-
-	this->getParent()->addChild(SongsLayer::create());
-
-	this->removeFromParent();
-
 }
