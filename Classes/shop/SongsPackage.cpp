@@ -1,5 +1,5 @@
 #include "SongsPackage.h"
-
+#include "ShopConfig.h"
 
 bool SongsPackage::init()
 {
@@ -16,14 +16,16 @@ bool SongsPackage::init()
 	scrollView->setPosition(Vec2(300,400));
 
 	this->addChild(scrollView);
-
+    
+    songspackageinfo = nullptr;
+    
+    auto bg = Sprite::create("img/shop/songspackage/songspackageinfobg.png");
+    
+    bg->setPosition(1930,733);
+    
+    this->addChild(bg);
+    
 	this->setSongspackage();
-
-	songspackageinfo = ShopItemInfo::createWithInfo(songsPackageID[0]);
-
-	songspackageinfo->setPosition(1000, 200);
-
-	this->addChild(songspackageinfo);
 
 	return true;
 }
@@ -36,9 +38,9 @@ void SongsPackage::setSongspackage()
 
 	item->setPosition(Vec2(0,0));
 
-	for (int i = 0; i < 8; ++i)
+	for (int i = 0; i < 4; ++i)
 	{
-		sprintf(songsPackageID[i],"songsPackage\%d",i + 1);
+		sprintf(songsPackageID[i],"songPack\%d",i + 1);
 
 //		log(songsPackageID[i]);
 
@@ -85,12 +87,15 @@ void SongsPackage::setSongspackage()
 
 void SongsPackage::songsPackageSelect(char* songsPackageID)
 {
-	this->removeChild(songspackageinfo);
+    if(songspackageinfo!=nullptr)
+        this->removeChild(songspackageinfo);
 
 //	songspackageinfo = SongsPackageInfo::create();
-	songspackageinfo = ShopItemInfo::createWithInfo(songsPackageID);
+    ItemInfo info = ShopConfig::getInstance()->getInfo(songsPackageID);
+    
+	songspackageinfo = ShopItemInfo::createWithInfo(info.name,info.intro,info.price,nullptr);
 
-	songspackageinfo->setPosition(1000,200);
+	songspackageinfo->setPosition(1930,733);
 
 	this->addChild(songspackageinfo);
 }

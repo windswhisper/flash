@@ -4,7 +4,8 @@
 #include "cocos2d.h"
 #include "SongsExtraction.h"
 #include "SongsPackage.h"
-#include "skill.h"
+#include "BuySkill.h"
+#include "BuyItems.h"
 
 USING_NS_CC;
 
@@ -35,6 +36,8 @@ public:
 
 	void skinSelect();
 
+    void updateMoney();
+    
 	MenuItemImage* btn_mainmenu;
 
 	MenuItemImage* btn_skin;
@@ -61,7 +64,11 @@ public:
 
 	SongsPackage* songsPackage;
 
-	Skill* skill;
+	BuySkill* skill;
+    
+    BuyItems* buyItems;
+    
+    Label* moneyLabel;
 };
 
 #endif

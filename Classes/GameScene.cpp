@@ -27,9 +27,6 @@ bool GameScene::init()
     
     this->addChild(LoginPanel::create());
     
-//	this->addChild(PKGameOverLayer::create());
-
-    
     this->lockLayer = Layer::create();
     
     ringIn = Sprite::create("img/loading/loadingRingIn.png");

@@ -16,17 +16,27 @@ public:
 
 	void buyShopItem();
 
-	static ShopItemInfo* createWithInfo(char* shopItemID);
+	static ShopItemInfo* createWithInfo(char* shopItemID,char* shopItemIntro,int price,ccMenuCallback callFunc);
 
 	void setShopItemID();
 
 	Sprite* bg;
 
-	Button* btn_buyShopItem;
+	MenuItemImage* btn_buyShopItem;
 
 	char* shopItemID;
 
 	Text* shopItemIdText;
+    
+    char* shopItemIntro;
+    
+    Text* shopItemIntroText;
+    
+    int price;
+    
+    Text* priceText;
+    
+    CallFunc* buyCallFunc;
 };
 
 #endif

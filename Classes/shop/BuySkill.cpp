@@ -1,6 +1,6 @@
-#include "skill.h"
+#include "BuySkill.h"
 
-bool Skill::init()
+bool BuySkill::init()
 {
 	scrollView = ScrollView::create();
 
@@ -18,16 +18,18 @@ bool Skill::init()
 
 	this->setSkill();
 
-	skillInfo = ShopItemInfo::createWithInfo(skillID[0]);
-
-	skillInfo->setPosition(1000, 200);
-
-	this->addChild(skillInfo);
-
+    skillInfo = nullptr;
+    
+    auto bg = Sprite::create("img/shop/songspackage/songspackageinfobg.png");
+    
+    bg->setPosition(1930,733);
+    
+    this->addChild(bg);
+    
 	return true;
 }
 
-void Skill::setSkill()
+void BuySkill::setSkill()
 {
 	Layout* item = Layout::create();
 
@@ -45,7 +47,7 @@ void Skill::setSkill()
 
 		skill[i]->setPosition(Vec2(200 + 500 * i, 400 ));
 
-		skill[i]->addTouchEventListener(CC_CALLBACK_0(Skill::skillSelect, this,skillID[i]));
+		skill[i]->addTouchEventListener(CC_CALLBACK_0(BuySkill::skillSelect, this,skillID[i]));
 
 		item->addChild(skill[i]);
 	}
@@ -53,14 +55,15 @@ void Skill::setSkill()
 	scrollView->addChild(item);
 }
 
-void Skill::skillSelect(char* skillId)
+void BuySkill::skillSelect(char* skillId)
 {
-	this->removeChild(skillInfo);
+    if(skillInfo!=nullptr)
+        this->removeChild(skillInfo);
 
 	//	songspackageinfo = SongsPackageInfo::create();
-	skillInfo = ShopItemInfo::createWithInfo(skillId);
+	skillInfo = ShopItemInfo::createWithInfo(skillId,"",10,nullptr);
 
-	skillInfo->setPosition(1000, 200);
+	skillInfo->setPosition(1930,733);
 
 	this->addChild(skillInfo);
 }
