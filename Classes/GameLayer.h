@@ -2,6 +2,7 @@
 #define __GAME_LAYER_H__
 
 #include "cocos2d.h"
+#include "PauseLayer.h"
 
 USING_NS_CC;
 
@@ -124,8 +125,10 @@ public:
     void updateScore(float dt);
     
     void showTitle();
-    
-    void backToList();
+
+	void pause();
+
+	void backToList();
     
     float t;
     
@@ -186,6 +189,10 @@ public:
     int maxCombo;
     
     int rateCount[4];
+
+	MenuItemImage* btn_pause;
+
+	PauseLayer* pauseLayer;
 };
 
 static GameLayer* _gamelayer;
