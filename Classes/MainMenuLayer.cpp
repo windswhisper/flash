@@ -4,6 +4,7 @@
 #include "SongsLayer.h"
 #include "PK/PKSelectDiff.h"
 #include "shop/ShopLayer.h"
+#include "Setting\Setting.h"
 
 #include "SimpleAudioEngine.h"
 
@@ -108,6 +109,9 @@ void MainMenuLayer::shop()
 }
 void MainMenuLayer::setting()
 {
+	this->close(CallFunc::create([=](){
+		this->getParent()->addChild(Setting::create());
+	}));
 }
 
 void MainMenuLayer::close(CallFunc* callfunc)
