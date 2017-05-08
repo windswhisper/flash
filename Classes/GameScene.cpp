@@ -6,6 +6,7 @@
 #include "GameOver.h"
 #include "PK/PKGameOverLayer.h"
 #include "PauseLayer.h"
+#include "Setting/Setting.h"
 
 #include "SocketIOClient.h"
 #include "SocketClient.h"
@@ -26,6 +27,8 @@ bool GameScene::init()
     this->addChild(this->bg);
     
     this->addChild(LoginPanel::create());
+//	this->addChild(Setting::create());
+
     
     this->lockLayer = Layer::create();
     

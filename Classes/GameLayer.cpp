@@ -410,9 +410,6 @@ void GameLayer::update(float dt)
     
     if (this->t > this->offset&&this->t-dt <= this->offset)
     {
-        this->backToList();
-        return;
-        
         SimpleAudioEngine::getInstance()->playBackgroundMusic(filename,false);
     }
     
