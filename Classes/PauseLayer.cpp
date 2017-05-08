@@ -11,11 +11,11 @@ bool PauseLayer::init()
 {
 	Size visiblesize = Director::getInstance()->getVisibleSize();
 
-	/*pauseBg = Sprite::create("img/pause/pauseBg.png");
+	pauseBg = Sprite::create("img/pause/pauseBg.png");
 
 	pauseBg->setPosition(visiblesize.width/2,visiblesize.height/2);
 
-	this->addChild(pauseBg);*/
+	this->addChild(pauseBg);
 
 
 	btn_continue = MenuItemImage::create("img/pause/button.png", "img/pause/button_p.png", CC_CALLBACK_0(PauseLayer::continuePlay,this));
@@ -62,7 +62,6 @@ bool PauseLayer::init()
 
 void PauseLayer::continuePlay()
 {
-//	Director::sharedDirector()->popScene();
 	Director::sharedDirector()->resume();
 	
 	SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
@@ -72,12 +71,8 @@ void PauseLayer::continuePlay()
 
 void PauseLayer::playAgain()
 {
-//	auto scene = GameScene::create();
-//	Director::sharedDirector()->replaceScene(scene);
-//	Director::getInstance()->getRunningScene()->removeAllChildren();
-//	Director::getInstance()->getRunningScene()->addChild(GameLayer::createWithId(songId, songdiff, pkMode));
 	this->getParent()->getParent()->addChild(GameLayer::createWithId(songId,songdiff,pkMode));
-//	scene->addChild(GameLayer::createWithId(songId, songdiff, pkMode));
+
 	this->getParent()->removeFromParent();
 
 	Director::sharedDirector()->resume();
@@ -88,17 +83,13 @@ void PauseLayer::back()
 {
 	this->getParent()->getParent()->addChild(SongsLayer::create());
 
-//	this->getParent()->removeFromParent();
-
 	this->getParent()->removeFromParent();
-//	this->getParent()->removeFromParent();
+
 	Director::sharedDirector()->resume();
 }
 
 PauseLayer* PauseLayer::createWithSong(int id, char* diff, int pkMode)
 {
-//	auto scene = Scene::create();
-
 	auto pauseLayer = PauseLayer::create();
 
 	pauseLayer->songId = id;
@@ -107,12 +98,6 @@ PauseLayer* PauseLayer::createWithSong(int id, char* diff, int pkMode)
 
 	strcpy(pauseLayer->songdiff, diff);
 
-	/*Sprite* bg_red = Sprite::createWithTexture(renderTexture->getSprite()->getTexture());
-	bg_red->setPosition(Vec2(960,540));
-	bg_red->setFlipY(true);
-	bg_red->setColor(Color3B::GRAY);
-	pauseLayer->addChild(bg_red);
-	scene->addChild(pauseLayer);*/
 	return pauseLayer;
 
 }

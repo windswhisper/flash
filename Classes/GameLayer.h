@@ -127,8 +127,6 @@ public:
     void showTitle();
 
 	void pause();
-
-	void backToList();
     
     float t;
     
