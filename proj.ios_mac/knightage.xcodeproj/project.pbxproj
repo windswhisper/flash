@@ -26,6 +26,7 @@
 		479298D41EB18E3C001996EC /* ShopConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 479298D21EB18E3C001996EC /* ShopConfig.cpp */; };
 		479298D81EB1CB35001996EC /* s in Resources */ = {isa = PBXBuildFile; fileRef = 479298D71EB1CB35001996EC /* s */; };
 		479298DB1EB1DF29001996EC /* BuyItems.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 479298D91EB1DF29001996EC /* BuyItems.cpp */; };
+		479978AD1EC002FC00E67D56 /* SettingData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 479978AB1EC002FC00E67D56 /* SettingData.cpp */; };
 		47A159E21E88EA7B004EAFE9 /* SocketIOClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47A159E01E88EA7B004EAFE9 /* SocketIOClient.cpp */; };
 		47A6E1ED1E6A652F0089E3A9 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47A6E1E31E6A652F0089E3A9 /* AppDelegate.cpp */; };
 		47A6E1EE1E6A652F0089E3A9 /* GameLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47A6E1E51E6A652F0089E3A9 /* GameLayer.cpp */; };
@@ -155,6 +156,8 @@
 		479298D71EB1CB35001996EC /* s */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = s; sourceTree = "<group>"; };
 		479298D91EB1DF29001996EC /* BuyItems.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BuyItems.cpp; path = shop/BuyItems.cpp; sourceTree = "<group>"; };
 		479298DA1EB1DF29001996EC /* BuyItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BuyItems.h; path = shop/BuyItems.h; sourceTree = "<group>"; };
+		479978AB1EC002FC00E67D56 /* SettingData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SettingData.cpp; sourceTree = "<group>"; };
+		479978AC1EC002FC00E67D56 /* SettingData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingData.h; sourceTree = "<group>"; };
 		47A159E01E88EA7B004EAFE9 /* SocketIOClient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SocketIOClient.cpp; sourceTree = "<group>"; };
 		47A159E11E88EA7B004EAFE9 /* SocketIOClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOClient.h; sourceTree = "<group>"; };
 		47A6E1E31E6A652F0089E3A9 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppDelegate.cpp; sourceTree = "<group>"; };
@@ -383,6 +386,8 @@
 				4755807B1E8A3283002A302F /* RankingList.h */,
 				47925D7C1E6E4A58008AE59C /* RegisterPanel.cpp */,
 				47925D7D1E6E4A58008AE59C /* RegisterPanel.h */,
+				479978AB1EC002FC00E67D56 /* SettingData.cpp */,
+				479978AC1EC002FC00E67D56 /* SettingData.h */,
 				47A159E01E88EA7B004EAFE9 /* SocketIOClient.cpp */,
 				47A159E11E88EA7B004EAFE9 /* SocketIOClient.h */,
 				472DA5C31E77E44A006D4DB7 /* SongsInfo.cpp */,
@@ -627,6 +632,7 @@
 				4755807C1E8A3283002A302F /* RankingList.cpp in Sources */,
 				47A6E1F01E6A652F0089E3A9 /* LoginPanel.cpp in Sources */,
 				47925D7E1E6E4A58008AE59C /* RegisterPanel.cpp in Sources */,
+				479978AD1EC002FC00E67D56 /* SettingData.cpp in Sources */,
 				472DA5C11E77809A006D4DB7 /* SongsLayer.cpp in Sources */,
 				4734700D1EA45674008EF475 /* PKSelectDiff.cpp in Sources */,
 				47773AF91E78E7040053AC10 /* SongsListView.cpp in Sources */,

@@ -4,6 +4,7 @@
 #include "GameOver.h"
 #include "PauseLayer.h"
 #include "SongsLayer.h"
+#include "SettingData.h"
 
 #include  <iostream>
 #include  <fstream>
@@ -195,6 +196,20 @@ bool GameLayer::init()
     
     this->hp = 100;
     
+    auto setting = SettingData::getInstance();
+    
+    for(int i=0;i<8;i++)
+    {
+        printf("%d",setting->itemSwitch[i]);
+        if(!setting->disableItem)
+            this->itemOn[i] = setting->itemSwitch[i];
+        else
+            this->itemOn[i] = false;
+        this->itemCount[i] = 10;
+        
+        printf("%d",itemOn[i]);
+    }
+    
     SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/game/hit.plist");
     AnimationCache::getInstance()->addAnimationsWithFile("img/game/hit_ani.plist");
     AnimationCache::getInstance()->addAnimationsWithFile("img/game/lhit_ani.plist");
@@ -374,6 +389,11 @@ GameLayer* GameLayer::createWithId(int id,const char* diff, int pkMode)
 }
 void GameLayer::initPKMode()
 {
+    for(int i=0;i<8;i++)
+    {
+        this->itemOn[i] = false;
+    }
+
     this->scoreLabel_OP = Label::createWithSystemFont("0000000", "Arial", 80);
     
     this->scoreLabel_OP->setPosition(0,1080);
@@ -410,9 +430,6 @@ void GameLayer::update(float dt)
     
     if (this->t > this->offset&&this->t-dt <= this->offset)
     {
-        this->backToList();
-        return;
-        
         SimpleAudioEngine::getInstance()->playBackgroundMusic(filename,false);
     }
     
@@ -618,6 +635,18 @@ void GameLayer::miss(int col)
 
 void GameLayer::getRate(int rate)
 {
+    if(rate==0&&itemOn[0]&&itemCount[0]>0)
+    {
+        itemCount[0]--;
+        getRate(3);
+        return;
+    }
+    if(rate==3&&itemOn[1]&&itemCount[1]>0)
+    {
+        itemCount[1]--;
+        getRate(2);
+        return;
+    }
     
     char str[20];
     
