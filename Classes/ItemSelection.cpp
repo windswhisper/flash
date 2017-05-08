@@ -1,7 +1,7 @@
 #include "ItemSelection.h"
 #include "UserInfo.h"
 //#include "SongsLayer.h"
-
+#include "SettingData.h"
 bool ItemSelection::init()
 {
 	isDown = false;
@@ -180,4 +180,20 @@ void ItemSelection::selectItem(Ref* pSender, Widget::TouchEventType type,  Butto
 			isSelect[i] = 0;
 		}
 	}
+}
+
+void ItemSelection::launch()
+{
+    auto setting = SettingData::getInstance();
+    
+    for(int i=0;i<8;i++)
+    {
+        setting->itemSwitch[i] = this->isSelect[i];
+        if(this->isSelect[i]&&i<3)
+        {
+            UserInfo::getInstance()->item[i]--;
+        }
+    }
+    
+    setting->save();
 }

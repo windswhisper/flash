@@ -19,6 +19,8 @@ public:
 	void selectItem(Ref* pSender, Widget::TouchEventType type, Button* items_btn,int i);
 
 	void setItem();
+    
+    void launch();
 
 private:
 	Sprite* itemSelectionbg;

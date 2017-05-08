@@ -188,6 +188,10 @@ public:
     
     int rateCount[4];
 
+    bool itemOn[8];
+    
+    int itemCount[8];
+    
 	MenuItemImage* btn_pause;
 
 	PauseLayer* pauseLayer;
