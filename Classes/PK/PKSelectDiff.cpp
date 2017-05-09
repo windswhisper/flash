@@ -2,6 +2,7 @@
 #include "MainMenuLayer.h"
 #include "SocketIOClient.h"
 #include "GameLayer.h"
+#include "Setting\Setting.h"
 
 bool PKSelectDiff::init()
 {
@@ -190,7 +191,10 @@ void PKSelectDiff::backToMenu()
 
 void PKSelectDiff::setting()
 {
-    
+	this->close(CallFunc::create([=]()
+	{
+		this->getParent()->addChild(Setting::create());
+	}));
 }
 
 void PKSelectDiff::matching()

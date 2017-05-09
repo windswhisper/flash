@@ -4,6 +4,7 @@
 #include "SongsListView.h"
 #include "GameLayer.h"
 #include "RankingList.h"
+#include "Setting\Setting.h"
 
 #include "SimpleAudioEngine.h"
 
@@ -138,6 +139,10 @@ void SongsLayer::backToMenu()
 
 void SongsLayer::setting()
 {
+	this->close(CallFunc::create([=]()
+	{
+		this->getParent()->addChild(Setting::create());
+	}));
 }
 
 void SongsLayer::close(CallFunc* callfunc)

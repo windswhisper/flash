@@ -2,6 +2,8 @@
 #include "MainMenuLayer.h"
 #include "SimpleAudioEngine.h"
 #include "LoginPanel.h"
+#include "SettingData.h"
+
 
 using namespace CocosDenshion;
 
@@ -30,7 +32,7 @@ bool Setting::init()
 	btn_back->addChild(ring);
 
 
-	btn_disableItem = MenuItemImage::create("img/setting/btn_disable.png","img/setting/btn_disable_p.png",CC_CALLBACK_0(Setting::disableItem,this));
+	btn_disableItem = MenuItemImage::create("img/setting/btn_disable.png", "img/setting/btn_disable_p.png", CC_CALLBACK_0(Setting::disableItemCallBack, this));
 
 	btn_disableItem->setPosition(visiblesize.width*0.4,visiblesize.height*0.3);
 
@@ -66,14 +68,14 @@ bool Setting::init()
 	
 	musicVolume->loadProgressBarTexture("img/setting/sliderprogress.png");
 
-	float effectPercent = UserDefault::getInstance()->getFloatForKey("effectPercent");
+//	float effectPercent = SettingData::getInstance()->musicVolume;
 
-	if (effectPercent == 0.0f)
+	if (SettingData::getInstance()->musicVolume == 0.0f)
 	{
-		effectPercent == 100.0f;
+		SettingData::getInstance()->musicVolume == 100.0f;
 	}
 
-	musicVolume->setPercent(effectPercent);
+	musicVolume->setPercent(SettingData::getInstance()->musicVolume);
 	
 	musicVolume->setPosition(Vec2(1200,700));
 
@@ -82,10 +84,11 @@ bool Setting::init()
 		if (type == Slider::EventType::ON_PERCENTAGE_CHANGED)
 		{
 			float percent = musicVolume->getPercent();
-
+			//SettingData::getInstance()->musicVolume = musicVolume->getPercent();
 			SimpleAudioEngine::getInstance()->setBackgroundMusicVolume(percent/100.0);
-
-			UserDefault::getInstance()->setFloatForKey("effectPercent",percent);
+			SettingData::getInstance()->musicVolume = percent;
+			//UserDefault::getInstance()->setFloatForKey("effectPercent",percent);
+			SettingData::getInstance()->save();
 		}
 
 	});
@@ -107,14 +110,14 @@ bool Setting::init()
 
 	keyPressVolume->loadProgressBarTexture("img/setting/sliderprogress.png");
 
-	float volumePercent = UserDefault::getInstance()->getFloatForKey("volumePercent");
+//	float volumePercent = UserDefault::getInstance()->getFloatForKey("volumePercent");
 
-	if (volumePercent == 0.0f)
+	if (SettingData::getInstance()->effectVolume == 0.0f)
 	{
-		volumePercent == 100.0f;
+		SettingData::getInstance()->effectVolume == 100.0f;
 	}
 
-	keyPressVolume->setPercent(volumePercent);
+	keyPressVolume->setPercent(SettingData::getInstance()->effectVolume);
 
 	keyPressVolume->setPosition(Vec2(1200, 600));
 
@@ -126,14 +129,29 @@ bool Setting::init()
 
 			SimpleAudioEngine::getInstance()->setEffectsVolume(float(percent) / 100);
 
-			UserDefault::getInstance()->setFloatForKey("volumePercent", percent);
+			SettingData::getInstance()->effectVolume = percent;
+
+			SettingData::getInstance()->save();
+
+			//UserDefault::getInstance()->setFloatForKey("volumePercent", percent);
 		}
 
 	});
 
 	this->addChild(keyPressVolume);
 
-
+	btnIsSelected = Sprite::create("img/setting/btn_disable_p.png");
+	btnIsSelected->setPosition(btn_disableItem->getContentSize().width / 2, btn_disableItem->getContentSize().height / 2);
+	btn_disableItem->addChild(btnIsSelected);
+//	btnIsSelected->setVisible(false);
+	if (SettingData::getInstance()->disableItem)
+	{
+		btnIsSelected->setVisible(true);
+	}
+	else
+	{
+		btnIsSelected->setVisible(false);
+	}
 	return true;
 }
 
@@ -144,9 +162,25 @@ void Setting::backToMainMenu()
 	this->removeFromParent();
 }
 
-void Setting::disableItem()
+void Setting::disableItemCallBack()
 {
+	
+	if (SettingData::getInstance()->disableItem)
+	{
+		SettingData::getInstance()->disableItem = false;
+		
+		btnIsSelected->setVisible(false);
 
+		SettingData::getInstance()->save();
+	}
+	else
+	{
+		SettingData::getInstance()->disableItem = true;
+		
+		btnIsSelected->setVisible(true);
+
+		SettingData::getInstance()->save();
+	}
 }
 
 void Setting::aboutUs()
@@ -160,18 +194,3 @@ void Setting::logout()
 
 	this->removeFromParent();
 }
-
-//void Setting::onEnter()
-//{
-//	musicVolume = Slider::create();
-//
-//	musicVolume->loadBarTexture("img/setting/musicvolume.png");
-//
-//	musicVolume->loadSlidBallTextures("img/setting/sliderthumb.png","img/setting/sliderthumb.png","");
-//
-//	musicVolume->loadProgressBarTexture("img/setting/sliderprogress.png");
-//
-//	musicVolume->setPosition(Vec2(1000,900));
-//
-//	this->addChild(musicVolume);
-//}

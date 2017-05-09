@@ -16,13 +16,11 @@ public:
 
 	void backToMainMenu();
 
-	void disableItem();
+	void disableItemCallBack();
 
 	void logout();
 
 	void aboutUs();
-
-//	virtual void onEnter() override;
 
 private:
 	MenuItemImage* btn_back;
@@ -42,6 +40,8 @@ private:
 	Sprite* label_musicVolume;
 
 	Sprite* label_keyPressVolume;
+
+	Sprite* btnIsSelected;
 };
 
 #endif
