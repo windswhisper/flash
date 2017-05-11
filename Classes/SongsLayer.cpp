@@ -4,7 +4,7 @@
 #include "SongsListView.h"
 #include "GameLayer.h"
 #include "RankingList.h"
-#include "Setting\Setting.h"
+#include "Setting/Setting.h"
 
 #include "SimpleAudioEngine.h"
 

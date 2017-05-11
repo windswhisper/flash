@@ -200,14 +200,11 @@ bool GameLayer::init()
     
     for(int i=0;i<8;i++)
     {
-        printf("%d",setting->itemSwitch[i]);
         if(!setting->disableItem)
             this->itemOn[i] = setting->itemSwitch[i];
         else
             this->itemOn[i] = false;
         this->itemCount[i] = 10;
-        
-        printf("%d",itemOn[i]);
     }
     
     SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/game/hit.plist");
@@ -722,7 +719,7 @@ void GameLayer::complete()
         overLayer->setData(songId,songName, diff,3, score, maxCombo, 100,rateCount[0],rateCount[3],rateCount[2],rateCount[1]);
         this->getParent()->addChild(overLayer);
         this->removeFromParent();
-    }),FadeTo::create(0.5f, 255),CallFunc::create([=](){
+    }),FadeTo::create(0.5f, 0),CallFunc::create([=](){
         shadow->removeFromParent();
     }), NULL));
     this->getParent()->addChild(shadow,9);
@@ -777,7 +774,7 @@ void GameLayer::pause()
 {
 	SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
 
-	Director::sharedDirector()->pause();
+	Director::getInstance()->pause();
 
 	pauseLayer = PauseLayer::createWithSong(this->songId,this->diff,0);
 

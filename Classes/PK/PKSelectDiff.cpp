@@ -2,7 +2,7 @@
 #include "MainMenuLayer.h"
 #include "SocketIOClient.h"
 #include "GameLayer.h"
-#include "Setting\Setting.h"
+#include "../Setting/Setting.h"
 
 bool PKSelectDiff::init()
 {

@@ -4,7 +4,7 @@
 #include "SongsLayer.h"
 #include "PK/PKSelectDiff.h"
 #include "shop/ShopLayer.h"
-#include "Setting\Setting.h"
+#include "Setting/Setting.h"
 
 #include "SimpleAudioEngine.h"
 

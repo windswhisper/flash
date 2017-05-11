@@ -2,6 +2,7 @@
 
 #include "GameLayer.h"
 #include "SongsLayer.h"
+#include "SocketIOClient.h"
 
 bool GameOver::init()
 {
@@ -260,6 +261,12 @@ void GameOver::setData(int songId,char* songsName, char* songsDiff,int grade, in
     cover->setPosition(400,538);
     
     this->addChild(cover);
+    
+    
+    SocketIOClient::getInstance()->listen("uploadScoreRes", [=](SIOClient* client, std::string msg){
+        log("%s",msg.c_str());
+    });
+
 }
 
 void GameOver::back()
