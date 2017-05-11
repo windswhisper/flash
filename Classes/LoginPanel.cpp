@@ -2,6 +2,7 @@
 #include "RegisterPanel.h"
 #include "MainMenuLayer.h"
 #include "SocketIOClient.h"
+#include "PromptingFrame.h"
 
 bool LoginPanel::init()
 {
@@ -110,7 +111,9 @@ void LoginPanel::login()
         }
         if(msg.compare("fail")==0)
         {
-            //TODO
+			auto promptingFrame = PromptingFrame::createWithId(1);
+
+			this->addChild(promptingFrame);
         }
         SocketIOClient::getInstance()->unlock();
     });

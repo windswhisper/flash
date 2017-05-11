@@ -279,26 +279,27 @@ bool GameLayer::init()
         
         
     }
+	
+		/*btn_pause = MenuItemImage::create("img/game/btn_pause.png", "img/game/btn_pause_p.png", CC_CALLBACK_0(GameLayer::gamePause, this));
 
-	btn_pause = MenuItemImage::create("img/game/btn_pause.png", "img/game/btn_pause_p.png", CC_CALLBACK_0(GameLayer::pause, this));
-
-	btn_pause->setPosition(Vec2(btn_pause->getContentSize().width/2,980));
-
-
-	auto ring = Sprite::create("img/selectsongs/ring.png");
-
-	ring->setPosition(130,100);
-
-	ring->runAction(RepeatForever::create(RotateBy::create(4, 360)));
-
-	btn_pause->addChild(ring);
+		btn_pause->setPosition(Vec2(btn_pause->getContentSize().width / 2, 980));
 
 
-	Menu* menu = Menu::create(btn_pause,NULL);
+		auto ring = Sprite::create("img/selectsongs/ring.png");
 
-	menu->setPosition(Point::ZERO);
+		ring->setPosition(130, 100);
 
-	this->addChild(menu);
+		ring->runAction(RepeatForever::create(RotateBy::create(4, 360)));
+
+		btn_pause->addChild(ring);
+
+
+		Menu* menu = Menu::create(btn_pause, NULL);
+
+		menu->setPosition(Point::ZERO);
+
+		this->addChild(menu);*/
+
     
     this->hpFrame = Sprite::create("img/game/hpFrame.png");
     
@@ -382,6 +383,7 @@ GameLayer* GameLayer::createWithId(int id,const char* diff, int pkMode)
     {
         gamelayer->initPKMode();
     }
+	gamelayer->setPauseButton(pkMode);
     return gamelayer;
 }
 void GameLayer::initPKMode()
@@ -718,6 +720,7 @@ void GameLayer::complete()
         auto overLayer = GameOver::create();
         overLayer->setData(songId,songName, diff,3, score, maxCombo, 100,rateCount[0],rateCount[3],rateCount[2],rateCount[1]);
         this->getParent()->addChild(overLayer);
+		Director::sharedDirector()->resume();
         this->removeFromParent();
     }),FadeTo::create(0.5f, 0),CallFunc::create([=](){
         shadow->removeFromParent();
@@ -770,7 +773,7 @@ void GameLayer::showTitle()
 }
 
 
-void GameLayer::pause()
+void GameLayer::gamePause()
 {
 	SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
 
@@ -779,4 +782,30 @@ void GameLayer::pause()
 	pauseLayer = PauseLayer::createWithSong(this->songId,this->diff,0);
 
 	this->addChild(pauseLayer);
+}
+
+void GameLayer::setPauseButton(int pkMode)
+{
+	if (!pkMode)
+	{
+		btn_pause = MenuItemImage::create("img/game/btn_pause.png", "img/game/btn_pause_p.png", CC_CALLBACK_0(GameLayer::gamePause, this));
+
+		btn_pause->setPosition(Vec2(btn_pause->getContentSize().width / 2, 980));
+
+
+		auto ring = Sprite::create("img/selectsongs/ring.png");
+
+		ring->setPosition(130, 100);
+
+		ring->runAction(RepeatForever::create(RotateBy::create(4, 360)));
+
+		btn_pause->addChild(ring);
+
+
+		Menu* menu = Menu::create(btn_pause, NULL);
+
+		menu->setPosition(Point::ZERO);
+
+		this->addChild(menu);
+	}
 }

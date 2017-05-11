@@ -3,6 +3,7 @@
 #include "SimpleAudioEngine.h"
 #include "LoginPanel.h"
 #include "SettingData.h"
+#include "PromptingFrame.h"
 
 
 using namespace CocosDenshion;
@@ -185,7 +186,9 @@ void Setting::disableItemCallBack()
 
 void Setting::aboutUs()
 {
+	auto promptingFrame = PromptingFrame::createWithId(2);
 
+	this->addChild(promptingFrame);
 }
 
 void Setting::logout()
