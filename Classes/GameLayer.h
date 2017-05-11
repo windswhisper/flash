@@ -126,7 +126,9 @@ public:
     
     void showTitle();
 
-	void pause();
+	void gamePause();
+
+	void setPauseButton(int pkMode);
     
     float t;
     

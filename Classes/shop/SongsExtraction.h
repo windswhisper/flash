@@ -18,6 +18,8 @@ public:
 
 	Sprite* songsExtractionBg;
 
+	Sprite* songsExtractionFrame;
+
 	MenuItemImage* btn_extractForOne;
 
 	MenuItemImage* btn_extractForTen;

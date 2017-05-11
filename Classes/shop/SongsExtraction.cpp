@@ -2,11 +2,18 @@
 
 bool SongsExtraction::init()
 {
-	songsExtractionBg = Sprite::create("img/shop/songsextraction/songsextraction_frame.png");
+	songsExtractionFrame = Sprite::create("img/shop/songsextraction/songsextraction_frame.png");
 
-	songsExtractionBg->setPosition(1000,530);
+	songsExtractionFrame->setPosition(1000, 530);
 
-	this->addChild(songsExtractionBg);
+	this->addChild(songsExtractionFrame);
+
+
+	songsExtractionBg = Sprite::create("img/shop/songsextraction/songsextraction_bg.png");
+
+	songsExtractionBg->setPosition(songsExtractionFrame->getContentSize().width/2,songsExtractionFrame->getContentSize().height/2);
+
+	songsExtractionFrame->addChild(songsExtractionBg);
 
 	
 	btn_extractForOne = MenuItemImage::create("img/shop/btn_buy.png", "img/shop/btn_buy_p.png", CC_CALLBACK_0(SongsExtraction::extractForOne,this));

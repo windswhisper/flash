@@ -109,14 +109,14 @@ void GameOver::setData(int songId,char* songsName, char* songsDiff,int grade, in
     strcpy(this->diffName, songsDiff);
     
 	//	char name[20] = "Flower Dance";
-	auto label_songsName = Label::createWithSystemFont(songsName, "Arial", 98);
+	auto label_songsName = Label::createWithSystemFont(songsName, "", 98);
 
 	label_songsName->setPosition(350, 100);
 
 	songsNameFrame->addChild(label_songsName);
 
 
-	auto label_songsDiff = Label::createWithSystemFont(songsDiff, "Arial", 98);
+	auto label_songsDiff = Label::createWithSystemFont(songsDiff, "", 98);
 
 	label_songsDiff->setPosition(1200, 100);
 
@@ -127,7 +127,7 @@ void GameOver::setData(int songId,char* songsName, char* songsDiff,int grade, in
 
 	sprintf(labelScore, "%09d", score);
 
-	auto label_score = Label::create(labelScore, "Arial", 98);
+	auto label_score = Label::create(labelScore, "", 98);
 
 	label_score->setAnchorPoint(Point::ONE);
 
@@ -140,7 +140,7 @@ void GameOver::setData(int songId,char* songsName, char* songsDiff,int grade, in
 
 	sprintf(labelCombo, "%d", combo);
 
-	auto label_combo = Label::create(labelCombo, "Arial", 98);
+	auto label_combo = Label::create(labelCombo, "", 98);
 
 	label_combo->setAnchorPoint(Vec2(0,0.5f));
 
@@ -153,7 +153,7 @@ void GameOver::setData(int songId,char* songsName, char* songsDiff,int grade, in
 
 	sprintf(labelAcc, "%d%%", acc);
 
-	auto label_acc = Label::create(labelAcc, "Arial", 98);
+	auto label_acc = Label::create(labelAcc, "", 98);
 
 	label_acc->setAnchorPoint(Vec2(0,0.5f));
 
@@ -166,7 +166,7 @@ void GameOver::setData(int songId,char* songsName, char* songsDiff,int grade, in
 
 	sprintf(labelMiss,"%d",miss);
 
-	auto label_miss = Label::create(labelMiss,"Arial",56);
+	auto label_miss = Label::create(labelMiss,"",56);
 
 	label_miss->setAnchorPoint(Point::ZERO);
 
@@ -179,7 +179,7 @@ void GameOver::setData(int songId,char* songsName, char* songsDiff,int grade, in
 
 	sprintf(labelPoor, "%d", poor);
 
-	auto label_poor = Label::create(labelPoor, "Arial", 56);
+	auto label_poor = Label::create(labelPoor, "", 56);
 
 	label_poor->setAnchorPoint(Point::ZERO);
 
@@ -192,7 +192,7 @@ void GameOver::setData(int songId,char* songsName, char* songsDiff,int grade, in
 
 	sprintf(labelGood, "%d", good);
 
-	auto label_good = Label::create(labelGood, "Arial", 56);
+	auto label_good = Label::create(labelGood, "", 56);
 
 	label_good->setAnchorPoint(Point::ZERO);
 
@@ -205,7 +205,7 @@ void GameOver::setData(int songId,char* songsName, char* songsDiff,int grade, in
 
 	sprintf(labelCool, "%d", cool);
 
-	auto label_cool = Label::create(labelCool, "Arial", 56);
+	auto label_cool = Label::create(labelCool, "", 56);
 
 	label_cool->setAnchorPoint(Point::ZERO);
 
