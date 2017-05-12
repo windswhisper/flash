@@ -1,5 +1,6 @@
 #include "SongsExtraction.h"
 
+
 bool SongsExtraction::init()
 {
 	songsExtractionFrame = Sprite::create("img/shop/songsextraction/songsextraction_frame.png");
@@ -48,10 +49,46 @@ bool SongsExtraction::init()
 
 void SongsExtraction::extractForOne()
 {
-
+	auto node = Node::create();
+	auto bg = Sprite::create("img/shop/shop_bg.png");
+	node->addChild(bg);
+	char coverName[64];
+	srand((unsigned int)time(0));
+	int num = random(1,10);
+	sprintf(coverName,"songs/%d/cover.jpg",num);
+//	songsExtractionBg->setTexture(coverName);
+	auto coverBg = Sprite::create(coverName);
+	coverBg->setPosition(Vec2(bg->getContentSize().width/2,bg->getContentSize().height/2));
+	bg->addChild(coverBg);
+	auto label = Label::create("ifsafjsfjeifjas","",72);
+	label->setPosition(Vec2(960,900));
+	bg->addChild(label);
+	node->setPosition(Vec2(760, 570));
+	this->addChild(node,10);
+	auto listener = EventListenerTouchOneByOne::create();
+	listener->setSwallowTouches(true);
+	listener->onTouchBegan = [=](Touch* touch, Event* event){
+		auto target = static_cast<Sprite*>(event->getCurrentTarget());
+		Point locationInNode = target->convertToNodeSpace(touch->getLocation());
+		Size s = target->getContentSize();
+		Rect rect = Rect(0, 0, s.width, s.height);
+		if (rect.containsPoint(locationInNode))
+		{
+			coverBg->setOpacity(180);
+			return true;
+		}
+		return false;
+	};
+	listener->onTouchEnded = [=](Touch* touch, Event* event){
+		auto target = static_cast<Sprite*>(event->getCurrentTarget());
+		target->removeAllChildren();
+		target->removeFromParent();
+	};
+	_eventDispatcher->addEventListenerWithSceneGraphPriority(listener, bg);
 }
 
 void SongsExtraction::extractForTen()
 {
 
 }
+

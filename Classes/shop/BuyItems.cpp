@@ -65,6 +65,17 @@ void BuyItems::setItem()
 		itemIcon->setPosition(Vec2(items[i]->getContentSize().width / 2, items[i]->getContentSize().height / 2));
 
 		items[i]->addChild(itemIcon);
+
+		auto itemNum = Sprite::create("img/shop/x5.png");
+
+		itemNum->setAnchorPoint(Vec2(1,1));
+
+		if (i > 2)
+		{
+			itemNum->setPosition(items[i]->getContentSize().width-40,items[i]->getContentSize().height-40);
+
+			items[i]->addChild(itemNum);
+		}
 	}
 
 	scrollView->addChild(item);
