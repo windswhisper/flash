@@ -23,6 +23,7 @@
 		476C15D31E9B45E60031FA3E /* TheFatRat - Unity.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 476C15D21E9B45E60031FA3E /* TheFatRat - Unity.mp3 */; };
 		477482301EBAFF95004FE660 /* PauseLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4774822E1EBAFF95004FE660 /* PauseLayer.cpp */; };
 		47773AF91E78E7040053AC10 /* SongsListView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47773AF71E78E7040053AC10 /* SongsListView.cpp */; };
+		4779322B1EC4436D00D8A54B /* PromptingFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 477932291EC4436D00D8A54B /* PromptingFrame.cpp */; };
 		47925D7E1E6E4A58008AE59C /* RegisterPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47925D7C1E6E4A58008AE59C /* RegisterPanel.cpp */; };
 		479298D41EB18E3C001996EC /* ShopConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 479298D21EB18E3C001996EC /* ShopConfig.cpp */; };
 		479298D81EB1CB35001996EC /* s in Resources */ = {isa = PBXBuildFile; fileRef = 479298D71EB1CB35001996EC /* s */; };
@@ -152,6 +153,8 @@
 		4774822F1EBAFF95004FE660 /* PauseLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PauseLayer.h; sourceTree = "<group>"; };
 		47773AF71E78E7040053AC10 /* SongsListView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SongsListView.cpp; sourceTree = "<group>"; };
 		47773AF81E78E7040053AC10 /* SongsListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongsListView.h; sourceTree = "<group>"; };
+		477932291EC4436D00D8A54B /* PromptingFrame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PromptingFrame.cpp; sourceTree = "<group>"; };
+		4779322A1EC4436D00D8A54B /* PromptingFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromptingFrame.h; sourceTree = "<group>"; };
 		47925D7C1E6E4A58008AE59C /* RegisterPanel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RegisterPanel.cpp; sourceTree = "<group>"; };
 		47925D7D1E6E4A58008AE59C /* RegisterPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterPanel.h; sourceTree = "<group>"; };
 		479298D21EB18E3C001996EC /* ShopConfig.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ShopConfig.cpp; path = shop/ShopConfig.cpp; sourceTree = "<group>"; };
@@ -386,6 +389,8 @@
 				47B9AC941E6E984800953ACA /* MainMenuLayer.h */,
 				4774822E1EBAFF95004FE660 /* PauseLayer.cpp */,
 				4774822F1EBAFF95004FE660 /* PauseLayer.h */,
+				477932291EC4436D00D8A54B /* PromptingFrame.cpp */,
+				4779322A1EC4436D00D8A54B /* PromptingFrame.h */,
 				4755807A1E8A3283002A302F /* RankingList.cpp */,
 				4755807B1E8A3283002A302F /* RankingList.h */,
 				47925D7C1E6E4A58008AE59C /* RegisterPanel.cpp */,
@@ -656,6 +661,7 @@
 				4731BBFA1E948EC900530117 /* ItemSelection.cpp in Sources */,
 				47F69BF91E962D54006F3F78 /* UserInfo.cpp in Sources */,
 				47A6E1ED1E6A652F0089E3A9 /* AppDelegate.cpp in Sources */,
+				4779322B1EC4436D00D8A54B /* PromptingFrame.cpp in Sources */,
 				479298DB1EB1DF29001996EC /* BuyItems.cpp in Sources */,
 				473470121EA458AD008EF475 /* GameOver.cpp in Sources */,
 				47B9AC951E6E984800953ACA /* MainMenuLayer.cpp in Sources */,

@@ -12,32 +12,47 @@
     "songPack1": {
         "price": 20000,
         "title": "曲包一",
-        "info": "包含4首流行音乐,《梁非凡吔屎啦》，《德国骨科》，《金坷垃》，《我的滑板鞋》"
+        "info": "包含4首音乐《River Flows In You》、《Dango Daikazoku》、《Achromat》、《licca》"
     },
     "songPack2": {
         "price": 20000,
         "title": "曲包二",
-        "info": "包含4首古典音乐"
+        "info": "包含4首音乐《Sedap Malam》、《over the top》、《PUPA》、《Gekkou Ranbu》"
     },
     "songPack3": {
         "price": 20000,
         "title": "曲包三",
-        "info": "包含4首摇滚音乐"
+        "info": "包含4首音乐《Belly Flopper》、《Curtain Call Memories》、《Lantinid》、《CENSORED!!》"
     },
     "songPack4": {
         "price": 20000,
         "title": "曲包四",
-        "info": "包含4首欧美音乐"
+        "info": "包含4首音乐《NNRT》、《Celestial stinger》、《REANIMATE》、《Grayed Out -Antifront-》"
+    },
+    "songPack5": {
+        "price": 20000,
+        "title": "曲包五",
+        "info": "包含4首音乐《!Viva!》、《Shiwa》、《Asu no Yozora Shoukaihan》、《Sweet Days》"
+    },
+    "songPack6": {
+        "price": 20000,
+        "title": "曲包六",
+        "info": "包含4首音乐《NAVILLERA》、《Memoria (Original Mix)》、《Shelter》、《Go Love&Peace》"
+    },
+    "songPack7": {
+        "price": 20000,
+        "title": "曲包七",
+        "info": "包含3首音乐《Next stop with you》、《Honey Come!!》、《FaV (Short Version)》"
     },
     "item1": {
         "price": 60,
-        "title": "连击护盾",
+        "title": "miss护盾",
         "info": "用来抵御miss的护盾，能够将%d次miss变成poor"
     },
     "item2": {
         "price": 150,
-        "title": "补正芯片",
-        "info": "帮助使用者修正打击时机的芯片，能够将%d次poor变成great"
+        "title": "poor护盾",
+        "info": "用来抵御poor的护盾，能够将%d次poor变成good"
     },
     "item3": {
         "price": 100,
@@ -46,13 +61,13 @@
     },
     "item4": {
         "price": 200,
-        "title": "连击护盾×5",
+        "title": "miss护盾×5",
         "info": "用来抵御miss的护盾，能够将%d次miss变成poor"
     },
     "item5": {
         "price": 600,
-        "title": "补正芯片×5",
-        "info": "帮助使用者修正打击时机的芯片，能够将%d次poor变成great"
+        "title": "poor护盾×5",
+        "info": "用来抵御poor的护盾，能够将%d次poor变成good"
     },
     "item6": {
         "price": 400,

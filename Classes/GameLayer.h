@@ -75,6 +75,8 @@ public:
     float tSum;
     
     Vector<Sprite*> pics;
+    
+    float lastestPiece;
 };
 
 class GameLayer : public Node

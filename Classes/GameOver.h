@@ -20,6 +20,8 @@ public:
 
 	void playAgain();
 
+    void getCoin(int coin);
+    
 	Size visiblesize;
 
 	MenuItemImage* btn_back;

@@ -49,6 +49,17 @@ void SimpleNote::display()
     
     this->runAction(Sequence::create(MoveBy::create(_gamelayer->offset+0.2f, Vec2(0,-3000*(_gamelayer->offset+0.2f)/_gamelayer->offset)),CallFunc::create([=]{this->miss();}),NULL));
     
+    
+    if(_gamelayer->itemOn[5])
+    {
+        this->p->setOpacity(0);
+        this->p->runAction(Sequence::create(DelayTime::create(_gamelayer->offset*0.6f),FadeTo::create(_gamelayer->offset*0.1f,255), NULL));
+    }
+    if(_gamelayer->itemOn[6])
+    {
+        this->p->runAction(Sequence::create(DelayTime::create(_gamelayer->offset*0.7f),FadeTo::create(_gamelayer->offset*0.1f,0), NULL));
+    }
+    
     this->addChild(this->p);
 }
 void SimpleNote::miss()
@@ -89,8 +100,20 @@ LongNote* LongNote::createLongNote(int x, int t, int type, int endt)
 }
 void LongNote::display()
 {
+    lastestPiece = 0;
+    
+   
     auto p = Sprite::create("img/game/longnoteB.png");
     
+    if(_gamelayer->itemOn[5])
+    {
+        p->runAction(Sequence::create(FadeTo::create(0,0),DelayTime::create(_gamelayer->offset*0.6f),FadeTo::create(_gamelayer->offset*0.1f,255), NULL));
+    }
+    if(_gamelayer->itemOn[6])
+    {
+        p->runAction(Sequence::create(DelayTime::create(_gamelayer->offset*0.7f),FadeTo::create(_gamelayer->offset*0.1f,0), NULL));
+    }
+
     this->addChild(p);
     
     this->pics.pushBack(p);
@@ -103,6 +126,15 @@ void LongNote::display()
         
         p->setPosition(0,78*n);
         
+        if(_gamelayer->itemOn[5])
+        {
+            p->runAction(Sequence::create(FadeTo::create(0,0),DelayTime::create(_gamelayer->offset*(0.6f+78.0f*n/3000)),FadeTo::create(_gamelayer->offset*0.1f,255), NULL));
+        }
+        if(_gamelayer->itemOn[6])
+        {
+            p->runAction(Sequence::create(DelayTime::create(_gamelayer->offset*(0.7f+78.0f*n/3000)),FadeTo::create(_gamelayer->offset*0.1f,0), NULL));
+        }
+        
         this->addChild(p);
         
         this->pics.pushBack(p);
@@ -113,6 +145,15 @@ void LongNote::display()
     p = Sprite::create("img/game/longnoteE.png");
     
     p->setPosition(0,2*(this->endt-this->t));
+    
+    if(_gamelayer->itemOn[5])
+    {
+        p->runAction(Sequence::create(FadeTo::create(0,0),DelayTime::create(_gamelayer->offset*(0.6f+78.0f*n/3000)),FadeTo::create(_gamelayer->offset*0.1f,255), NULL));
+    }
+    else if(_gamelayer->itemOn[6])
+    {
+        p->runAction(Sequence::create(DelayTime::create(_gamelayer->offset*(0.7f+78.0f*n/3000)),FadeTo::create(_gamelayer->offset*0.1f,0), NULL));
+    }
     
     this->addChild(p);
     
@@ -131,12 +172,13 @@ void LongNote::miss()
     }
 }
 void LongNote::click()
-{    if(this->status == 0)
 {
-    this->status = 1;
-    _gamelayer->playAnimate(this->x, 1);
-    this->scheduleUpdate();
-}
+    if(this->status == 0)
+    {
+        this->status = 1;
+        _gamelayer->playAnimate(this->x, 1);
+        this->scheduleUpdate();
+    }
 }
 void LongNote::release()
 {
@@ -150,7 +192,7 @@ void LongNote::release()
 }
 void LongNote::update(float dt)
 {
-    
+
     if(this->status!=1)return;
     
     if(pics.size()>0&&pics.at(pics.size()-1)->getPositionY()+this->getPositionY()<_gamelayer->key1Pos.y)
@@ -204,7 +246,7 @@ bool GameLayer::init()
             this->itemOn[i] = setting->itemSwitch[i];
         else
             this->itemOn[i] = false;
-        this->itemCount[i] = 10;
+        this->itemCount[i] = 1000;
     }
     
     SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/game/hit.plist");
@@ -727,9 +769,7 @@ void GameLayer::complete()
     }), NULL));
     this->getParent()->addChild(shadow,9);
     
-    char str[256];
-    sprintf(str, "{\"songId\":%d,\"diffName\":\"%s\",\"score\":%d,\"grade\":%d,\"combo\":%d,\"missCount\":%d,\"poorCount\":%d,\"goodCount\":%d,\"coolCount\":%d,\"acc\":%d}",songId,diff,score,3,maxCombo,rateCount[0],rateCount[3],rateCount[2],rateCount[1],100);
-    SocketIOClient::getInstance()->send("uploadScore", str);
+
 }
 void GameLayer::updateHp(int delta)
 {

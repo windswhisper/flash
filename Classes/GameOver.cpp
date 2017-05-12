@@ -3,6 +3,7 @@
 #include "GameLayer.h"
 #include "SongsLayer.h"
 #include "SocketIOClient.h"
+#include "UserInfo.h"
 
 bool GameOver::init()
 {
@@ -262,11 +263,54 @@ void GameOver::setData(int songId,char* songsName, char* songsDiff,int grade, in
     
     this->addChild(cover);
     
-    
+    char str[256];
+    sprintf(str, "{\"songId\":%d,\"diffName\":\"%s\",\"score\":%d,\"grade\":%d,\"combo\":%d,\"missCount\":%d,\"poorCount\":%d,\"goodCount\":%d,\"coolCount\":%d,\"acc\":%d}",songId,diffName,score,grade,combo,miss,poor,good,cool,acc);
+    SocketIOClient::getInstance()->send("uploadScore", str);
     SocketIOClient::getInstance()->listen("uploadScoreRes", [=](SIOClient* client, std::string msg){
-        log("%s",msg.c_str());
+        rapidjson::Document doc;
+        doc.Parse<0>(msg.c_str());
+        
+        int coin = doc["coin"].GetInt();
+        
+        this->getCoin(coin);
+        
     });
 
+}
+
+void GameOver::getCoin(int coin)
+{
+    UserInfo::getInstance()->coin+=coin;
+    
+    auto root = Node::create();
+    
+    root->setPosition(960,1300);
+    
+    root->runAction(Sequence::create(DelayTime::create(1.0f),EaseSineOut::create(MoveBy::create(0.5f, Vec2(0,-400))),DelayTime::create(2.0f),EaseSineIn::create(MoveBy::create(0.5f, Vec2(0,400))), NULL));
+    
+    auto frame = Sprite::create("img/GameOver/coinFrame.png");
+    
+    root->addChild(frame);
+    
+    auto coinIcon = Sprite::create("img/GameOver/coin.png");
+    
+    coinIcon->setPosition(-100,0);
+    
+    root->addChild(coinIcon);
+    
+    char str[16];
+    
+    sprintf(str, "%dG",coin);
+    
+    auto coinLabel = Label::create(str,"Arial",64);
+    
+    coinLabel->setPosition(-20,0);
+    
+    coinLabel->setAnchorPoint(Vec2(0,0.5));
+    
+    root->addChild(coinLabel);
+    
+    this->addChild(root);
 }
 
 void GameOver::back()
