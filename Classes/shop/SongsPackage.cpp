@@ -38,7 +38,7 @@ void SongsPackage::setSongspackage()
 
 	item->setPosition(Vec2(0,0));
 
-	for (int i = 0; i < 4; ++i)
+	for (int i = 0; i < 7; ++i)
 	{
 		sprintf(songsPackageID[i],"songPack\%d",i + 1);
 
@@ -55,6 +55,18 @@ void SongsPackage::setSongspackage()
 		songsPackage[i]->addTouchEventListener(CC_CALLBACK_0(SongsPackage::songsPackageSelect, this, songsPackageID[i]));
 
 		item->addChild(songsPackage[i]);
+
+		char songsPackageIconId[100];
+
+		sprintf(songsPackageIconId,"img/shop/songspackage/songspackage%d.png",i+1);
+
+		auto songsPackageIcon = Sprite::create(songsPackageIconId);
+
+		songsPackageIcon->setScale(0.3);
+
+		songsPackageIcon->setPosition(songsPackage[i]->getContentSize().width/2,songsPackage[i]->getContentSize().height/2);
+
+		songsPackage[i]->addChild(songsPackageIcon);
 	}
 
 	scrollView->addChild(item);
