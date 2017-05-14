@@ -102,6 +102,10 @@ void ItemSelection::setItem()
 		btn_sel->addChild(itemSel);
 
 		itemButtonSelect.pushBack(btn_sel);
+        
+        
+        if(i==3)items[i]->removeFromParent();
+        
 	}
     
     for(int i = 0;i<3;i++)
@@ -189,10 +193,6 @@ void ItemSelection::launch()
     for(int i=0;i<8;i++)
     {
         setting->itemSwitch[i] = this->isSelect[i];
-        if(this->isSelect[i]&&i<3)
-        {
-            UserInfo::getInstance()->item[i]--;
-        }
     }
     
     setting->save();

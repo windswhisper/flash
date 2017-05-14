@@ -44,7 +44,7 @@ bool GameScene::init()
     
     lockLayer->addChild(ringOut);
     
-    lockText = Sprite::create("img/loading/loadingText.png");
+    lockText = Sprite::create("img/loading/loadingText1.png");
     
     lockText->setPosition(340,70);
     

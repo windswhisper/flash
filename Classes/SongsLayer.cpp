@@ -5,6 +5,7 @@
 #include "GameLayer.h"
 #include "RankingList.h"
 #include "Setting/Setting.h"
+#include "SongsInfo.h"
 
 #include "SimpleAudioEngine.h"
 
@@ -229,6 +230,6 @@ void SongsLayer::play()
     itemSelection->launch();
     this->close(CallFunc::create([=]{
         SimpleAudioEngine::getInstance()->stopBackgroundMusic();
-        this->getParent()->addChild(GameLayer::createWithId(this->songId , this->songDiff, 0));
+        this->getParent()->addChild(GameLayer::createWithId(this->songId,SongsInfo::getInstance()->getInfoById(this->songId)->name , this->songDiff, 0));
     }));
 }

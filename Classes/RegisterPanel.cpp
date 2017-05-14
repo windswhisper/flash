@@ -1,6 +1,7 @@
 #include "RegisterPanel.h"
 #include "LoginPanel.h"
 #include "MainMenuLayer.h"
+#include "PromptingFrame.h"
 
 #include "SocketIOClient.h"
 
@@ -58,7 +59,7 @@ bool RegisterPanel::init()
     
     this->usernameText->setTextAreaSize(Size(600,100));
     
-    this->usernameText->setPosition(Vec2(873,690));
+    this->usernameText->setPosition(Vec2(795,634));
     
     this->usernameText->setMaxLengthEnabled(true);
     
@@ -74,7 +75,7 @@ bool RegisterPanel::init()
     
     this->passwordText->setFontSize(64);
     
-    this->passwordText->setPosition(Vec2(873,580));
+    this->passwordText->setPosition(Vec2(795,524));
     
     this->passwordText->setTextAreaSize(Size(600,100));
     
@@ -102,6 +103,16 @@ bool RegisterPanel::init()
 
 void RegisterPanel::reg()
 {
+    if(this->usernameText->getString()=="")
+    {
+        this->getParent()->addChild(PromptingFrame::createWithId(4));
+        return;
+    }
+    if(this->passwordText->getString()=="")
+    {
+        this->getParent()->addChild(PromptingFrame::createWithId(5));
+        return;
+    }
     char msg[128];
     sprintf(msg, "{\"username\":\"%s\",\"password\":\"%s\"}",this->usernameText->getString().c_str(),this->passwordText->getString().c_str());
     SocketIOClient::getInstance()->send("register",msg);
@@ -115,7 +126,7 @@ void RegisterPanel::reg()
         }
         if(msg.compare("fail")==0)
         {
-            //TODO
+            this->getParent()->addChild(PromptingFrame::createWithId(3));
         }
         SocketIOClient::getInstance()->unlock();    });
 }

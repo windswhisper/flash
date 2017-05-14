@@ -1,5 +1,7 @@
 #include "ShopConfig.h"
 #include "UserInfo.h"
+#include "ShopLayer.h"
+#include "PromptingFrame.h"
 
 ShopConfig* ShopConfig::getInstance()
 {
@@ -35,10 +37,12 @@ bool ShopConfig::checkCoin(int price)
 {
     if(UserInfo::getInstance()->coin<price)
     {
+        ShopLayer::getInstance()->addChild( PromptingFrame::createWithId(2));
         return false;
     }
     else{
         UserInfo::getInstance()->coin-=price;
+        ShopLayer::getInstance()->updateMoney();
         return true;
     }
 }

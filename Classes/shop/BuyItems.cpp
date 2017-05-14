@@ -87,14 +87,60 @@ void BuyItems::selectItem(int i)
 
 void BuyItems::buyItem(int i)
 {
+    auto config = ShopConfig::getInstance();
     switch (i) {
         case 0:
-            if(ShopConfig::checkCoin(10))
+            if(ShopConfig::checkCoin(config->getInfo(itemIdArray[0]).price))
             {
                 UserInfo::getInstance()->item[0]++;
             }
             else{
-                 printf("buyfail");
+                printf("buyfail");
+            }
+            break;
+        case 1:
+            if(ShopConfig::checkCoin(config->getInfo(itemIdArray[1]).price))
+            {
+                UserInfo::getInstance()->item[1]++;
+            }
+            else{
+                printf("buyfail");
+            }
+            break;
+        case 2:
+            if(ShopConfig::checkCoin(config->getInfo(itemIdArray[2]).price))
+            {
+                UserInfo::getInstance()->item[2]++;
+            }
+            else{
+                printf("buyfail");
+            }
+            break;
+        case 3:
+            if(ShopConfig::checkCoin(config->getInfo(itemIdArray[3]).price))
+            {
+                UserInfo::getInstance()->item[0]+=5;
+            }
+            else{
+                printf("buyfail");
+            }
+            break;
+        case 4:
+            if(ShopConfig::checkCoin(config->getInfo(itemIdArray[4]).price))
+            {
+                UserInfo::getInstance()->item[1]+=5;
+            }
+            else{
+                printf("buyfail");
+            }
+            break;
+        case 5:
+            if(ShopConfig::checkCoin(config->getInfo(itemIdArray[5]).price))
+            {
+                UserInfo::getInstance()->item[2]+=5;
+            }
+            else{
+                printf("buyfail");
             }
             break;
             

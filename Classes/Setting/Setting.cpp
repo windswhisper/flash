@@ -158,9 +158,15 @@ bool Setting::init()
 
 void Setting::backToMainMenu()
 {
-	this->getParent()->addChild(MainMenuLayer::create());
-
-	this->removeFromParent();
+    auto shadow = LayerColor::create(Color4B(0,0,0,255));
+    shadow->setOpacity(0);
+    shadow->runAction(Sequence::create(FadeTo::create(0.5f, 255),DelayTime::create(0.4f),CallFunc::create([=](){
+        this->getParent()->addChild(MainMenuLayer::create());
+        this->removeFromParent();
+    }),FadeTo::create(0.5f, 0),CallFunc::create([=](){
+        shadow->removeFromParent();
+    }), NULL));
+    this->getParent()->addChild(shadow,9);
 }
 
 void Setting::disableItemCallBack()

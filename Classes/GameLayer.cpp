@@ -150,7 +150,7 @@ void LongNote::display()
     {
         p->runAction(Sequence::create(FadeTo::create(0,0),DelayTime::create(_gamelayer->offset*(0.6f+78.0f*n/3000)),FadeTo::create(_gamelayer->offset*0.1f,255), NULL));
     }
-    else if(_gamelayer->itemOn[6])
+    if(_gamelayer->itemOn[6])
     {
         p->runAction(Sequence::create(DelayTime::create(_gamelayer->offset*(0.7f+78.0f*n/3000)),FadeTo::create(_gamelayer->offset*0.1f,0), NULL));
     }
@@ -237,17 +237,7 @@ bool GameLayer::init()
     this->combo = 0;
     
     this->hp = 100;
-    
-    auto setting = SettingData::getInstance();
-    
-    for(int i=0;i<8;i++)
-    {
-        if(!setting->disableItem)
-            this->itemOn[i] = setting->itemSwitch[i];
-        else
-            this->itemOn[i] = false;
-        this->itemCount[i] = 1000;
-    }
+
     
     SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/game/hit.plist");
     AnimationCache::getInstance()->addAnimationsWithFile("img/game/hit_ani.plist");
@@ -412,13 +402,13 @@ bool GameLayer::init()
     return true;
 }
 
-GameLayer* GameLayer::createWithId(int id,const char* diff, int pkMode)
+GameLayer* GameLayer::createWithId(int id,const char* name,const char* diff, int pkMode)
 {
     auto gamelayer = GameLayer::create();
     gamelayer->mode = pkMode;
     gamelayer->songId = id;
     strcpy(gamelayer->diff, diff);
-    strcpy(gamelayer->songName, SongsInfo::getInstance()->getInfoById(id)->name);
+    strcpy(gamelayer->songName, name);
     gamelayer->loadFile();
     gamelayer->showTitle();
     if(pkMode)
@@ -426,14 +416,11 @@ GameLayer* GameLayer::createWithId(int id,const char* diff, int pkMode)
         gamelayer->initPKMode();
     }
 	gamelayer->setPauseButton(pkMode);
+    gamelayer->launchItem();
     return gamelayer;
 }
 void GameLayer::initPKMode()
 {
-    for(int i=0;i<8;i++)
-    {
-        this->itemOn[i] = false;
-    }
 
     this->scoreLabel_OP = Label::createWithSystemFont("0000000", "Arial", 80);
     
@@ -456,6 +443,47 @@ void GameLayer::initPKMode()
     
     this->schedule(schedule_selector(GameLayer::updateScore),0.2f);
     
+}
+
+void GameLayer::launchItem()
+{
+    auto setting = SettingData::getInstance();
+    
+    int k=0;
+    for(int i=0;i<8;i++)
+    {
+        if(!setting->disableItem&&mode==0)
+        {
+            if(i==4)k=0;
+            this->itemOn[i] = setting->itemSwitch[i];
+            
+            if(this->itemOn[i])
+            {
+                auto itemBg = Sprite::create("img/game/itemBg.png");
+                itemBg->setPosition(250+i/4*1440,770-k*100);
+                this->addChild(itemBg);
+                char itemIconName[128];
+                sprintf(itemIconName, "img/selectsongs/itemIcon/itemIcon%d.png", i + 1);
+                itemIcon[i] = Sprite::create(itemIconName);
+                itemIcon[i]->setScale(0.16f, 0.16f);
+                itemIcon[i]->setPosition(250+i/4*1440,770-k*100);
+                this->addChild(itemIcon[i]);
+                if(i<2)
+                {
+                    auto itemNumBg = Sprite::create("img/game/itemNumBg.png");
+                    itemNumBg->setPosition(276+i/4*1440,750-k*100);
+                    this->addChild(itemNumBg);
+                    itemNumLabel[i] = Label::createWithSystemFont("20","0",24);
+                    itemNumLabel[i]->setPosition(276+i/4*1440,750-k*100);
+                    this->addChild(itemNumLabel[i]);
+                }
+                k++;
+            }
+        }
+        else
+            this->itemOn[i] = false;
+        this->itemCount[i] = 10;
+    }
 }
 
 void GameLayer::updateScore(float dt)
@@ -494,8 +522,13 @@ void GameLayer::update(float dt)
             }),NULL));
         }
     }
+    
+    this->hpBar->setPercentage(this->hpBar->getPercentage()+(hp*100.0f/MAX_HP-this->hpBar->getPercentage())*0.4f);
+    
+    this->comboBar->setPercentage(this->comboBar->getPercentage()+(combo*100.0f/MAX_POWER-this->comboBar->getPercentage())*0.4f);
 }
 
+//Load .osu file and parse it to notes.
 void GameLayer::loadFile()
 {
     sprintf(filename, "songs/%d/%s.mp3",songId,songName);
@@ -528,7 +561,7 @@ void GameLayer::loadFile()
             n = line.find(",");
             number = line.substr(0,n);
             line = line.erase(0,n+1);
-            //int data2 = atoi(number.c_str());
+            int data2 = atoi(number.c_str());
             
             n = line.find(",");
             number = line.substr(0,n);
@@ -543,7 +576,7 @@ void GameLayer::loadFile()
             n = line.find(",");
             number = line.substr(0,n);
             line = line.erase(0,n+1);
-            //int data5 = atoi(number.c_str());
+            int data5 = atoi(number.c_str());
             
             n = line.find(":");
             number = line.substr(0,n);
@@ -554,7 +587,7 @@ void GameLayer::loadFile()
             if(data1>120&&data1<=240)data1 = 1;
             if(data1>240&&data1<=360)data1 = 2;
             if(data1>360&&data1<=480)data1 = 3;
-            
+            data2 = 0;
             if(data4!=128)
                 this->notes.pushBack(SimpleNote::createSimpleNote(data1, data3, data4, data3));
             if(data4==128)
@@ -679,12 +712,18 @@ void GameLayer::getRate(int rate)
     if(rate==0&&itemOn[0]&&itemCount[0]>0)
     {
         itemCount[0]--;
+        char str[4];
+        sprintf(str, "%d",itemCount[0]);
+        this->itemNumLabel[0]->setString(str);
         getRate(3);
         return;
     }
     if(rate==3&&itemOn[1]&&itemCount[1]>0)
     {
         itemCount[1]--;
+        char str[4];
+        sprintf(str, "%d",itemCount[1]);
+        this->itemNumLabel[1]->setString(str);
         getRate(2);
         return;
     }
@@ -746,7 +785,6 @@ void GameLayer::comboIncrese()
     this->comboLabel->stopAllActions();
     this->comboLabel->runAction(MoveBy::create(0.2f, Vec2(0,20)));
     
-    this->comboBar->setPercentage(combo*100.0f/MAX_POWER);
 }
 void GameLayer::comboClear()
 {
@@ -773,6 +811,10 @@ void GameLayer::complete()
 }
 void GameLayer::updateHp(int delta)
 {
+    if(itemOn[2]&&delta>0){
+        delta*=2;
+    }
+    
     this->hp+=delta;
     
     if(this->hp<0){
@@ -783,7 +825,6 @@ void GameLayer::updateHp(int delta)
         this->hp = MAX_HP;
     }
     
-    this->hpBar->setPercentage(hp*100.0f/MAX_HP);
 }
 void GameLayer::showTitle()
 {
@@ -819,7 +860,7 @@ void GameLayer::gamePause()
 
 	Director::getInstance()->pause();
 
-	pauseLayer = PauseLayer::createWithSong(this->songId,this->diff,0);
+	pauseLayer = PauseLayer::createWithSong(this->songId,this->songName,this->diff,0);
 
 	this->addChild(pauseLayer);
 }
@@ -832,7 +873,6 @@ void GameLayer::setPauseButton(int pkMode)
 
 		btn_pause->setPosition(Vec2(btn_pause->getContentSize().width / 2, 980));
 
-
 		auto ring = Sprite::create("img/selectsongs/ring.png");
 
 		ring->setPosition(130, 100);
@@ -840,7 +880,6 @@ void GameLayer::setPauseButton(int pkMode)
 		ring->runAction(RepeatForever::create(RotateBy::create(4, 360)));
 
 		btn_pause->addChild(ring);
-
 
 		Menu* menu = Menu::create(btn_pause, NULL);
 

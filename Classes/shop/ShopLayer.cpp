@@ -9,8 +9,14 @@ ShopLayer::ShopLayer()
 ShopLayer::~ShopLayer()
 {
 }
+ShopLayer* ShopLayer::getInstance()
+{
+    return _shopLayer;
+}
 bool ShopLayer::init()
 {
+    _shopLayer = this;
+    
 	Size visiblesize = Director::getInstance()->getVisibleSize();
 	
 	shop_bg = Sprite::create("img/shop/shop_bg.png");
@@ -21,9 +27,7 @@ bool ShopLayer::init()
 
 	btn_mainmenu = MenuItemImage::create("img/shop/btn_mainmenu.png", "img/shop/btn_mainmenu_p.png", CC_CALLBACK_0(ShopLayer::backToMenu, this));
 
-	btn_mainmenu->setPosition(250, 973 + 300);
-
-	btn_mainmenu->runAction(Sequence::create(DelayTime::create(0.3f), (EaseSineOut::create(MoveBy::create(1, Vec2(0, -300)))), NULL));
+	btn_mainmenu->setPosition(250, 973);
 
 	auto ringL = Sprite::create("img/selectsongs/ring.png");
 
@@ -220,9 +224,15 @@ void ShopLayer::close()
 
 void ShopLayer::backToMenu()
 {
-	this->removeAllChildren();
-
-	this->getParent()->addChild(MainMenuLayer::create());
+    auto shadow = LayerColor::create(Color4B(0,0,0,255));
+    shadow->setOpacity(0);
+    shadow->runAction(Sequence::create(FadeTo::create(0.5f, 255),DelayTime::create(0.4f),CallFunc::create([=](){
+        this->getParent()->addChild(MainMenuLayer::create());
+        this->removeFromParent();
+    }),FadeTo::create(0.5f, 0),CallFunc::create([=](){
+        shadow->removeFromParent();
+    }), NULL));
+    this->getParent()->addChild(shadow,9);
 }
 
 void ShopLayer::updateMoney()

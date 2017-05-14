@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/LoginPanel.cpp"
-            timestampString = "513140245.443349"
+            timestampString = "516355639.80282"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "127"
-            endingLineNumber = "127"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
             landmarkName = "LoginPanel::close(CallFunc* callfunc)"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/RegisterPanel.cpp"
-            timestampString = "513140245.443349"
+            timestampString = "516355639.80282"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131">
+            startingLineNumber = "142"
+            endingLineNumber = "142">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -88,11 +88,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/SongsLayer.cpp"
-            timestampString = "515902193.778927"
+            timestampString = "516253770.182941"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
             landmarkName = "SongsLayer::init()"
             landmarkType = "7">
          </BreakpointContent>

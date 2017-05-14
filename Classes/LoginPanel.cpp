@@ -98,6 +98,17 @@ bool LoginPanel::init()
 
 void LoginPanel::login()
 {
+    if(this->usernameText->getString()=="")
+    {
+        this->getParent()->addChild(PromptingFrame::createWithId(4));
+        return;
+    }
+    if(this->passwordText->getString()=="")
+    {
+        this->getParent()->addChild(PromptingFrame::createWithId(5));
+        return;
+    }
+    
     char msg[128];
     sprintf(msg, "{\"username\":\"%s\",\"password\":\"%s\"}",this->usernameText->getString().c_str(),this->passwordText->getString().c_str());
     SocketIOClient::getInstance()->send("login",msg);

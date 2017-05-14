@@ -62,7 +62,7 @@ bool PauseLayer::init()
 
 void PauseLayer::continuePlay()
 {
-	Director::sharedDirector()->resume();
+	Director::getInstance()->resume();
 	
 	SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
 
@@ -71,11 +71,11 @@ void PauseLayer::continuePlay()
 
 void PauseLayer::playAgain()
 {
-	this->getParent()->getParent()->addChild(GameLayer::createWithId(songId,songdiff,pkMode));
+	this->getParent()->getParent()->addChild(GameLayer::createWithId(songId,name,songdiff,pkMode));
 
 	this->getParent()->removeFromParent();
 
-	Director::sharedDirector()->resume();
+	Director::getInstance()->resume();
 
 }
 
@@ -85,17 +85,19 @@ void PauseLayer::back()
 
 	this->getParent()->removeFromParent();
 
-	Director::sharedDirector()->resume();
+	Director::getInstance()->resume();
 }
 
-PauseLayer* PauseLayer::createWithSong(int id, char* diff, int pkMode)
+PauseLayer* PauseLayer::createWithSong(int id,char* name, char* diff, int pkMode)
 {
 	auto pauseLayer = PauseLayer::create();
 
 	pauseLayer->songId = id;
-
+    
 	pauseLayer->pkMode = pkMode;
-
+    
+    strcpy(pauseLayer->name, name);
+    
 	strcpy(pauseLayer->songdiff, diff);
 
 	return pauseLayer;
