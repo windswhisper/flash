@@ -1,5 +1,5 @@
 #include "PKGameOverLayer.h"
-#include "PK/PKSelectDiff.h"
+#include "PKSelectDiff.h"
 
 bool PKGameOverLayer::init()
 {
@@ -26,8 +26,6 @@ bool PKGameOverLayer::init()
 
 	winnerNameFrame->setPosition(Vec2(500 - 1000,680 - 30));
 
-	winnerNameFrame->runAction(Sequence::create(EaseSineIn::create(MoveBy::create(0.5f, Vec2(1000, 0))), MoveBy::create(1, Vec2(0, 30)), Repeat::create(Sequence::create(MoveBy::create(1, Vec2(0, -60)), MoveBy::create(1, Vec2(0, 60)),NULL), 2), CallFunc::create([=](){winner->setVisible(true); }), NULL));
-
 	this->addChild(winnerNameFrame);
 
 
@@ -35,10 +33,10 @@ bool PKGameOverLayer::init()
 
 	loserNameFrame->setPosition(Vec2(1415 + 1000, 620 + 30));
 
-	loserNameFrame->runAction(Sequence::create(EaseSineIn::create(MoveBy::create(0.5f, Vec2(-1000, 0))), MoveBy::create(1, Vec2(0, -30)), Repeat::create(Sequence::create(MoveBy::create(1, Vec2(0, 60)), MoveBy::create(1, Vec2(0, -60)), NULL), 2), CallFunc::create([=](){loser->setVisible(true); }), NULL));
-
 	this->addChild(loserNameFrame);
-
+    
+    winnerNameFrame->runAction(EaseSineIn::create(MoveBy::create(0.5f, Vec2(1000, 0))));
+    loserNameFrame->runAction(EaseSineIn::create(MoveBy::create(0.5f, Vec2(-1000, 0))));
 
 	PK_vs = Sprite::create("img/PK/vs.png");
 
@@ -51,23 +49,21 @@ bool PKGameOverLayer::init()
 	this->addChild(PK_vs);
 
 
-	winnerGrade = Sprite::create("img/PK/PK_grade.png");
+	myGradeFrame = Sprite::create("img/PK/PK_grade.png");
 
-	winnerGrade->setPosition(Vec2(455,310 - 550));
+	myGradeFrame->setPosition(Vec2(455,280 - 520));
 
-	winnerGrade->runAction(Sequence::create(DelayTime::create(6),MoveBy::create(1,Vec2(0,550)),NULL));
-
-	this->addChild(winnerGrade);
+	this->addChild(myGradeFrame);
 
 
-	loserGrade = Sprite::create("img/PK/PK_grade.png");
+	opnGradeFrame = Sprite::create("img/PK/PK_grade.png");
 
-	loserGrade->setPosition(Vec2(1460, 250 - 490));
+	opnGradeFrame->setPosition(Vec2(1460, 280 - 520));
 
-	loserGrade->runAction(Sequence::create(DelayTime::create(6), MoveBy::create(1, Vec2(0, 490)), NULL));
-
-	this->addChild(loserGrade);
-
+	this->addChild(opnGradeFrame);
+    
+    myGradeFrame->runAction(MoveBy::create(1,Vec2(0,520)));
+    opnGradeFrame->runAction( MoveBy::create(1, Vec2(0, 520)));
 
 	winner = Sprite::create("img/PK/winner.png");
 
@@ -107,13 +103,13 @@ bool PKGameOverLayer::init()
 	back->addChild(ring);
 
 
-	this->setData("Flower Dance","easy","Liu Kangwei","Deng Hao",999999,1000,100,111111,222,55,1,7);
+	//this->setData("Flower Dance","easy","Liu Kangwei","Deng Hao",999999,1000,100,111111,222,55,1,7);
 
 
 	return true;
 }
 
-void PKGameOverLayer::setData(char* songName, char* songDiff, char* winnerName, char* loserName, int winnerScore, int winnerCombo, int winnerAcc, int loserScore, int loserCombo, int loserAcc,int winnerGrade,int loserGrade)
+void PKGameOverLayer::setData(char* songName,char* songDiff,char* myName,const char* opnName,int myScore,int myCombo,int myAcc,int opnScore,int opnCombo,int opnAcc,int myGrade,int opnGrade)
 {
 	auto label_songName = Label::create(songName,"Arial",72);
 
@@ -129,27 +125,33 @@ void PKGameOverLayer::setData(char* songName, char* songDiff, char* winnerName, 
 	songsNameFrame->addChild(label_songDiff);
 
 
-	auto label_winnerName = Label::create(winnerName,"Arial",72);
+	auto label_winnerName = Label::create(myName,"Arial",72);
 
 	label_winnerName->setPosition(winnerNameFrame->getContentSize().width/2,winnerNameFrame->getContentSize().height/2);
 
 	winnerNameFrame->addChild(label_winnerName);
 
 
-	auto label_loserName = Label::create(loserName, "Arial", 72);
+	auto label_loserName = Label::create(myName, "Arial", 72);
 
 	label_loserName->setPosition(loserNameFrame->getContentSize().width / 2, loserNameFrame->getContentSize().height / 2);
 
 	loserNameFrame->addChild(label_loserName);
 
+	this->setGrade(myScore,myCombo,myAcc,true,myGrade);
 
-	this->setGrade(winnerScore,winnerCombo,winnerAcc,true,winnerGrade);
+	this->setGrade(opnScore, opnCombo, opnAcc,false,opnGrade);
+    
+    winnerNameFrame->runAction(Sequence::create( MoveBy::create(1, Vec2(0, 30)), CallFunc::create([=](){winner->setVisible(true); }), NULL));
+    loserNameFrame->runAction(Sequence::create( MoveBy::create(1, Vec2(0, -30)), CallFunc::create([=](){loser->setVisible(true); }), NULL));
+    
+    myGradeFrame->runAction(MoveBy::create(1,Vec2(0,30)));
+    opnGradeFrame->runAction( MoveBy::create(1, Vec2(0, -30)));
 
-	this->setGrade(loserScore, loserCombo, loserAcc, false,loserGrade);
-	
 }
 
-void PKGameOverLayer::setGrade(int score, int combo, int acc,bool isWinner,int playerGrade)
+
+void PKGameOverLayer::setGrade(int score, int combo, int acc,bool isMine,int playerGrade)
 {
 	char playerScore[16];
 
@@ -214,19 +216,19 @@ void PKGameOverLayer::setGrade(int score, int combo, int acc,bool isWinner,int p
 	evaluation->setPosition(Vec2(585, 185));
 
 
-	if (isWinner)
+	if (isMine)
 	{
-		winnerGrade->addChild(label_score);
-		winnerGrade->addChild(label_combo);
-		winnerGrade->addChild(label_acc);
-		winnerGrade->addChild(evaluation);
+		myGradeFrame->addChild(label_score);
+		myGradeFrame->addChild(label_combo);
+		myGradeFrame->addChild(label_acc);
+		myGradeFrame->addChild(evaluation);
 	}
 	else
 	{
-		loserGrade->addChild(label_score);
-		loserGrade->addChild(label_combo);
-		loserGrade->addChild(label_acc);
-		loserGrade->addChild(evaluation);
+		opnGradeFrame->addChild(label_score);
+		opnGradeFrame->addChild(label_combo);
+		opnGradeFrame->addChild(label_acc);
+		opnGradeFrame->addChild(evaluation);
 	}		
 }
 
@@ -255,9 +257,9 @@ void PKGameOverLayer::close(CallFunc* callfunc)
 
 	PK_vs->runAction(FadeOut::create(1));
 
-	winnerGrade->runAction(MoveBy::create(1,Vec2(0,-550)));
+	myGradeFrame->runAction(MoveBy::create(1,Vec2(0,-550)));
 
 	back->runAction(MoveBy::create(1,Vec2(0,200)));
 
-	loserGrade->runAction(Sequence::create(MoveBy::create(1, Vec2(0, -490)), callfunc, CallFunc::create(CC_CALLBACK_0(PKGameOverLayer::removeFromParent, this)), NULL));
+	opnGradeFrame->runAction(Sequence::create(MoveBy::create(1, Vec2(0, -490)), callfunc, CallFunc::create(CC_CALLBACK_0(PKGameOverLayer::removeFromParent, this)), NULL));
 }

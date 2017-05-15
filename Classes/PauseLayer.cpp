@@ -57,6 +57,18 @@ bool PauseLayer::init()
 
 	this->addChild(menu,1);
 
+    
+    auto listener = EventListenerTouchOneByOne::create();
+    
+    listener->setSwallowTouches(true);
+    
+    listener->onTouchBegan = [=](Touch* touch,Event* event){
+        return true;
+    };
+    
+    this->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener, this);
+    
+    
 	return true;
 }
 

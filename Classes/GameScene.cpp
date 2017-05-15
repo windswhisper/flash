@@ -27,7 +27,7 @@ bool GameScene::init()
     this->addChild(this->bg);
     
     this->addChild(LoginPanel::create());
-//	this->addChild(Setting::create());
+	//this->addChild(PKGameOverLayer::create());
 
     
     this->lockLayer = Layer::create();

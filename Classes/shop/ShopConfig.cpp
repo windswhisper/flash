@@ -43,6 +43,7 @@ bool ShopConfig::checkCoin(int price)
     else{
         UserInfo::getInstance()->coin-=price;
         ShopLayer::getInstance()->updateMoney();
+        ShopLayer::getInstance()->addChild( PromptingFrame::createWithId(6));
         return true;
     }
 }

@@ -82,6 +82,9 @@ void PromptingFrame::setMessage(int messageTag)
         case 5:
             strcpy(message, "密码不能为空！");
             break;
+        case 6:
+            strcpy(message, "购买成功！");
+            break;
 	}
 
 	messageLabel = Label::create(message, "Arial", 72);

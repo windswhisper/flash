@@ -28,6 +28,7 @@
 		479298D41EB18E3C001996EC /* ShopConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 479298D21EB18E3C001996EC /* ShopConfig.cpp */; };
 		479298D81EB1CB35001996EC /* s in Resources */ = {isa = PBXBuildFile; fileRef = 479298D71EB1CB35001996EC /* s */; };
 		479298DB1EB1DF29001996EC /* BuyItems.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 479298D91EB1DF29001996EC /* BuyItems.cpp */; };
+		47971EDB1EC88C620003CA35 /* PKGameOverLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47971ED91EC88C620003CA35 /* PKGameOverLayer.cpp */; };
 		479978AD1EC002FC00E67D56 /* SettingData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 479978AB1EC002FC00E67D56 /* SettingData.cpp */; };
 		47A159E21E88EA7B004EAFE9 /* SocketIOClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47A159E01E88EA7B004EAFE9 /* SocketIOClient.cpp */; };
 		47A6E1ED1E6A652F0089E3A9 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47A6E1E31E6A652F0089E3A9 /* AppDelegate.cpp */; };
@@ -130,7 +131,7 @@
 		1AC6FAE5180E9839004C840B /* cocos2d_libs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_libs.xcodeproj; path = ../cocos2d/build/cocos2d_libs.xcodeproj; sourceTree = "<group>"; };
 		1ACB3243164770DE00914215 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../../cocos2dx/platform/third_party/ios/libraries/libcurl.a; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1D6058910D05DD3D006BFB54 /* knightage-mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "knightage-mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6058910D05DD3D006BFB54 /* 节拍达人.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "节拍达人.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		472DA5BF1E77809A006D4DB7 /* SongsLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SongsLayer.cpp; sourceTree = "<group>"; };
@@ -162,6 +163,8 @@
 		479298D71EB1CB35001996EC /* s */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = s; sourceTree = "<group>"; };
 		479298D91EB1DF29001996EC /* BuyItems.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BuyItems.cpp; path = shop/BuyItems.cpp; sourceTree = "<group>"; };
 		479298DA1EB1DF29001996EC /* BuyItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BuyItems.h; path = shop/BuyItems.h; sourceTree = "<group>"; };
+		47971ED91EC88C620003CA35 /* PKGameOverLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PKGameOverLayer.cpp; path = PK/PKGameOverLayer.cpp; sourceTree = "<group>"; };
+		47971EDA1EC88C620003CA35 /* PKGameOverLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PKGameOverLayer.h; path = PK/PKGameOverLayer.h; sourceTree = "<group>"; };
 		479978AB1EC002FC00E67D56 /* SettingData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SettingData.cpp; sourceTree = "<group>"; };
 		479978AC1EC002FC00E67D56 /* SettingData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingData.h; sourceTree = "<group>"; };
 		47A159E01E88EA7B004EAFE9 /* SocketIOClient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SocketIOClient.cpp; sourceTree = "<group>"; };
@@ -298,7 +301,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* knightage-mobile.app */,
+				1D6058910D05DD3D006BFB54 /* 节拍达人.app */,
 				5087E76F17EB910900C73F5D /* knightage-desktop.app */,
 			);
 			name = Products;
@@ -415,6 +418,8 @@
 		4734700F1EA45679008EF475 /* PK */ = {
 			isa = PBXGroup;
 			children = (
+				47971ED91EC88C620003CA35 /* PKGameOverLayer.cpp */,
+				47971EDA1EC88C620003CA35 /* PKGameOverLayer.h */,
 				4734700B1EA45674008EF475 /* PKSelectDiff.cpp */,
 				4734700C1EA45674008EF475 /* PKSelectDiff.h */,
 			);
@@ -516,7 +521,7 @@
 			);
 			name = "knightage-mobile";
 			productName = iphone;
-			productReference = 1D6058910D05DD3D006BFB54 /* knightage-mobile.app */;
+			productReference = 1D6058910D05DD3D006BFB54 /* 节拍达人.app */;
 			productType = "com.apple.product-type.application";
 		};
 		5087E73D17EB910900C73F5D /* knightage-desktop */ = {
@@ -652,6 +657,7 @@
 				47925D7E1E6E4A58008AE59C /* RegisterPanel.cpp in Sources */,
 				479978AD1EC002FC00E67D56 /* SettingData.cpp in Sources */,
 				472DA5C11E77809A006D4DB7 /* SongsLayer.cpp in Sources */,
+				47971EDB1EC88C620003CA35 /* PKGameOverLayer.cpp in Sources */,
 				4734700D1EA45674008EF475 /* PKSelectDiff.cpp in Sources */,
 				47773AF91E78E7040053AC10 /* SongsListView.cpp in Sources */,
 				47E6BF641E9F080C00D742FB /* BuySkill.cpp in Sources */,
@@ -729,6 +735,8 @@
 					"$(_COCOS_LIB_IOS_END)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.denghao.flash;
+				PRODUCT_MODULE_NAME = BeatUp;
+				PRODUCT_NAME = "节拍达人";
 				SDKROOT = iphoneos;
 				STRIP_PNG_TEXT = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -762,6 +770,8 @@
 					"$(_COCOS_LIB_IOS_END)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.denghao.flash;
+				PRODUCT_MODULE_NAME = BeatUp;
+				PRODUCT_NAME = "节拍达人";
 				SDKROOT = iphoneos;
 				STRIP_PNG_TEXT = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";

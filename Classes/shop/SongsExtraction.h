@@ -3,7 +3,7 @@
 
 #include "cocos2d.h"
 #include <random>
-#include "ui\CocosGUI.h"
+#include "ui/CocosGUI.h"
 
 USING_NS_CC;
 using namespace ui;

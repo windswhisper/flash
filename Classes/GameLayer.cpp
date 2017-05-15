@@ -5,6 +5,8 @@
 #include "PauseLayer.h"
 #include "SongsLayer.h"
 #include "SettingData.h"
+#include "UserInfo.h"
+#include "PK/PKGameOverLayer.h"
 
 #include  <iostream>
 #include  <fstream>
@@ -794,19 +796,47 @@ void GameLayer::comboClear()
 }
 void GameLayer::complete()
 {
-    auto shadow = LayerColor::create(Color4B(0,0,0,255));
-    shadow->setOpacity(0);
-    shadow->runAction(Sequence::create(FadeTo::create(0.5f, 255),DelayTime::create(0.4f),CallFunc::create([=](){
-        auto overLayer = GameOver::create();
-        overLayer->setData(songId,songName, diff,3, score, maxCombo, 100,rateCount[0],rateCount[3],rateCount[2],rateCount[1]);
-        this->getParent()->addChild(overLayer);
-		Director::sharedDirector()->resume();
-        this->removeFromParent();
-    }),FadeTo::create(0.5f, 0),CallFunc::create([=](){
-        shadow->removeFromParent();
-    }), NULL));
-    this->getParent()->addChild(shadow,9);
-    
+    if(!mode)
+    {
+        char msg[128];
+        sprintf(msg, "{\"username\":\"%s\",\"score\":%d,\"combo\":%d,\"acc\":%d,\"grade\":%d}",UserInfo::getInstance()->username,score,maxCombo,100,1);
+        SocketIOClient::getInstance()->send("uploadPKScore",msg);
+        SocketIOClient::getInstance()->lock();
+        SocketIOClient::getInstance()->listen("uploadPKScoreRes", [=](SIOClient* client, std::string msg){
+            rapidjson::Document doc;
+            doc.Parse<0>(msg.c_str());
+            
+            auto shadow = LayerColor::create(Color4B(0,0,0,255));
+            shadow->setOpacity(0);
+            shadow->runAction(Sequence::create(FadeTo::create(0.5f, 255),DelayTime::create(0.4f),CallFunc::create([&](){
+                auto overLayer = PKGameOverLayer::create();
+                overLayer->setData(songName,diff,UserInfo::getInstance()->username,doc["username"].GetString(),score,maxCombo,100,doc["score"].GetInt(),doc["combo"].GetInt(),doc["acc"].GetInt(),1,doc["grade"].GetInt());
+                this->getParent()->addChild(overLayer);
+                this->removeFromParent();
+            }),FadeTo::create(0.5f, 0),CallFunc::create([=](){
+                shadow->removeFromParent();
+            }), NULL));
+            
+            this->getParent()->addChild(shadow,9);
+            SocketIOClient::getInstance()->unlock();
+        });
+    }
+    else
+    {
+        
+        auto shadow = LayerColor::create(Color4B(0,0,0,255));
+        shadow->setOpacity(0);
+        shadow->runAction(Sequence::create(FadeTo::create(0.5f, 255),DelayTime::create(0.4f),CallFunc::create([=](){
+            auto overLayer = PKGameOverLayer::create();
+            this->getParent()->addChild(overLayer);
+            
+            this->removeFromParent();
+        }),FadeTo::create(0.5f, 0),CallFunc::create([=](){
+            shadow->removeFromParent();
+        }), NULL));
+        this->getParent()->addChild(shadow,9);
+        
+    }
 
 }
 void GameLayer::updateHp(int delta)

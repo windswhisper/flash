@@ -47,32 +47,32 @@
     "item1": {
         "price": 60,
         "title": "miss护盾",
-        "info": "用来抵御miss的护盾，能够将%d次miss变成poor"
+        "info": "用来抵御miss的护盾，能够将20次miss变成poor"
     },
     "item2": {
         "price": 150,
         "title": "poor护盾",
-        "info": "用来抵御poor的护盾，能够将%d次poor变成good"
+        "info": "用来抵御poor的护盾，能够将20次poor变成good"
     },
     "item3": {
         "price": 100,
         "title": "治疗强化",
-        "info": "一股来自东方的神秘力量，使用后该局里提升%d%的回复量"
+        "info": "一股来自东方的神秘力量，使用后该局里提升100%的回复量"
     },
     "item4": {
         "price": 200,
         "title": "miss护盾×5",
-        "info": "用来抵御miss的护盾，能够将%d次miss变成poor"
+        "info": "用来抵御miss的护盾，能够将20次miss变成poor"
     },
     "item5": {
         "price": 600,
         "title": "poor护盾×5",
-        "info": "用来抵御poor的护盾，能够将%d次poor变成good"
+        "info": "用来抵御poor的护盾，能够将20次poor变成good"
     },
     "item6": {
         "price": 400,
         "title": "治疗强化×5",
-        "info": "一股来自东方的神秘力量，使用后该局里提升%d%的回复量"
+        "info": "一股来自东方的神秘力量，使用后该局里提升100%的回复量"
     },
     "skill1": [
         {
