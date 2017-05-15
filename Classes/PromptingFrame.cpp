@@ -65,7 +65,7 @@ void PromptingFrame::back()
 
 void PromptingFrame::setMessage(int messageTag)
 {
-	switch (messageTag)
+	/*switch (messageTag)
 	{
         case 1:
             strcpy(message, "用户名或密码错误！");
@@ -83,10 +83,10 @@ void PromptingFrame::setMessage(int messageTag)
             strcpy(message, "密码不能为空！");
             break;
         case 6:
-            strcpy(message, "购买成功！");
+            strcpy(message, "购买成功!");
             break;
 	}
-
+*/
 	messageLabel = Label::create(message, "Arial", 72);
 
 	messageLabel->setPosition(promptingFrame->getContentSize().width / 2, promptingFrame->getContentSize().height*0.6f);

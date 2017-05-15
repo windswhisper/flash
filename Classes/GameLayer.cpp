@@ -7,6 +7,7 @@
 #include "SettingData.h"
 #include "UserInfo.h"
 #include "PK/PKGameOverLayer.h"
+#include "FailedLayer.h"
 
 #include  <iostream>
 #include  <fstream>
@@ -433,6 +434,8 @@ void GameLayer::initPKMode()
     this->addChild(this->scoreLabel_OP);
     
     SocketIOClient::getInstance()->listen("sendScore", [=](SIOClient* client, std::string msg){
+		if (this == nullptr)return;
+
         rapidjson::Document doc;
         doc.Parse<0>(msg.c_str());
         
@@ -796,7 +799,8 @@ void GameLayer::comboClear()
 }
 void GameLayer::complete()
 {
-    if(!mode)
+	this->unschedule(schedule_selector(GameLayer::updateScore));
+    if(mode)
     {
         char msg[128];
         sprintf(msg, "{\"username\":\"%s\",\"score\":%d,\"combo\":%d,\"acc\":%d,\"grade\":%d}",UserInfo::getInstance()->username,score,maxCombo,100,1);
@@ -849,6 +853,10 @@ void GameLayer::updateHp(int delta)
     
     if(this->hp<0){
         this->hp = 0;
+		SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
+
+		Director::getInstance()->pause();
+		this->addChild(FailedLayer::createWithSong(this->songId, this->songName, this->diff, 0));
     }
     if(this->hp>MAX_HP)
     {

@@ -21,7 +21,7 @@ bool SongsExtraction::init()
 
 	btn_extractForOne->setPosition(700,130);
 
-	auto extractionForOne = Sprite::create("img/shop/songsextraction/extractionForOne.png");
+	auto extractionForOne = Label::create("100G¡Á1","",72);
 
 	extractionForOne->setPosition(btn_extractForOne->getContentSize().width / 2, btn_extractForOne->getContentSize().height/2);
 
@@ -31,7 +31,7 @@ bool SongsExtraction::init()
 
 	btn_extractForTen->setPosition(1300,130);
 
-	auto extractionForTen = Sprite::create("img/shop/songsextraction/extractionForTen.png");
+	auto extractionForTen = Label::create("800G¡Á10","",72);
 
 	extractionForTen->setPosition(btn_extractForTen->getContentSize().width / 2, btn_extractForTen->getContentSize().height / 2);
 
