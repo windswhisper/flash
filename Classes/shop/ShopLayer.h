@@ -18,6 +18,8 @@ public:
 
 	CREATE_FUNC(ShopLayer);
 
+    static ShopLayer* getInstance();
+    
 	void backToMenu();
 
 	void close();
@@ -70,5 +72,5 @@ public:
     
     Label* moneyLabel;
 };
-
+static ShopLayer* _shopLayer;
 #endif

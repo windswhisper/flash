@@ -18,7 +18,7 @@ public:
 
 	void back();
 
-	static PauseLayer* createWithSong(int id, char* diff, int pkMode);
+	static PauseLayer* createWithSong(int id,char* name, char* diff, int pkMode);
 
 private:
 	MenuItemImage* btn_continue;
@@ -34,6 +34,8 @@ private:
 	char songdiff[32];
 
 	int pkMode;
+    
+    char name[64];
 };
 
 #endif

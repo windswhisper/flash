@@ -27,7 +27,7 @@ bool GameScene::init()
     this->addChild(this->bg);
     
     this->addChild(LoginPanel::create());
-//	this->addChild(Setting::create());
+	//this->addChild(PKGameOverLayer::create());
 
     
     this->lockLayer = Layer::create();
@@ -44,7 +44,7 @@ bool GameScene::init()
     
     lockLayer->addChild(ringOut);
     
-    lockText = Sprite::create("img/loading/loadingText.png");
+    lockText = Sprite::create("img/loading/loadingText1.png");
     
     lockText->setPosition(340,70);
     

@@ -18,9 +18,9 @@ public :
 
 	void close(CallFunc* callfunc);
 
-	void setData(char* songName,char* songDiff,char* winnerName,char* loserName,int winnerScore,int winnerCombo,int winnerAcc,int loserScore,int loserCombo,int loserAcc,int winnerGrade,int loserGrade);
+	void setData(char* songName,char* songDiff,char* winnerName,const char* loserName,int winnerScore,int winnerCombo,int winnerAcc,int loserScore,int loserCombo,int loserAcc,int winnerGrade,int loserGrade);
 
-	void setGrade(int score,int combo,int acc,bool isWinner,int playerGrade);
+	void setGrade(int score,int combo,int acc,bool isMine,int playerGrade);
 
 private:
 	Sprite* PK_bg;
@@ -33,9 +33,9 @@ private:
 
 	Sprite* PK_vs;
 
-	Sprite* winnerGrade;
+	Sprite* myGradeFrame;
 
-	Sprite* loserGrade;
+	Sprite* opnGradeFrame;
 
 	Sprite* winner;
 

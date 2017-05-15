@@ -86,7 +86,7 @@ public:
     
     CREATE_FUNC(GameLayer);
     
-    static GameLayer* createWithId(int id,const char* diff,int pkMode);
+    static GameLayer* createWithId(int id,const char* name,const char* diff,int pkMode);
     
     void update(float dt);
     
@@ -99,6 +99,8 @@ public:
     void onKeyPressed(EventKeyboard::KeyCode keyCode,Event* event);
     
     void onKeyReleased(EventKeyboard::KeyCode keyCode,Event* event);
+    
+    void launchItem();
     
     void dropTag(int col);
     
@@ -195,6 +197,10 @@ public:
     bool itemOn[8];
     
     int itemCount[8];
+    
+    Sprite* itemIcon[8];
+    
+    Label* itemNumLabel[3];
     
 	MenuItemImage* btn_pause;
 

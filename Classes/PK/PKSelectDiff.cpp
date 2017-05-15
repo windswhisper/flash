@@ -36,11 +36,14 @@ bool PKSelectDiff::init()
 
 	btn_setting->addChild(ringR);
 
-
 	playButton = MenuItemImage::create("img/selectsongs/btn_play.png", "img/selectsongs/btn_play.png", CC_CALLBACK_0(PKSelectDiff::matching, this));
 
 	playButton->setPosition(1850, 110);
-
+    
+    this->playButton->setOpacity(0);
+    
+    this->playButton->runAction(FadeTo::create(0.5f,255));
+    
 	playButton->runAction(RepeatForever::create(Sequence::create(ScaleTo::create(0.1f, 1.1f), ScaleTo::create(0.4f, 1), NULL)));
 
 	Menu* menu = Menu::create(btn_mainMenu,btn_setting,playButton,NULL);
@@ -176,9 +179,9 @@ void PKSelectDiff::diffAction(Sprite* up, Sprite* mid, Sprite* down)
 	diffUp->stopAllActions();
 	diffMid->stopAllActions();
 	diffDown->stopAllActions();
-	diffMid->runAction(MoveTo::create(1.0f, Vec2(1000, 500)));
-	diffDown->runAction(MoveTo::create(1.0f, Vec2(1300, 300)));
-	diffUp->runAction(MoveTo::create(1.0f, Vec2(1300, 700)));
+	diffMid->runAction(MoveTo::create(0.5f, Vec2(1000, 500)));
+	diffDown->runAction(MoveTo::create(0.5f, Vec2(1300, 300)));
+	diffUp->runAction(MoveTo::create(0.5f, Vec2(1300, 700)));
 }
 
 void PKSelectDiff::backToMenu()
@@ -206,12 +209,16 @@ void PKSelectDiff::matching()
         
 		this->close(CallFunc::create([=](){
 			rapidjson::Document doc;
-		doc.Parse<0>(msg.c_str());
+            doc.Parse<0>(msg.c_str());
 
-		int songId = doc["songId"].GetInt();
-		char diffName[64];
-		strcpy(diffName, doc["diffName"].GetString());
-            this->getParent()->addChild(GameLayer::createWithId(songId , diffName, 1));
+            int songId = doc["songId"].GetInt();
+            char diffName[64];
+            strcpy(diffName, doc["diffName"].GetString());
+            
+            char songName[64];
+            strcpy(songName, doc["name"].GetString());
+            
+            this->getParent()->addChild(GameLayer::createWithId(songId,songName , diffName, 1));
         }));
         SocketIOClient::getInstance()->unlock();
     });
@@ -233,5 +240,6 @@ void PKSelectDiff::close(CallFunc* callfunc)
 	btn_mainMenu->runAction(Sequence::create(DelayTime::create(0.3f), (EaseSineOut::create(MoveBy::create(1, Vec2(0, 300)))), NULL));
 
 	btn_setting->runAction(Sequence::create(DelayTime::create(0.3f), (EaseSineOut::create(MoveBy::create(1, Vec2(0, 300)))), callfunc, CallFunc::create(CC_CALLBACK_0(PKSelectDiff::removeFromParent, this)), NULL));
-
+    
+    this->playButton->runAction(FadeTo::create(0.5f,0));
 }
