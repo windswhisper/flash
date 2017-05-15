@@ -30,6 +30,8 @@ public:
     
     void load();
     
+    void reload();
+    
     void addSong(int id,const char* name,const char* length,const char* artist,const char* diffName,int diffLevel);
     
     vector<Song*> songs;

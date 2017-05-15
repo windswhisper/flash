@@ -3,12 +3,8 @@
 
 #include "cocos2d.h"
 #include <random>
-<<<<<<< HEAD
-#include "ui\CocosGUI.h"
-#include <vector>
-=======
 #include "ui/CocosGUI.h"
->>>>>>> 682e650d263c65e4df1a383a042ed0f929b1fdc8
+#include <vector>
 
 USING_NS_CC;
 using namespace ui;
@@ -25,6 +21,10 @@ public:
 
 	void extractForTen();
 
+    void oneSong(int id,const char* name);
+    
+    void tenSong(std::string msg);
+    
 	Sprite* songsExtractionBg;
 
 	Sprite* songsExtractionFrame;
