@@ -29,6 +29,13 @@ void SongsInfo::load()
     
 }
 
+void SongsInfo::reload()
+{
+    songs.clear();
+    
+    load();
+}
+
 void SongsInfo::addSong(int id,const char *name,const char *length,const char *artist,const char* diffName,int diffLevel)
 {
     if(this->songs.empty()||this->getInfoById(id)==nullptr)

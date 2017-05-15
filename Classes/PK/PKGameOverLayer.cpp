@@ -67,20 +67,20 @@ bool PKGameOverLayer::init()
 
 	winner = Sprite::create("img/PK/winner.png");
 
-	winner->setPosition(Vec2(210,820));
+	winner->setPosition(Vec2(140,260));
 
 	winner->setVisible(false);
 
-	this->addChild(winner);
+	winnerNameFrame->addChild(winner);
 
 
 	loser = Sprite::create("img/PK/loser.png");
 
-	loser->setPosition(Vec2(1750, 765));
+	loser->setPosition(Vec2(720, 260));
 
 	loser->setVisible(false);
 
-	this->addChild(loser);
+	loserNameFrame->addChild(loser);
 
 
 	back = Button::create("img/PK/btn_back.png","img/PK/btn_back_p.png");
@@ -103,7 +103,7 @@ bool PKGameOverLayer::init()
 	back->addChild(ring);
 
 
-	//this->setData("Flower Dance","easy","Liu Kangwei","Deng Hao",999999,1000,100,111111,222,55,1,7);
+	this->setData("Flower Dance","easy","Liu Kangwei","Deng Hao",999999,1000,100,111111,222,55,1,7);
 
 
 	return true;
@@ -118,21 +118,21 @@ void PKGameOverLayer::setData(char* songName,char* songDiff,char* myName,const c
 	songsNameFrame->addChild(label_songName);
 
 
-	auto label_songDiff = Label::create(songDiff, "Arial", 72);
+	auto label_songDiff = Label::create(songDiff, "Arial", 64);
 
 	label_songDiff->setPosition(Vec2(songsNameFrame->getContentSize().width / 2, 80));
 
 	songsNameFrame->addChild(label_songDiff);
 
 
-	auto label_winnerName = Label::create(myName,"Arial",72);
+	auto label_winnerName = Label::create(myName,"Arial",96);
 
 	label_winnerName->setPosition(winnerNameFrame->getContentSize().width/2,winnerNameFrame->getContentSize().height/2);
 
 	winnerNameFrame->addChild(label_winnerName);
 
 
-	auto label_loserName = Label::create(myName, "Arial", 72);
+	auto label_loserName = Label::create(opnName, "Arial", 96);
 
 	label_loserName->setPosition(loserNameFrame->getContentSize().width / 2, loserNameFrame->getContentSize().height / 2);
 
@@ -142,11 +142,23 @@ void PKGameOverLayer::setData(char* songName,char* songDiff,char* myName,const c
 
 	this->setGrade(opnScore, opnCombo, opnAcc,false,opnGrade);
     
-    winnerNameFrame->runAction(Sequence::create( MoveBy::create(1, Vec2(0, 30)), CallFunc::create([=](){winner->setVisible(true); }), NULL));
-    loserNameFrame->runAction(Sequence::create( MoveBy::create(1, Vec2(0, -30)), CallFunc::create([=](){loser->setVisible(true); }), NULL));
-    
-    myGradeFrame->runAction(MoveBy::create(1,Vec2(0,30)));
-    opnGradeFrame->runAction( MoveBy::create(1, Vec2(0, -30)));
+    if(myScore>opnScore)
+    {
+        winnerNameFrame->runAction(Sequence::create( MoveBy::create(1, Vec2(0, 30)), CallFunc::create([=](){winner->setVisible(true); }), NULL));
+        loserNameFrame->runAction(Sequence::create( MoveBy::create(1, Vec2(0, -30)), CallFunc::create([=](){loser->setVisible(true); }), NULL));
+        
+        myGradeFrame->runAction(MoveBy::create(1,Vec2(0,30)));
+        opnGradeFrame->runAction( MoveBy::create(1, Vec2(0, -30)));
+    }
+    else{
+        winner->setTexture("img/PK/loser.png");
+        loser->setTexture("img/PK/winner.png");
+        loserNameFrame->runAction(Sequence::create( MoveBy::create(1, Vec2(0, 30)), CallFunc::create([=](){winner->setVisible(true); }), NULL));
+        winnerNameFrame->runAction(Sequence::create( MoveBy::create(1, Vec2(0, -30)), CallFunc::create([=](){loser->setVisible(true); }), NULL));
+        
+        opnGradeFrame->runAction(MoveBy::create(1,Vec2(0,30)));
+        myGradeFrame->runAction( MoveBy::create(1, Vec2(0, -30)));
+    }
 
 }
 

@@ -434,8 +434,13 @@ void GameLayer::initPKMode()
     this->addChild(this->scoreLabel_OP);
     
     SocketIOClient::getInstance()->listen("sendScore", [=](SIOClient* client, std::string msg){
+<<<<<<< HEAD
 		if (this == nullptr)return;
 
+=======
+        if(this->scoreLabel_OP==nullptr)return;
+        
+>>>>>>> 03e8f30d2168dc0dcef8193147c566b991833b9a
         rapidjson::Document doc;
         doc.Parse<0>(msg.c_str());
         
@@ -799,7 +804,15 @@ void GameLayer::comboClear()
 }
 void GameLayer::complete()
 {
+<<<<<<< HEAD
 	this->unschedule(schedule_selector(GameLayer::updateScore));
+=======
+    this->unschedule(schedule_selector(GameLayer::updateScore));
+    
+    int acc = 100;
+    int grade = 3;
+    
+>>>>>>> 03e8f30d2168dc0dcef8193147c566b991833b9a
     if(mode)
     {
         char msg[128];
@@ -810,12 +823,16 @@ void GameLayer::complete()
             rapidjson::Document doc;
             doc.Parse<0>(msg.c_str());
             
+            log("%s",msg.c_str());
+            auto overLayer = PKGameOverLayer::create();
+            overLayer->setData(songName,diff,UserInfo::getInstance()->username,doc["username"].GetString(),score,maxCombo,acc,doc["score"].GetInt(),doc["combo"].GetInt(),doc["acc"].GetInt(),grade,doc["grade"].GetInt());
+            overLayer->retain();
+            
             auto shadow = LayerColor::create(Color4B(0,0,0,255));
             shadow->setOpacity(0);
-            shadow->runAction(Sequence::create(FadeTo::create(0.5f, 255),DelayTime::create(0.4f),CallFunc::create([&](){
-                auto overLayer = PKGameOverLayer::create();
-                overLayer->setData(songName,diff,UserInfo::getInstance()->username,doc["username"].GetString(),score,maxCombo,100,doc["score"].GetInt(),doc["combo"].GetInt(),doc["acc"].GetInt(),1,doc["grade"].GetInt());
+            shadow->runAction(Sequence::create(FadeTo::create(0.5f, 255),DelayTime::create(0.4f),CallFunc::create([=](){
                 this->getParent()->addChild(overLayer);
+                overLayer->release();
                 this->removeFromParent();
             }),FadeTo::create(0.5f, 0),CallFunc::create([=](){
                 shadow->removeFromParent();
@@ -831,7 +848,8 @@ void GameLayer::complete()
         auto shadow = LayerColor::create(Color4B(0,0,0,255));
         shadow->setOpacity(0);
         shadow->runAction(Sequence::create(FadeTo::create(0.5f, 255),DelayTime::create(0.4f),CallFunc::create([=](){
-            auto overLayer = PKGameOverLayer::create();
+            auto overLayer = GameOver::create();
+            overLayer->setData(songId, songName, diff, grade, score, maxCombo, acc, rateCount[0], rateCount[3], rateCount[2], rateCount[1]);
             this->getParent()->addChild(overLayer);
             
             this->removeFromParent();
