@@ -4,9 +4,11 @@
 #include "cocos2d.h"
 #include <random>
 #include "ui\CocosGUI.h"
+#include <vector>
 
 USING_NS_CC;
 using namespace ui;
+//using namespace std;
 
 class SongsExtraction : public Layer
 {
@@ -27,6 +29,11 @@ public:
 
 	MenuItemImage* btn_extractForTen;
 
+	Vector<Sprite*> songsCover;
+
+//	Vector<char*> songsCoverPath;
+
+	int count;
 };
 
 #endif
