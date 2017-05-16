@@ -433,14 +433,11 @@ void GameLayer::initPKMode()
     
     this->addChild(this->scoreLabel_OP);
     
-    SocketIOClient::getInstance()->listen("sendScore", [=](SIOClient* client, std::string msg){
-<<<<<<< HEAD
-		if (this == nullptr)return;
+    SocketIOClient::getInstance()->listen("sendScore", [=](SIOClient* client, std::string msg){		if (this == nullptr)return;
 
-=======
         if(this->scoreLabel_OP==nullptr)return;
         
->>>>>>> 03e8f30d2168dc0dcef8193147c566b991833b9a
+        
         rapidjson::Document doc;
         doc.Parse<0>(msg.c_str());
         
@@ -492,7 +489,7 @@ void GameLayer::launchItem()
         }
         else
             this->itemOn[i] = false;
-        this->itemCount[i] = 10;
+        this->itemCount[i] = 20;
     }
 }
 
@@ -804,15 +801,12 @@ void GameLayer::comboClear()
 }
 void GameLayer::complete()
 {
-<<<<<<< HEAD
-	this->unschedule(schedule_selector(GameLayer::updateScore));
-=======
     this->unschedule(schedule_selector(GameLayer::updateScore));
     
     int acc = 100;
     int grade = 3;
     
->>>>>>> 03e8f30d2168dc0dcef8193147c566b991833b9a
+    
     if(mode)
     {
         char msg[128];
@@ -871,10 +865,13 @@ void GameLayer::updateHp(int delta)
     
     if(this->hp<0){
         this->hp = 0;
-		SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
+        if(!itemOn[4]&&!mode)
+        {
+            SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
 
-		Director::getInstance()->pause();
-		this->addChild(FailedLayer::createWithSong(this->songId, this->songName, this->diff, 0));
+            Director::getInstance()->pause();
+            this->addChild(FailedLayer::createWithSong(this->songId, this->songName, this->diff, 0));
+        }
     }
     if(this->hp>MAX_HP)
     {

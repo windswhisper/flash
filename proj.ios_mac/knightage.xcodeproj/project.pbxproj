@@ -18,6 +18,7 @@
 		4731BBFD1E94923C00530117 /* songs in Resources */ = {isa = PBXBuildFile; fileRef = 4731BBFC1E94923C00530117 /* songs */; };
 		4734700D1EA45674008EF475 /* PKSelectDiff.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4734700B1EA45674008EF475 /* PKSelectDiff.cpp */; };
 		473470121EA458AD008EF475 /* GameOver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 473470101EA458AD008EF475 /* GameOver.cpp */; };
+		473822F81EC9FD7600335A89 /* FailedLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 473822F61EC9FD7600335A89 /* FailedLayer.cpp */; };
 		4755807C1E8A3283002A302F /* RankingList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4755807A1E8A3283002A302F /* RankingList.cpp */; };
 		476445E81EC2B3CF00E8C7F1 /* Setting.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 476445E61EC2B3CF00E8C7F1 /* Setting.cpp */; };
 		476C15D31E9B45E60031FA3E /* TheFatRat - Unity.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 476C15D21E9B45E60031FA3E /* TheFatRat - Unity.mp3 */; };
@@ -145,6 +146,8 @@
 		4734700C1EA45674008EF475 /* PKSelectDiff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PKSelectDiff.h; path = PK/PKSelectDiff.h; sourceTree = "<group>"; };
 		473470101EA458AD008EF475 /* GameOver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameOver.cpp; sourceTree = "<group>"; };
 		473470111EA458AD008EF475 /* GameOver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOver.h; sourceTree = "<group>"; };
+		473822F61EC9FD7600335A89 /* FailedLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FailedLayer.cpp; sourceTree = "<group>"; };
+		473822F71EC9FD7600335A89 /* FailedLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FailedLayer.h; sourceTree = "<group>"; };
 		4755807A1E8A3283002A302F /* RankingList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RankingList.cpp; sourceTree = "<group>"; };
 		4755807B1E8A3283002A302F /* RankingList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RankingList.h; sourceTree = "<group>"; };
 		476445E61EC2B3CF00E8C7F1 /* Setting.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Setting.cpp; path = Setting/Setting.cpp; sourceTree = "<group>"; };
@@ -378,6 +381,8 @@
 				47E6BF681E9F263F00D742FB /* shop */,
 				47A6E1E31E6A652F0089E3A9 /* AppDelegate.cpp */,
 				47A6E1E41E6A652F0089E3A9 /* AppDelegate.h */,
+				473822F61EC9FD7600335A89 /* FailedLayer.cpp */,
+				473822F71EC9FD7600335A89 /* FailedLayer.h */,
 				47A6E1E51E6A652F0089E3A9 /* GameLayer.cpp */,
 				47A6E1E61E6A652F0089E3A9 /* GameLayer.h */,
 				47A6E1E71E6A652F0089E3A9 /* GameScene.cpp */,
@@ -679,6 +684,7 @@
 				47A159E21E88EA7B004EAFE9 /* SocketIOClient.cpp in Sources */,
 				47A6E1EF1E6A652F0089E3A9 /* GameScene.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
+				473822F81EC9FD7600335A89 /* FailedLayer.cpp in Sources */,
 				47E6BF631E9F080C00D742FB /* ShopLayer.cpp in Sources */,
 				47E6BF661E9F080C00D742FB /* SongsPackage.cpp in Sources */,
 			);

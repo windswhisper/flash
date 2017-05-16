@@ -103,9 +103,6 @@ bool PKGameOverLayer::init()
 	back->addChild(ring);
 
 
-	this->setData("Flower Dance","easy","Liu Kangwei","Deng Hao",999999,1000,100,111111,222,55,1,7);
-
-
 	return true;
 }
 

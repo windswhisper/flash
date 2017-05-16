@@ -1,6 +1,7 @@
 #include "SongsExtraction.h"
 #include "SocketIOClient.h"
 #include "SongsInfo.h"
+#include "ShopConfig.h"
 
 bool SongsExtraction::init()
 {
@@ -22,7 +23,7 @@ bool SongsExtraction::init()
 
 	btn_extractForOne->setPosition(700,130);
 
-	auto extractionForOne = Label::create("100G¡Á1","",72);
+	auto extractionForOne = Label::create("100G\n å•æŠ½","",48);
 
 	extractionForOne->setPosition(btn_extractForOne->getContentSize().width / 2, btn_extractForOne->getContentSize().height/2);
 
@@ -32,7 +33,7 @@ bool SongsExtraction::init()
 
 	btn_extractForTen->setPosition(1300,130);
 
-	auto extractionForTen = Label::create("800G¡Á10","",72);
+	auto extractionForTen = Label::create(" 800G\nåè¿žæŠ½","",48);
 
 	extractionForTen->setPosition(btn_extractForTen->getContentSize().width / 2, btn_extractForTen->getContentSize().height / 2);
 
@@ -51,6 +52,8 @@ bool SongsExtraction::init()
 
 void SongsExtraction::extractForOne()
 {
+    if(!ShopConfig::checkCoin(100))return;
+    
     SocketIOClient::getInstance()->send("drawSong", "");
     SocketIOClient::getInstance()->lock();
     SocketIOClient::getInstance()->listen("drawSongRes", [=](SIOClient* client, std::string msg){
@@ -103,6 +106,8 @@ void SongsExtraction::oneSong(int id,const char* name)
 
 void SongsExtraction::extractForTen()
 {
+    if(!ShopConfig::checkCoin(800))return;
+    
     SocketIOClient::getInstance()->send("drawTenSong", "");
     SocketIOClient::getInstance()->lock();
     SocketIOClient::getInstance()->listen("drawTenSongRes", [=](SIOClient* client, std::string msg){
@@ -113,8 +118,7 @@ void SongsExtraction::extractForTen()
 }
 
 void SongsExtraction::tenSong(std::string msg)
-{
-    rapidjson::Document doc;
+{    rapidjson::Document doc;
     doc.Parse<0>(msg.c_str());
     
     count = 1;

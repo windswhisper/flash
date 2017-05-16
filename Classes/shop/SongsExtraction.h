@@ -3,14 +3,8 @@
 
 #include "cocos2d.h"
 #include <random>
-<<<<<<< HEAD
-#include "ui\CocosGUI.h"
-#include <vector>
-
-=======
 #include "ui/CocosGUI.h"
 #include <vector>
->>>>>>> 03e8f30d2168dc0dcef8193147c566b991833b9a
 
 USING_NS_CC;
 using namespace ui;
