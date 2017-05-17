@@ -50,7 +50,7 @@ void SimpleNote::display()
 {
     this->p = Sprite::create("img/game/note.png");
     
-    this->runAction(Sequence::create(MoveBy::create(_gamelayer->offset+0.2f, Vec2(0,-3000*(_gamelayer->offset+0.2f)/_gamelayer->offset)),CallFunc::create([=]{this->miss();}),NULL));
+    this->runAction(Sequence::create(MoveBy::create(_gamelayer->offset+RATE_STD[3]/1000.0f, Vec2(0,-3000*(_gamelayer->offset+0.2f)/_gamelayer->offset)),CallFunc::create([=]{this->miss();}),NULL));
     
     
     if(_gamelayer->itemOn[5])
@@ -164,7 +164,7 @@ void LongNote::display()
     
     this->pics.reverse();
     
-    this->runAction(Sequence::create(MoveBy::create(_gamelayer->offset+0.2f, Vec2(0,-3000*(_gamelayer->offset+0.2f)/_gamelayer->offset)),CallFunc::create([=]{this->miss();}),MoveBy::create((this->endt-this->t)/1000.0f, Vec2(0,-2*(this->endt-this->t))),CallFunc::create([=]{this->remove();}),NULL));
+    this->runAction(Sequence::create(MoveBy::create(_gamelayer->offset+RATE_STD[3]/1000.0f, Vec2(0,-3000*(_gamelayer->offset+0.2f)/_gamelayer->offset)),CallFunc::create([=]{this->miss();}),MoveBy::create((this->endt-this->t)/1000.0f, Vec2(0,-2*(this->endt-this->t))),CallFunc::create([=]{this->remove();}),NULL));
 }
 void LongNote::miss()
 {
@@ -490,6 +490,18 @@ void GameLayer::launchItem()
         else
             this->itemOn[i] = false;
         this->itemCount[i] = 20;
+    }
+    if(itemOn[7])
+    {
+        RATE_STD[1] = 30;
+        RATE_STD[2] = 60;
+        RATE_STD[3] = 80;
+    }
+    else{
+        RATE_STD[1] = 40;
+        RATE_STD[2] = 80;
+        RATE_STD[3] = 100;
+        
     }
 }
 
